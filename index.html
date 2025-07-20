@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhik Das | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- ===== Sidebar ===== -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="\images\abhik1.jpg" alt="Your Profile Picture" id="profile-pic">
+                <h2>Abhik Das</h2>
+                <p>Software Engineer</p>
+            </div>
+            <nav class="main-menu">
+                <h3>Contact</h3>
+                <a href="mailto:abhikdas1066@gmail.com" class="menu-item">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://www.linkedin.com/in/abhik-das-983141303" target="_blank" class="menu-item">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Abhik128911" target="_blank" class="menu-item">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="time-widget">
+                    <p id="current-time"></p>
+                    <p id="current-date"></p>
+                </div>
+                <!-- Theme Switcher -->
+                <div class="theme-switcher">
+                    <div class="theme-toggle">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="theme-palette">
+                        <span class="color-option" data-color="#e94560"></span>
+                        <span class="color-option" data-color="#3498db"></span>
+                        <span class="color-option" data-color="#2ecc71"></span>
+                        <span class="color-option" data-color="#f1c40f"></span>
+                        <span class="color-option" data-color="#9b59b6"></span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== Main Content ===== -->
+        <main class="main-content">
+            
+
+            <!-- Tools/Skills Widget -->
+            <section id="tools" class="widget">
+                <h2 class="widget-title">My Toolkit</h2>
+                <div class="tool-categories">
+                    <div class="tool-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-tools"></i> Tools</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="tool-grid">
+                            <!-- <div><a href="image-processor.html" class="tool-item"><i class="fas fa-image"></i> Image Processor</a></div> -->
+                             <div>
+                                <button class="tool-item" onclick="location.href='tools/image-processor/index.html'">
+                                    <i class="fas fa-image"></i> Image Processor
+                                </button>
+                             </div>
+                            <!-- <div class="tool-item"><i class="fab fa-css3-alt"></i> CSS3</div>
+                            <div class="tool-item"><i class="fab fa-js-square"></i> JavaScript</div>
+                            <div class="tool-item"><i class="fab fa-react"></i> React</div> -->
+                        </div>
+                    </div>
+                    <div class="tool-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-cogs"></i> Skills</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="tool-grid">
+                            <div class="tool-item"><i class="fab fa-node-js"></i> C</div>
+                            <div class="tool-item"><i class="fab fa-python"></i> Python</div>
+                            <div class="tool-item"><i class="fas fa-database"></i> SQL</div>
+                            <div class="tool-item"><i class="fab fa-java"></i> Java</div>
+                            <div class="tool-item"><i class="fab fa-html5"></i> HTML5</div>
+                            <div class="tool-item"><i class="fab fa-cloud"></i> Cloud Computing</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Start -->
+                <!-- <section id="skills" class="widget skills-widget">
+                    <h2 class="widget-title">My Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <p>HTML</p>
+                                <p>95%</p>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <p>CSS & Animations</p>
+                                <p>90%</p>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <p>JavaScript (ES6+)</p>
+                                <p>85%</p>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <p>React</p>
+                                <p>80%</p>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <p>Node.js & Express</p>
+                                <p>75%</p>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <p>Python</p>
+                                <p>70%</p>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <!-- Skills End -->
+
+            <!-- Education Widget -->
+            <section id="education" class="widget">
+                <h2 class="widget-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>B.Tech(CSE)-DS</h3>
+                        <p>Brainware University | 2023 - 2027</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Data Science Certification</h3>
+                        <p>Coursera | 2025</p>
+                    </div>
+                </div>
+            </section>
+                                     
+
+            <!-- Projects Widget -->
+            <section id="projects" class="widget projects-widget">
+                <h2 class="widget-title">My Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card" data-title="YT_Downloader" data-image="https://placehold.co/600x400/0f3460/ffffff?text=Project+1" data-description="This is a downloader for youtube videos using python." data-link="https://github.com/Abhik128911/YT_Downloader">
+                        <img src="https://placehold.co/600x400/0f3460/ffffff?text=Project+1" alt="Project 1" loading="lazy">
+                        <div class="project-info">
+                            <h3>YT_Downloader</h3>
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                    <div class="project-card" data-title="Image_Processor" data-image="https://placehold.co/600x400/0f3460/ffffff?text=Project+2" data-description="This is a simple image resizer + compressor + converter tool (ignore the background remover button...that does not works) using JavaScript." data-link="/tools/image-processor/index.html">
+                        <img src="https://placehold.co/600x400/0f3460/ffffff?text=Project+2" alt="Project 2" loading="lazy">
+                        <div class="project-info">
+                            <h3>Image_Processor</h3>
+                            <button class="view-project-btn">View Project</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+    <!-- ===== Project Modal ===== -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-img" src="" alt="Project Image" loading="lazy">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <a href="#" id="modal-link" class="modal-project-link" target="_blank" rel="noopener noreferrer">View Site / Repo</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <footer style="text-align: center; padding: 1rem; background-color: #aaaeb8; color: #090707;">
+        <p>&copy; 2025 Abhik Das. All rights reserved.</p>
+        <p>Made with ❤️ by Abhik Das</p>
+    </footer>
+</body>
+</html>

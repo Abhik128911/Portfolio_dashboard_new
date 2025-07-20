@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processor | Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Processing Libraries -->
+    <script src="//cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/@imgly/background-removal/dist/browser.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+</head>
+<body>
+    <div class="tool-container">
+        <header class="tool-header">
+            <a href="../../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <h2><i class="fas fa-magic"></i> Image Utility Tool</h2>
+        </header>
+
+        <main class="tool-body">
+            <div class="file-drop-area">
+                <i class="fas fa-upload"></i>
+                <p>Drag & drop your image here, or</p>
+                <input type="file" id="file-input" accept="image/jpeg, image/png, image/webp" hidden>
+                <button id="browse-file-btn" class="button-secondary">Browse Files</button>
+            </div>
+
+            <div id="image-editor" class="hidden">
+                <div class="image-preview-area">
+                    <img id="image-preview" src="#" alt="Image Preview">
+                    <p id="original-size-info"></p>
+                </div>
+                <div class="image-options-area">
+                    <!-- Background Tools -->
+                    <div class="option-group background-tools">
+                        <label><i class="fas fa-paint-brush"></i> Background Tools</label>
+                        <button id="remove-bg-btn" class="button-secondary"><i class="fas fa-eraser"></i> Remove Background</button>
+                        <div id="fill-bg-controls" class="hidden">
+                            <label for="fill-color-input">Fill Color:</label>
+                            <input type="color" id="fill-color-input" value="#ffffff">
+                        </div>
+                    </div>
+                    
+                    <!-- Resize & Format -->
+                    <div class="option-group">
+                        <label><i class="fas fa-ruler-combined"></i> Resize & Format</label>
+                        <div class="input-row">
+                           <input type="number" id="resize-width" placeholder="Max Width">
+                           <select id="convert-format">
+                                <option value="">Keep Format</option>
+                                <option value="image/jpeg">to JPEG</option>
+                                <option value="image/png">to PNG</option>
+                                <option value="image/webp">to WebP</option>
+                                <option value="application/pdf">to PDF</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Target Size -->
+                    <div id="compression-group" class="option-group">
+                        <label for="target-size"><i class="fas fa-bullseye"></i> Target Size</label>
+                        <div class="input-row">
+                            <input type="range" id="target-size" min="1" max="1000" step="5" value="500">
+                            <span id="target-size-value">500 KB</span>
+                        </div>
+                    </div>
+                    
+                    <button id="process-image-btn" class="button-primary process-btn">
+                        <i class="fas fa-cogs"></i> Process Image
+                    </button>
+                </div>
+            </div>
+
+            <div id="result-area" class="hidden">
+                <h3>Your file is ready!</h3>
+                <p id="result-size-info"></p>
+                <div class="result-buttons">
+                    <a href="#" id="download-link" class="button-primary download-btn" download="processed-image">
+                        <i class="fas fa-download"></i> Download File
+                    </a>
+                    <button id="start-over-btn" class="button-secondary">
+                        <i class="fas fa-redo"></i> Start Over
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
