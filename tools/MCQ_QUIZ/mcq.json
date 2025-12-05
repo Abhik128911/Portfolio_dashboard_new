@@ -1,0 +1,3018 @@
+{
+  "Computer Networks": [
+    {
+      "question": "Select the structure or format of data that is stated as ___________.",
+      "options": ["Syntax", "Semantics", "Struct", "Formatting"],
+      "answer": "Syntax"
+    },
+    {
+      "question": "Select the communication between a computer and a keyboard that defines ______________ transmission.",
+      "options": ["Automatic", "Half-duplex", "Full-duplex", "Simplex"],
+      "answer": "Simplex"
+    },
+    {
+      "question": "A _______ defines the physical path over which a message travels.",
+      "options": ["Path", "Medium", "Protocol", "Route"],
+      "answer": "Medium"
+    },
+    {
+      "question": "A _________ defines a set of rules that govern data communication.",
+      "options": ["Protocols", "Standards", "RFCs", "Servers"],
+      "answer": "Protocols"
+    },
+    {
+      "question": "Three or more devices share a link in ________ connection.",
+      "options": ["Unipoint", "Multipoint", "Point to point", "Simplex"],
+      "answer": "Multipoint"
+    },
+    {
+      "question": "Identify the collection of various computers that seems a single coherent system to its client.",
+      "options": ["computer network", "distributed system", "networking system", "mail system"],
+      "answer": "distributed system"
+    },
+    {
+      "question": "Two devices are said to be in a network if __________",
+      "options": [
+        "a process in one device is able to exchange information with a process in another device",
+        "a process is running on both devices",
+        "PIDs of processes are same",
+        "a process is active and another is inactive"
+      ],
+      "answer": "a process in one device is able to exchange information with a process in another device"
+    },
+    {
+      "question": "In computer networks, nodes are defined as _________.",
+      "options": [
+        "the computer that originates the data",
+        "the computer that routes the data",
+        "the computer that terminates the data",
+        "all of the mentioned"
+      ],
+      "answer": "all of the mentioned"
+    },
+    {
+      "question": "The communication channel that is shared by all machines is called ________.",
+      "options": ["broadcast network", "unicast network", "multicast network", "anycast network"],
+      "answer": "broadcast network"
+    },
+    {
+      "question": "A device that forwards packets between networks by processing routing information is called ________.",
+      "options": ["bridge", "firewall", "router", "hub"],
+      "answer": "router"
+    },
+    {
+      "question": "Network congestion is observed _________.",
+      "options": [
+        "in case of traffic overloading",
+        "when a system terminates",
+        "when connection terminates",
+        "in case of transfer failure"
+      ],
+      "answer": "in case of traffic overloading"
+    },
+    {
+      "question": "Which network extends a private network across public networks?",
+      "options": ["local area network", "virtual private network", "enterprise private network", "storage area network"],
+      "answer": "virtual private network"
+    },
+    {
+      "question": "Select the number of layers in the TCP/IP model.",
+      "options": ["5", "7", "6", "10"],
+      "answer": "5"
+    },
+    {
+      "question": "Which layers are extra in OSI model compared to TCP/IP model?",
+      "options": ["Application layer", "Presentation layer", "Session layer", "Session and Presentation layer"],
+      "answer": "Session and Presentation layer"
+    },
+    {
+      "question": "The application layer is observed in ____________.",
+      "options": ["End system", "NIC", "Ethernet", "Packet Transport"],
+      "answer": "End system"
+    },
+    {
+      "question": "Which are functionalities of the presentation layer?",
+      "options": ["Data compression", "Data encryption", "Data description", "All of the mentioned"],
+      "answer": "All of the mentioned"
+    },
+    {
+      "question": "Delimiting and synchronization of data exchange is defined by __________.",
+      "options": ["Application layer", "Session layer", "Transport layer", "Link layer"],
+      "answer": "Session layer"
+    },
+    {
+      "question": "As a data packet moves from lower to upper layers in OSI model, headers are _______.",
+      "options": ["Added", "Removed", "Rearranged", "Randomized"],
+      "answer": "Removed"
+    },
+    {
+      "question": "Choose the correct statement about OSI model.",
+      "options": [
+        "A structured way to discuss and update system components",
+        "One layer may duplicate lower layer functionality",
+        "Functionality at one layer does not require information from another layer",
+        "It is an application-specific network model"
+      ],
+      "answer": "Functionality at one layer does not require information from another layer"
+    },
+    {
+      "question": "Choose the full name of the OSI Model.",
+      "options": ["open system interconnection", "operating system interface", "optical service implementation", "open service Internet"],
+      "answer": "open system interconnection"
+    },
+    {
+      "question": "The TCP/IP model does not have the ______ layer, but the OSI model has this layer.",
+      "options": ["session layer", "application layer", "transport layer", "network layer"],
+      "answer": "session layer"
+    },
+    {
+      "question": "Which layer is responsible for process-to-process delivery?",
+      "options": ["network layer", "transport layer", "session layer", "data link layer"],
+      "answer": "transport layer"
+    },
+    {
+      "question": "Which address identifies a process on a host (transport layer)?",
+      "options": ["physical address", "logical address", "port address", "specific address"],
+      "answer": "port address"
+    },
+    {
+      "question": "Transmission data rate is determined by ____________.",
+      "options": ["network layer", "physical layer", "data link layer", "transport layer"],
+      "answer": "physical layer"
+    },
+    {
+      "question": "The physical layer is concerned with ___________.",
+      "options": ["bit-by-bit delivery", "process to process delivery", "application delivery", "port to port delivery"],
+      "answer": "bit-by-bit delivery"
+    },
+    {
+      "question": "Bits can be sent over media as analog signals using ___________.",
+      "options": ["digital modulation", "amplitude modulation", "frequency modulation", "phase modulation"],
+      "answer": "digital modulation"
+    },
+    {
+      "question": "Physical layer recognizes __________.",
+      "options": [
+        "mechanical specs of connectors",
+        "electrical signal specs",
+        "IR over optical fiber specs",
+        "all of the mentioned"
+      ],
+      "answer": "all of the mentioned"
+    },
+    {
+      "question": "A single channel shared by multiple signals is called ________.",
+      "options": ["analog modulation", "digital modulation", "multiplexing", "phase modulation"],
+      "answer": "multiplexing"
+    },
+    {
+      "question": "Wireless transmission of signals can be done via",
+      "options": ["radio waves", "microwaves", "infrared", "all of the mentioned"],
+      "answer": "all of the mentioned"
+    },
+    {
+      "question": "Physical layer translates logical communication requests from ______ into hardware operations.",
+      "options": ["data link layer", "network layer", "transport layer", "application layer"],
+      "answer": "data link layer"
+    },
+    {
+      "question": "In a wireless LAN, an access point (AP) is ________.",
+      "options": [
+        "device that allows wireless devices to connect to a wired network",
+        "wireless devices itself",
+        "all nodes in the network",
+        "both wired and wireless device"
+      ],
+      "answer": "device that allows wireless devices to connect to a wired network"
+    },
+    {
+      "question": "Multiple access technique used in IEEE 802.11 wireless LAN?",
+      "options": ["CDMA", "CSMA/CA", "ALOHA", "CSMA/CD"],
+      "answer": "CSMA/CA"
+    },
+    {
+      "question": "Which event is not possible in a wireless LAN?",
+      "options": ["collision detection", "multi-mode transmission", "acknowledgement", "connection to wired networks"],
+      "answer": "collision detection"
+    },
+    {
+      "question": "________ topology requires a multipoint connection.",
+      "options": ["Star", "Mesh", "Ring", "Bus"],
+      "answer": "Bus"
+    },
+    {
+      "question": "Data communication system spanning states or world is called ______.",
+      "options": ["LAN", "WAN", "MAN", "PAN"],
+      "answer": "wAN"
+    },
+    {
+      "question": "In TDM, slots are divided into __________.",
+      "options": ["Seconds", "Frames", "Packets", "Bits"],
+      "answer": "Frames"
+    },
+    {
+      "question": "Multiplexing technique that shifts each signal to a different carrier frequency.",
+      "options": ["FDM", "TDM", "Both FDM and TDM", "PDM"],
+      "answer": "FDM"
+    },
+    {
+      "question": "A TDM link transmits 4000 frames/sec and each slot has 8 bits. Transmission rate = ______",
+      "options": ["32kbps", "500kbps", "500bps", "32bps"],
+      "answer": "32kbps"
+    },
+    {
+      "question": "In TDM, the transmission rate of a multiplexed path is always ______ the sum of sources.",
+      "options": ["Greater than", "Lesser than", "Equal to", "Equal to or greater than"],
+      "answer": "Greater than"
+    },
+    {
+      "question": "Which delay is faced by packet travelling from one end to another?",
+      "options": ["Propagation delay", "Queuing delay", "Transmission delay", "All of the mentioned"],
+      "answer": "All of the mentioned"
+    },
+    {
+      "question": "10Mbps Ethernet link, packet length = 32 bits. Transmission delay = ______ microseconds.",
+      "options": ["3.2", "32", "0.32", "320"],
+      "answer": "3.2"
+    },
+    {
+      "question": "Time required to examine a packet's header is part of ________.",
+      "options": ["Processing delay", "Transmission delay", "Queuing delay", "Propagation delay"],
+      "answer": "Processing delay"
+    },
+    {
+      "question": "Server → client file transfer. Rates: 10Mbps, 20Mbps, 30Mbps, 40Mbps. Throughput = ______",
+      "options": ["20Mbps", "40Mbps", "10Mbps", "50Mbps"],
+      "answer": "10Mbps"
+    },
+    {
+      "question": "Transmission delay does NOT depend on ________.",
+      "options": ["Packet length", "Distance between routers", "Transmission rate", "Bandwidth"],
+      "answer": "Distance between routers"
+    },
+    {
+      "question": "Propagation delay depends on ________.",
+      "options": ["Packet length", "Transmission rate", "Distance between routers", "CPU speed"],
+      "answer": "Distance between routers"
+    },
+    {
+      "question": "Data link layer takes packets from ________ and encapsulates into frames.",
+      "options": ["network layer", "physical layer", "transport layer", "application layer"],
+      "answer": "network layer"
+    },
+    {
+      "question": "Task NOT done by data link layer:",
+      "options": ["framing", "error control", "flow control", "channel coding"],
+      "answer": "channel coding"
+    },
+    {
+      "question": "Sublayer that performs medium-dependent data link functions.",
+      "options": [
+        "logical link control sublayer",
+        "media access control sublayer",
+        "network interface control sublayer",
+        "error control sublayer"
+      ],
+      "answer": "media access control sublayer"
+    },
+    {
+      "question": "Header of a frame generally contains __________.",
+      "options": ["synchronization bytes", "addresses", "frame identifier", "all of the mentioned"],
+      "answer": "all of the mentioned"
+    },
+    {
+      "question": "Automatic repeat request error management mechanism is provided by:",
+      "options": [
+        "logical link control sublayer",
+        "media access control sublayer",
+        "network interface control sublayer",
+        "application access control sublayer"
+      ],
+      "answer": "logical link control sublayer"
+    },
+    {
+      "question": "If 2 or more bits change in transmission, error is called ________.",
+      "options": ["random error", "burst error", "double error", "inverted error"],
+      "answer": "burst error"
+    },
+    {
+      "question": "Which of the following is a data link protocol?",
+      "options": ["ethernet", "point to point protocol", "hdlc", "all of the mentioned"],
+      "answer": "all of the mentioned"
+    },
+        {
+      "question": "Identify the one from the following as the multiple access protocol for channel access control.",
+      "options": ["CSMA/CD", "CSMA/CA", "Both CSMA/CD & CSMA/CA", "HDLC"],
+      "answer": "Both CSMA/CD & CSMA/CA"
+    },
+    {
+      "question": "Technique of temporarily delaying outgoing acknowledgements so they can be hooked onto the next outgoing data frame is called ________.",
+      "options": ["piggybacking", "cyclic redundancy check", "fletcher’s checksum", "parity check"],
+      "answer": "piggybacking"
+    },
+    {
+      "question": "In open-loop control, policies are applied to ________.",
+      "options": ["Remove after congestion occurs", "Remove after sometime", "Prevent before congestion occurs", "Prevent before sending packets"],
+      "answer": "Prevent before congestion occurs"
+    },
+    {
+      "question": "Retransmission of packets must not be done when _______.",
+      "options": ["Packet is lost", "Packet is corrupted", "Packet is needed", "Packet is error-free"],
+      "answer": "Packet is error-free"
+    },
+    {
+      "question": "In Go-Back-N window, timer timeout causes many packets to resend. In Selective Repeat window, the sender resends ________.",
+      "options": ["Packets which are not lost", "Only lost or corrupted packets", "Packets from starting", "All packets"],
+      "answer": "Only lost or corrupted packets"
+    },
+    {
+      "question": "Closed-Loop control mechanisms ________.",
+      "options": ["Remove after congestion occurs", "Remove after sometime", "Prevent before congestion occurs", "Prevent before sending packets"],
+      "answer": "Remove after congestion occurs"
+    },
+    {
+      "question": "Primary purpose of the Data Link Layer in OSI model is ________.",
+      "options": ["Data transmission over the physical medium", "Routing data between networks", "Ensuring end-to-end data delivery", "Managing application-layer protocols"],
+      "answer": "Data transmission over the physical medium"
+    },
+    {
+      "question": "Multiple access protocol that uses time slots to divide transmission time.",
+      "options": ["Pure ALOHA", "Slotted ALOHA", "CSMA/CD", "CSMA/CA"],
+      "answer": "Slotted ALOHA"
+    },
+    {
+      "question": "In Pure ALOHA, a collision is detected ________.",
+      "options": [
+        "Whenever a station transmits",
+        "Whenever a station successfully transmits",
+        "After a fixed time interval",
+        "Only when two stations transmit simultaneously"
+      ],
+      "answer": "Only when two stations transmit simultaneously"
+    },
+    {
+      "question": "In CSMA/CD, when a collision is detected ________.",
+      "options": [
+        "Both stations stop transmitting and retry later",
+        "One station continues, the other waits",
+        "Both stations continue transmitting",
+        "Stations switch to full-duplex mode"
+      ],
+      "answer": "Both stations stop transmitting and retry later"
+    },
+    {
+      "question": "Error detection technique that uses polynomial division to generate a checksum.",
+      "options": ["Hamming code", "CRC (Cyclic Redundancy Check)", "Block coding", "Parity bit"],
+      "answer": "CRC (Cyclic Redundancy Check)"
+    },
+    {
+      "question": "Error correction technique that lets receiver correct errors without retransmission.",
+      "options": ["Hamming code", "CRC", "Block coding", "Parity bit"],
+      "answer": "Block coding"
+    },
+    {
+      "question": "Purpose of Stop-and-Wait ARQ protocol.",
+      "options": [
+        "Efficiently transmit large packets",
+        "Detect and correct errors",
+        "Ensure ordered and reliable data transfer",
+        "Share communication medium"
+      ],
+      "answer": "Ensure ordered and reliable data transfer"
+    },
+    {
+      "question": "Error control protocol that retransmits only lost or corrupted packets.",
+      "options": ["Stop-and-Wait ARQ", "Go-Back-N ARQ", "Selective Repeat ARQ", "Sliding Window"],
+      "answer": "Selective Repeat ARQ"
+    },
+    {
+      "question": "Piggybacking in networking refers to ________.",
+      "options": [
+        "A protocol for long distance transmission",
+        "Attaching error-checking information",
+        "Combining data and acknowledgment into a single frame",
+        "Routing through multiple networks"
+      ],
+      "answer": "Combining data and acknowledgment into a single frame"
+    },
+    {
+      "question": "Medium access protocol commonly used in Ethernet networks.",
+      "options": ["Pure ALOHA", "Slotted ALOHA", "CSMA/CD", "CSMA/CA"],
+      "answer": "CSMA/CD"
+    },
+    {
+      "question": "Coding scheme that can detect and correct single-bit errors.",
+      "options": ["Hamming code", "CRC", "Block coding", "Parity bit"],
+      "answer": "Hamming code"
+    },
+    {
+      "question": "In Slotted ALOHA, a station transmits ________.",
+      "options": [
+        "Only at the beginning of each time slot",
+        "At any time during slot",
+        "After detecting idle channel",
+        "After receiving acknowledgment"
+      ],
+      "answer": "Only at the beginning of each time slot"
+    },
+    {
+      "question": "Purpose of the MAC sublayer.",
+      "options": [
+        "Detect and correct errors",
+        "Handle flow control",
+        "Manage access to shared communication medium",
+        "Route data between networks"
+      ],
+      "answer": "Manage access to shared communication medium"
+    },
+    {
+      "question": "Error control protocol that maintains a sender's window of unacknowledged packets.",
+      "options": ["Stop-and-Wait ARQ", "Go-Back-N ARQ", "Selective Repeat ARQ", "Sliding Window"],
+      "answer": "Sliding Window"
+    },
+    {
+      "question": "Random access in data transmission means ________.",
+      "options": [
+        "Accessing data in random order",
+        "Randomly selecting medium",
+        "Multiple stations transmit without coordination",
+        "Sending data in random sequence"
+      ],
+      "answer": "Multiple stations transmit without coordination"
+    },
+    {
+      "question": "Hamming Distance helps in error detection by ________.",
+      "options": [
+        "Counting bits set to 1",
+        "Identifying flipped bit positions",
+        "Generating polynomial checksum",
+        "Using block coding"
+      ],
+      "answer": "Identifying flipped bit positions"
+    },
+    {
+      "question": "Access protocol with higher probability of collisions but simple implementation.",
+      "options": ["Pure ALOHA", "Slotted ALOHA", "CSMA/CD", "CSMA/CA"],
+      "answer": "Pure ALOHA"
+    },
+    {
+      "question": "Primary purpose of Flow Control in data communication.",
+      "options": [
+        "Detect and correct errors",
+        "Manage communication medium",
+        "Ensure correct destination",
+        "Prevent sender from overwhelming receiver"
+      ],
+      "answer": "Prevent sender from overwhelming receiver"
+    },
+    {
+      "question": "Key advantage of Selective Repeat ARQ over Go-Back-N.",
+      "options": ["Simpler implementation", "Lower delay", "Fewer retransmissions", "Greater efficiency"],
+      "answer": "Fewer retransmissions"
+    },
+    {
+      "question": "Block coding refers to ________.",
+      "options": [
+        "Dividing data into blocks",
+        "Coding data into fixed-size blocks for error detection",
+        "Encoding data with fixed-length code",
+        "Coding variable-sized blocks"
+      ],
+      "answer": "Coding data into fixed-size blocks for error detection"
+    },
+    {
+      "question": "Which function is NOT applicable for IP?",
+      "options": ["Error reporting", "Datagram format", "Addressing conventions", "Packet handling"],
+      "answer": "Error reporting"
+    },
+    {
+      "question": "Field in IPv4 NOT related to fragmentation.",
+      "options": ["Flags", "Offset", "TOS", "Identifier"],
+      "answer": "TOS"
+    },
+    {
+      "question": "Protocol field = 17 in IPv4 corresponds to ________.",
+      "options": ["TCP", "UDP", "ICMP", "IGMP"],
+      "answer": "UDP"
+    },
+    {
+      "question": "Which is NOT applicable for IP protocol?",
+      "options": ["connectionless", "offer unreliable service", "offer reliable service", "does not offer error reporting"],
+      "answer": "offer reliable service"
+    },
+    {
+      "question": "Demerits of fragmentation:",
+      "options": ["complicates routers", "open to DOS attack", "overlapping fragments", "all of the mentioned"],
+      "answer": "all of the mentioned"
+    },
+    {
+      "question": "In classless addressing, addresses are described in ________.",
+      "options": ["IPs", "Blocks", "Codes", "Sizes"],
+      "answer": "Blocks"
+    },
+    {
+      "question": "First address in a block is used as network address representing ________.",
+      "options": ["Class Network", "Entity", "Organization", "Codes"],
+      "answer": "Organization"
+    },
+    {
+      "question": "In classful addressing, a large part of addresses are ________.",
+      "options": ["Organized", "Blocked", "Wasted", "Communicated"],
+      "answer": "Wasted"
+    },
+    {
+      "question": "Network addresses are an important concept of ________.",
+      "options": ["Routing", "Mask", "IP Addressing", "Classless Addressing"],
+      "answer": "IP Addressing"
+    },
+        {
+      "question": "The size of an IP address in IPv6 is inferred as _________.",
+      "options": ["4 bytes", "128 bits", "8 bytes", "100 bits"],
+      "answer": "128 bits"
+    },
+    {
+      "question": "IPv6 does not use _________ type of address.",
+      "options": ["broadcast", "multicast", "anycast", "unicast"],
+      "answer": "broadcast"
+    },
+    {
+      "question": "Which feature is present in IPv6 but not in IPv4?",
+      "options": ["Fragmentation", "Header checksum", "Options", "Anycast address"],
+      "answer": "Anycast address"
+    },
+    {
+      "question": "Two IPv6 nodes want to interoperate but are connected via IPv4 routers. Best solution is ________.",
+      "options": ["Use dual-stack approach", "Tunneling", "No solution", "Replace the system"],
+      "answer": "Tunneling"
+    },
+    {
+      "question": "A link-local address is used in an _______.",
+      "options": ["Isolated router", "Isolated mask", "Isolated subnet", "Isolated net"],
+      "answer": "Isolated subnet"
+    },
+    {
+      "question": "Which statement about IPv6 addresses is true?",
+      "options": [
+        "Leading zeros are required",
+        "Two colons(::) represent successive zero fields",
+        "Two colons(::) separate all fields",
+        "A single interface cannot have multiple IPv6 address types"
+      ],
+      "answer": "Two colons(::) represent successive zero fields"
+    },
+    {
+      "question": "Your IP address is 172.16.13.5 with subnet mask 255.255.255.128. Select class, subnet, and broadcast address.",
+      "options": [
+        "Class A, Subnet 172.16.13.0, Broadcast 172.16.13.127",
+        "Class B, Subnet 172.16.13.0, Broadcast 172.16.13.127",
+        "Class B, Subnet 172.16.13.0, Broadcast 172.16.13.255",
+        "Class B, Subnet 172.16.0.0, Broadcast 172.16.255.255"
+      ],
+      "answer": "Class B, Subnet 172.16.13.0, Broadcast 172.16.13.127"
+    },
+    {
+      "question": "For 12 subnets in Class C, which subnet mask is correct?",
+      "options": ["255.255.255.252", "255.255.255.255", "255.255.255.240", "255.255.255.248"],
+      "answer": "255.255.255.240"
+    },
+    {
+      "question": "The combination of _________ and __________ is the local address portion of IP.",
+      "options": [
+        "Network number and host number",
+        "Network number and subnet number",
+        "Subnet number and host number",
+        "Host number"
+      ],
+      "answer": "Subnet number and host number"
+    },
+    {
+      "question": "_________ infers that all subnets are obtained from the same subnet mask.",
+      "options": [
+        "Static subnetting",
+        "Dynamic subnetting",
+        "Variable length subnetting",
+        "Dynamic length subnetting"
+      ],
+      "answer": "Static subnetting"
+    },
+    {
+      "question": "_________ represents Ethernet standards carrying traffic at 1000 Mbit/s.",
+      "options": ["Ethernet", "Fast Ethernet", "Gigabit Ethernet", "Gigabyte Ethernet"],
+      "answer": "Fast Ethernet"
+    },
+    {
+      "question": "Router IP 172.16.2.1/23. Which are valid host IDs? i.172.16.1.100 ii.172.16.1.198 iii.172.16.2.255 iv.172.16.3.0",
+      "options": ["i only", "ii and iii only", "iii and iv only", "ii only"],
+      "answer": "iii and iv only"
+    },
+    {
+      "question": "Maximum number of host addresses with subnet mask 255.255.255.224?",
+      "options": ["14", "15", "16", "30"],
+      "answer": "30"
+    },
+    {
+      "question": "To create 5 subnets each with at least 16 hosts, which classful mask?",
+      "options": ["255.255.255.192", "255.255.255.224", "255.255.255.240", "255.255.255.248"],
+      "answer": "255.255.255.224"
+    },
+    {
+      "question": "For 29 subnets while maximizing hosts, bits to borrow?",
+      "options": ["2", "3", "4", "5"],
+      "answer": "5"
+    },
+    {
+      "question": "Router port IP 172.16.112.1/25. Valid subnet address?",
+      "options": ["172.16.112.0", "172.16.0.0", "172.16.96.0", "172.16.255.0"],
+      "answer": "172.16.112.0"
+    },
+    {
+      "question": "Interface IP 192.168.192.10/29. How many hosts can have IPs?",
+      "options": ["6", "8", "30", "32"],
+      "answer": "6"
+    },
+    {
+      "question": "Subnet ID of 172.16.66.0/21?",
+      "options": ["172.16.36.0", "172.16.48.0", "172.16.64.0", "172.16.0.0"],
+      "answer": "172.16.64.0"
+    },
+    {
+      "question": "172.16.0.0/19 provides how many subnets and hosts?",
+      "options": [
+        "7 subnets, 30 hosts",
+        "8 subnets, 8,190 hosts",
+        "8 subnets, 2,046 hosts",
+        "7 subnets, 2,046 hosts"
+      ],
+      "answer": "8 subnets, 8,190 hosts"
+    },
+    {
+      "question": "Novell’s RIP updates routing table every ________ seconds.",
+      "options": ["60", "90", "10", "30"],
+      "answer": "60"
+    },
+    {
+      "question": "Metrics used by Novell’s RIP?",
+      "options": ["Ticks & Hops", "Hops & Loops", "Loops & Counts", "Counts & Ticks"],
+      "answer": "Ticks & Hops"
+    },
+    {
+      "question": "Routing protocol with max hop count of 15?",
+      "options": ["RIPv1", "RIPv2", "EIGRP", "Both RIPv1 and RIPv2"],
+      "answer": "RIPv2"
+    },
+    {
+      "question": "RIPv1 router broadcasts routing table every ______.",
+      "options": ["Every 30 seconds", "Every 60 seconds", "Every 90 seconds", "Never"],
+      "answer": "Every 30 seconds"
+    },
+    {
+      "question": "Command that displays RIP routing updates?",
+      "options": ["Show IP route", "Debug IP rip", "Show protocols", "Debug IP route"],
+      "answer": "Debug IP rip"
+    },
+    {
+      "question": "Router gets update with higher-cost path already present. What happens?",
+      "options": [
+        "Added to existing table",
+        "Ignored",
+        "Replaces existing entry",
+        "Deleted and triggers convergence"
+      ],
+      "answer": "Ignored"
+    },
+    {
+      "question": "If debug IP rip shows network 172.16.10.0 advertised with metric 16, meaning?",
+      "options": [
+        "Route is 16 hops away",
+        "Delay is 16 microseconds",
+        "Route is inaccessible",
+        "Queued at 16 msgs per sec"
+      ],
+      "answer": "Route is inaccessible"
+    },
+    {
+      "question": "Administrative distance of static route?",
+      "options": ["0", "90", "100", "1"],
+      "answer": "1"
+    },
+    {
+      "question": "Which protocol sends full routing table every 30 seconds?",
+      "options": ["IEGRP", "RIP", "ICMP", "IP"],
+      "answer": "RIP"
+    },
+    {
+      "question": "Default administrative distance of RIP?",
+      "options": ["0", "90", "120", "130"],
+      "answer": "120"
+    },
+    {
+      "question": "Which statement is true about classless routing protocol?",
+      "options": [
+        "Discontinuous networks not allowed",
+        "VLSM is permitted",
+        "RIPv1 is classless",
+        "IGRP supports classful routing"
+      ],
+      "answer": "VLSM is permitted"
+    },
+    {
+      "question": "When should default routing be used?",
+      "options": [
+        "On stub networks with one exit path",
+        "Networks with multiple exit paths",
+        "Minimum five exit paths",
+        "Maximum five exit paths"
+      ],
+      "answer": "On stub networks with one exit path"
+    },
+    {
+      "question": "Which statement is false with respect to TCP?",
+      "options": [
+        "Connection-oriented",
+        "Process-to-process",
+        "Transport layer protocol",
+        "Unreliable"
+      ],
+      "answer": "Unreliable"
+    },
+    {
+      "question": "In TCP, data is sent and received as _______.",
+      "options": ["Stream of bytes", "Sequence of characters", "Lines of data", "Packets"],
+      "answer": "Stream of bytes"
+    },
+    {
+      "question": "TCP process may not read/write at same speed. What is needed?",
+      "options": ["Packets", "Buffers", "Segments", "Stacks"],
+      "answer": "Buffers"
+    },
+    {
+      "question": "TCP groups bytes into a ________.",
+      "options": ["Packet", "Buffer", "Segment", "Stack"],
+      "answer": "Segment"
+    },
+    {
+      "question": "Type of communication seen in TCP?",
+      "options": ["Full-duplex", "Half-duplex", "Semi-duplex", "Byte-by-byte"],
+      "answer": "Full-duplex"
+    },
+    {
+      "question": "To achieve reliable transport, TCP uses ________.",
+      "options": ["Packet", "Buffer", "Segment", "Acknowledgment"],
+      "answer": "Acknowledgment"
+    },
+    {
+      "question": "Segment header field for sequence number & acknowledgment number is ________.",
+      "options": ["Byte number", "Buffer number", "Segment number", "Acknowledgment"],
+      "answer": "Byte number"
+    },
+    {
+      "question": "TCP file transfer of 1000 bytes starts at sequence number 10001. What is the sequence number?",
+      "options": ["10000", "10001", "12001", "11001"],
+      "answer": "10001"
+    },
+    {
+      "question": "TCP starts numbering bytes from ________.",
+      "options": ["Fixed number", "Random sequence of 0’s and 1’s", "One", "Sequence of zeros and ones"],
+      "answer": "Sequence of zeros and ones"
+    },
+    {
+      "question": "Acknowledgment field value represents ________.",
+      "options": [
+        "Sequence number of previously received byte",
+        "Sequence number of next byte to be received",
+        "Total number of bytes",
+        "Sequence of zeros and ones"
+      ],
+      "answer": "Sequence number of next byte to be received"
+    },
+    {
+      "question": "Size of TCP segment header ranges from ________.",
+      "options": ["16–32 bytes", "16–32 bits", "20–60 bytes", "20–60 bits"],
+      "answer": "20–60 bytes"
+    },
+    {
+      "question": "TCP uses ________ to establish a connection.",
+      "options": ["Flow control", "Three-Way Handshaking", "Forwarding", "Synchronization"],
+      "answer": "Three-Way Handshaking"
+    },
+    {
+      "question": "Server program tells TCP it is ready to accept connection. This is ________.",
+      "options": ["Active open", "Active close", "Passive close", "Passive open"],
+      "answer": "Passive open"
+    },
+    {
+      "question": "Client requests TCP to connect to server. This process is ________.",
+      "options": ["Active open", "Passive close", "Active close", "Passive open"],
+      "answer": "Active open"
+    },
+        {
+      "question": "In Three-Way Handshaking, what happens if both TCPs issue an active open?",
+      "options": ["Mutual open", "Mutual Close", "Simultaneous open", "Simultaneous close"],
+      "answer": "Simultaneous open"
+    },
+    {
+      "question": "A malicious attacker sends many SYN segments with fake source IPs. Which attack is this?",
+      "options": ["SYNC flooding attack", "Active attack", "Passive attack", "Denial-of-service attack"],
+      "answer": "SYNC flooding attack"
+    },
+    {
+      "question": "SYNC flooding attack belongs to which type of security attack?",
+      "options": ["SYNC flooding attack", "Active attack", "Passive attack", "Denial-of-service attack"],
+      "answer": "Denial-of-service attack"
+    },
+    {
+      "question": "Sizes of source and destination port in TCP header are ________.",
+      "options": ["16-bits and 32-bits", "16-bits and 16-bits", "32-bits and 16-bits", "32-bits and 32-bits"],
+      "answer": "16-bits and 16-bits"
+    },
+    {
+      "question": "Which field allows TCP to detect lost segments and recover?",
+      "options": ["Sequence number", "Acknowledgment number", "Checksum", "Both sequence & acknowledgment number"],
+      "answer": "Acknowledgment number"
+    },
+    {
+      "question": "Which is false with respect to UDP?",
+      "options": ["Connection-oriented", "Unreliable", "Transport layer protocol", "Low overhead"],
+      "answer": "Connection-oriented"
+    },
+    {
+      "question": "Return value of the UDP port 'Chargen' is _______.",
+      "options": ["String of characters", "String of integers", "Array of characters with integers", "Array of zero’s and one’s"],
+      "answer": "String of characters"
+    },
+    {
+      "question": "Beyond IP, UDP provides ________ services.",
+      "options": ["Routing and switching", "Demultiplexing and error checking", "Multiplexing and demultiplexing", "Reliable"],
+      "answer": "Multiplexing and demultiplexing"
+    },
+    {
+      "question": "Main advantage of UDP is ________.",
+      "options": ["More overload", "Reliable", "Low overhead", "Fast"],
+      "answer": "Low overhead"
+    },
+    {
+      "question": "UDP port used by Network Time Protocol (NTP) is ________.",
+      "options": ["161", "123", "162", "124"],
+      "answer": "123"
+    },
+    {
+      "question": "Header size of a UDP packet is ________.",
+      "options": ["8 bytes", "8 bits", "16 bytes", "124 bytes"],
+      "answer": "8 bytes"
+    },
+    {
+      "question": "Port is 'ephemeral' when the source host is a ________.",
+      "options": ["NTP", "Echo", "Server", "Client"],
+      "answer": "Client"
+    },
+    {
+      "question": "Total length field in UDP packet is length of ________.",
+      "options": ["Only UDP header", "Only data", "UDP header plus data", "Only checksum"],
+      "answer": "UDP header plus data"
+    },
+    {
+      "question": "Correct expression for length of UDP datagram:",
+      "options": [
+        "UDP length = IP length – IP header length",
+        "UDP length = UDP length – UDP header length",
+        "UDP length = IP length + IP header length",
+        "UDP length = UDP length + UDP header length"
+      ],
+      "answer": "UDP length = IP length – IP header length"
+    },
+    {
+      "question": "Which field detects errors over entire UDP datagram?",
+      "options": ["udp header", "checksum", "source port", "destination port"],
+      "answer": "checksum"
+    },
+    {
+      "question": "Authentication process at IP level is done by ________.",
+      "options": ["AH", "ESP", "PGP", "SSL"],
+      "answer": "AH"
+    },
+    {
+      "question": "Which element is NOT provided by ESP?",
+      "options": ["source authentication", "data integrity", "privacy", "error control"],
+      "answer": "error control"
+    },
+    {
+      "question": "In computer security, _______ means assets can be modified only by authorized parties.",
+      "options": ["confidentiality", "integrity", "availability", "authenticity"],
+      "answer": "integrity"
+    },
+    {
+      "question": "In computer security, _______ means information can be read only by authorized parties.",
+      "options": ["confidentiality", "integrity", "availability", "authenticity"],
+      "answer": "confidentiality"
+    },
+    {
+      "question": "Use of Common Gateway Interface:",
+      "options": [
+        "generate executable files from web content",
+        "generate web pages",
+        "stream videos",
+        "download media files"
+      ],
+      "answer": "generate executable files from web content"
+    },
+    {
+      "question": "Main purpose of Leaky Bucket algorithm:",
+      "options": [
+        "To control bandwidth allocation based on token generation",
+        "To ensure smooth and regulated data flow",
+        "To increase data rate during congestion",
+        "To handle packet prioritization"
+      ],
+      "answer": "To ensure smooth and regulated data flow"
+    },
+    {
+      "question": "How Leaky Bucket algorithm works:",
+      "options": [
+        "Sends packets at variable rate based on tokens",
+        "Allows buffer overflow",
+        "Sends packets at constant rate regardless of incoming burst",
+        "Increases rate during burst"
+      ],
+      "answer": "Sends packets at constant rate regardless of incoming burst"
+    },
+    {
+      "question": "Key difference between Token Bucket and Leaky Bucket:",
+      "options": [
+        "Token Bucket allows bursts, Leaky Bucket does not",
+        "Leaky Bucket operates on variable output rate, Token Bucket on constant rate",
+        "Token Bucket has no tokens, Leaky Bucket uses tokens",
+        "Leaky Bucket generates tokens, Token Bucket controls congestion"
+      ],
+      "answer": "Token Bucket allows bursts, Leaky Bucket does not"
+    },
+    {
+      "question": "In Token Bucket, if no tokens are available when data arrives:",
+      "options": [
+        "Data is sent immediately",
+        "Data is discarded",
+        "Data waits until tokens are available",
+        "Extra tokens are generated"
+      ],
+      "answer": "Data waits until tokens are available"
+    },
+    {
+      "question": "Best scenario for Token Bucket algorithm:",
+      "options": [
+        "Managing non-bursty constant-rate traffic",
+        "Regulating smooth video streaming",
+        "Allowing temporary bursts of traffic",
+        "Discarding excess traffic"
+      ],
+      "answer": "Allowing temporary bursts of traffic"
+    },
+    {
+      "question": "In Leaky Bucket, if incoming traffic exceeds bucket output capacity:",
+      "options": [
+        "Excess traffic is queued",
+        "Excess traffic is discarded",
+        "Bucket size increases automatically",
+        "Output rate adjusts dynamically"
+      ],
+      "answer": "Excess traffic is discarded"
+    }
+
+  ],
+
+  "Data Analytics and Reporting": [
+  {
+    "question": "Identify the name of the first phase of data analytics lifecycle.",
+    "options": [
+      "Model planning",
+      "Data preparation",
+      "Discovery/objective",
+      "Data visualization"
+    ],
+    "answer": "Discovery/objective"
+  },
+  {
+    "question": "Select the name of the tool that is NOT used for data preparation.",
+    "options": [
+      "Power BI",
+      "Hadoop",
+      "Python",
+      "Tableau"
+    ],
+    "answer": "Hadoop"
+  },
+  {
+    "question": "Choose the name of the phase in which the analyst team delivers the final report, briefings and codes.",
+    "options": [
+      "Operationalize",
+      "Model Building",
+      "Model Planning",
+      "None of these"
+    ],
+    "answer": "Operationalize"
+  },
+  {
+    "question": "Identify the name that is NOT a dimension of data quality.",
+    "options": [
+      "Accuracy",
+      "Completeness",
+      "Validity",
+      "Volume"
+    ],
+    "answer": "Volume"
+  },
+  {
+    "question": "Select the correct example of ordinal data.",
+    "options": [
+      "Price",
+      "Temperature",
+      "Education Level",
+      "All of these"
+    ],
+    "answer": "Education Level"
+  },
+  {
+    "question": "Select the correct property from the following options for nominal data.",
+    "options": [
+      "Order",
+      "Grouping",
+      "Equal interval",
+      "None of these"
+    ],
+    "answer": "Grouping"
+  },
+  {
+    "question": "Choose the BI tool that enables users to analyse data along multiple dimensions.",
+    "options": [
+      "Ad hoc",
+      "OLAP",
+      "Tableau",
+      "None of these"
+    ],
+    "answer": "OLAP"
+  },
+  {
+    "question": "Choose the correct option regarding the benefits of Business Intelligence.",
+    "options": [
+      "Speeds up and improves decision making",
+      "Optimizes internal business processes",
+      "Increases operational efficiency and productivity",
+      "All of these"
+    ],
+    "answer": "All of these"
+  },
+  {
+    "question": "Select the primary purpose of a histogram in data analysis.",
+    "options": [
+      "To display individual data points",
+      "To show the relationship between two variables",
+      "To summarize the distribution of a dataset",
+      "To calculate the mean and median of the data"
+    ],
+    "answer": "To summarize the distribution of a dataset"
+  },
+  {
+    "question": "Choose the main advantage of using a histogram over a bar chart.",
+    "options": [
+      "A histogram can display multiple variables simultaneously while a bar chart cannot.",
+      "A histogram shows the distribution of continuous data while a bar chart compares discrete data categories.",
+      "A histogram is better at showing relationships between variables compared to a bar chart.",
+      "A histogram is more suitable than a bar chart for displaying categorical data."
+    ],
+    "answer": "A histogram shows the distribution of continuous data while a bar chart compares discrete data categories."
+  },
+  {
+    "question": "Choose the primary goal of data analytics.",
+    "options": [
+      "To collect data",
+      "To store data",
+      "To process data",
+      "To gain insights from the data"
+    ],
+    "answer": "To gain insights from the data"
+  },
+  {
+    "question": "Choose the data pre-processing technique in data analytics.",
+    "options": [
+      "Data visualization",
+      "Data cleaning",
+      "Data modeling",
+      "Data reporting"
+    ],
+    "answer": "Data cleaning"
+  },
+  {
+    "question": "Choose the type of data analysis that discovers patterns or relationships in data to make predictions about future events.",
+    "options": [
+      "Descriptive analytics",
+      "Diagnostic analytics",
+      "Predictive analytics",
+      "Prescriptive analytics"
+    ],
+    "answer": "Predictive analytics"
+  },
+  {
+    "question": "Choose the purpose of Exploratory Data Analysis (EDA).",
+    "options": [
+      "To summarize data",
+      "To make predictions",
+      "To find hidden patterns",
+      "To create reports"
+    ],
+    "answer": "To find hidden patterns"
+  },
+  {
+    "question": "Choose the programming language commonly used for data analysis and manipulation.",
+    "options": [
+      "Java",
+      "Python",
+      "C++",
+      "Ruby"
+    ],
+    "answer": "Python"
+  },
+  {
+    "question": "Select the term for a statistical measure that represents the central tendency of a dataset.",
+    "options": [
+      "Variance",
+      "Covariance",
+      "Mean",
+      "Standard deviation"
+    ],
+    "answer": "Mean"
+  },
+  {
+    "question": "Identify the type of data visualization that is best suited for showing the distribution of a continuous variable.",
+    "options": [
+      "Bar chart",
+      "Scatter plot",
+      "Histogram",
+      "Pie chart"
+    ],
+    "answer": "Histogram"
+  },
+  {
+    "question": "Choose the commonly used machine learning algorithm for classification tasks.",
+    "options": [
+      "Linear regression",
+      "K-means clustering",
+      "Decision tree",
+      "Principal component analysis (PCA)"
+    ],
+    "answer": "Decision tree"
+  },
+  {
+    "question": "Select the type of data analytics that aims to provide recommendations and actionable insights to optimize decision-making.",
+    "options": [
+      "Descriptive analytics",
+      "Diagnostic analytics",
+      "Predictive analytics",
+      "Prescriptive analytics"
+    ],
+    "answer": "Prescriptive analytics"
+  },
+  {
+    "question": "Identify the primary characteristic that distinguishes big data from traditional data.",
+    "options": [
+      "Volume",
+      "Velocity",
+      "Variety",
+      "Validity"
+    ],
+    "answer": "Volume"
+  },
+  {
+    "question": "Identify which option is NOT one of the V's of big data.",
+    "options": [
+      "Volume",
+      "Velocity",
+      "Visualization",
+      "Variety"
+    ],
+    "answer": "Visualization"
+  },
+  {
+    "question": "Select the programming language commonly used for processing big data in the Hadoop ecosystem.",
+    "options": [
+      "Java",
+      "Python",
+      "Ruby",
+      "C++"
+    ],
+    "answer": "Java"
+  },
+  {
+    "question": "Select the primary goal of MapReduce in the context of big data processing.",
+    "options": [
+      "Data storage",
+      "Data cleaning",
+      "Data visualization",
+      "Data processing and analysis"
+    ],
+    "answer": "Data processing and analysis"
+  },
+  {
+    "question": "Identify the technology commonly used to store and manage large volumes of structured data in a distributed manner in big data systems.",
+    "options": [
+      "NoSQL databases",
+      "Relational databases",
+      "Hadoop",
+      "Spark"
+    ],
+    "answer": "NoSQL databases"
+  },
+  {
+    "question": "Select the full form of HDFS.",
+    "options": [
+      "High-Definition File System",
+      "Hadoop Distributed File System",
+      "Hyper-Distributed File Storage",
+      "Heterogeneous Data File Service"
+    ],
+    "answer": "Hadoop Distributed File System"
+  },
+  {
+    "question": "Select the big data processing framework that is known for its in-memory data processing capabilities.",
+    "options": [
+      "Hadoop",
+      "Spark",
+      "Hive",
+      "Flink"
+    ],
+    "answer": "Spark"
+  },
+  {
+    "question": "Identify the primary goal of data warehousing in the context of big data.",
+    "options": [
+      "Real-time data processing",
+      "Storing and managing historical data",
+      "Data visualization",
+      "Data cleaning"
+    ],
+    "answer": "Storing and managing historical data"
+  },
+  {
+    "question": "Identify the unstructured data in the context of big data.",
+    "options": [
+      "Customer transaction records",
+      "Sensor data from IoT devices",
+      "Social media posts",
+      "Stock market ticker data"
+    ],
+    "answer": "Social media posts"
+  },
+  {
+    "question": "Identify the term used to describe the process of extracting valuable information or knowledge from big data.",
+    "options": [
+      "Data ingestion",
+      "Data analytics",
+      "Data validation",
+      "Data serialization"
+    ],
+    "answer": "Data analytics"
+  },
+  {
+    "question": "Identify the primary goal of Hadoop.",
+    "options": [
+      "Real-time data processing using distributed systems",
+      "Storing and processing vast amounts of data, particularly big data, across clusters of computers",
+      "Data validation",
+      "High-performance computing across clusters of computers"
+    ],
+    "answer": "Storing and processing vast amounts of data, particularly big data, across clusters of computers"
+  },
+  {
+    "question": "Identify the component of Hadoop that is responsible for storing and managing large amounts of data across a cluster.",
+    "options": [
+      "HDFS (Hadoop Distributed File System)",
+      "MapReduce",
+      "Hive",
+      "Pig"
+    ],
+    "answer": "HDFS (Hadoop Distributed File System)"
+  },
+  {
+    "question": "Select the Hadoop ecosystem tool that is used for querying and analyzing data stored in HDFS using SQL-like queries.",
+    "options": [
+      "HBase",
+      "PIG",
+      "HIVE",
+      "SPARK"
+    ],
+    "answer": "HIVE"
+  },
+  {
+    "question": "Identify the role of the MapReduce framework in Hadoop.",
+    "options": [
+      "Manages data storage in HDFS",
+      "Processes and analyzes data in parallel across a cluster",
+      "Visualizes data for reporting purposes",
+      "Cleans and validates data"
+    ],
+    "answer": "Processes and analyzes data in parallel across a cluster"
+  },
+  {
+    "question": "Select the purpose of YARN (Yet Another Resource Negotiator) in Hadoop.",
+    "options": [
+      "To store large datasets",
+      "To process data using MapReduce",
+      "To manage cluster resources and job scheduling",
+      "To visualize data"
+    ],
+    "answer": "To manage cluster resources and job scheduling"
+  },
+  {
+    "question": "Select the Hadoop component that is a high-level data flow scripting language for processing and analyzing data.",
+    "options": [
+      "HBase",
+      "Pig",
+      "Hive",
+      "Mahout"
+    ],
+    "answer": "Pig"
+  },
+  {
+    "question": "Identify the main advantage of Hadoop for processing big data.",
+    "options": [
+      "Real-time processing capabilities",
+      "Low cost and scalability",
+      "Interactive data querying",
+      "Data visualization"
+    ],
+    "answer": "Low cost and scalability"
+  },
+  {
+    "question": "Select the Hadoop ecosystem tool used for real-time, distributed data processing and stream processing.",
+    "options": [
+      "Spark",
+      "Hive",
+      "Pig",
+      "HBase"
+    ],
+    "answer": "Spark"
+  },
+  {
+    "question": "Identify the core component of Hadoop.",
+    "options": [
+      "YARN",
+      "MapReduce",
+      "Hive",
+      "HDFS"
+    ],
+    "answer": "Hive"
+  },
+  {
+    "question": "Choose the primary goal of data cleaning in the data analytics process.",
+    "options": [
+      "Removing outliers",
+      "Enhancing data security",
+      "Preparing data for analysis",
+      "Creating data visualizations"
+    ],
+    "answer": "Preparing data for analysis"
+  },
+  {
+    "question": "Identify the acronym for SQL in the context of data analytics.",
+    "options": [
+      "Structured Query Language",
+      "Statistical Query Logic",
+      "System Query Language",
+      "Simple Query Locator"
+    ],
+    "answer": "Structured Query Language"
+  },
+  {
+    "question": "Choose the type of data that is typically represented by categories or labels and does not have a natural numerical value.",
+    "options": [
+      "Quantitative Data",
+      "Nominal Data",
+      "Continuous Data",
+      "Ordinal Data"
+    ],
+    "answer": "Nominal Data"
+  },
+  {
+    "question": "Choose the option that is NOT a key component of Business Intelligence.",
+    "options": [
+      "Data transmission",
+      "Data warehousing",
+      "Data collection",
+      "Data mining"
+    ],
+    "answer": "Data transmission"
+  },
+  {
+    "question": "Identify the BI process involved in transforming raw data into a structured format for analysis.",
+    "options": [
+      "Data visualization",
+      "Data extraction",
+      "Data integration",
+      "Data modeling"
+    ],
+    "answer": "Data integration"
+  },
+  {
+    "question": "Select the primary objective of data mining in Business Intelligence.",
+    "options": [
+      "Data storage",
+      "Data presentation",
+      "Data discovery",
+      "Data transmission"
+    ],
+    "answer": "Data discovery"
+  },
+  {
+    "question": "Select what OLAP stands for in Business Intelligence.",
+    "options": [
+      "Online Analytical Processing",
+      "Onsite Logistics and Analysis Platform",
+      "Operational Language for Analytics and Processing",
+      "Online Learning and Analysis Protocol"
+    ],
+    "answer": "Online Analytical Processing"
+  },
+  {
+    "question": "Select the proper example of a Business Intelligence tool.",
+    "options": [
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Tableau",
+      "Google Chrome"
+    ],
+    "answer": "Tableau"
+  },
+  {
+    "question": "Choose the type of analysis in Business Intelligence that focuses on historical data and trends to make informed decisions.",
+    "options": [
+      "Predictive analysis",
+      "Descriptive analysis",
+      "Diagnostic analysis",
+      "Prescriptive analysis"
+    ],
+    "answer": "Descriptive analysis"
+  },
+  {
+    "question": "Choose the main purpose of Business Intelligence reporting.",
+    "options": [
+      "To collect data",
+      "To store data",
+      "To present data in a structured format",
+      "To mine data for patterns"
+    ],
+    "answer": "To present data in a structured format"
+  },
+  {
+    "question": "Identify the primary goal of Exploratory Data Analysis (EDA).",
+    "options": [
+      "To make predictions",
+      "To summarize data",
+      "To clean data",
+      "To create data visualizations"
+    ],
+    "answer": "To summarize data"
+  },
+  {
+    "question": "Select the step in EDA that involves detecting and handling missing values in a dataset.",
+    "options": [
+      "Data visualization",
+      "Data cleaning",
+      "Data transformation",
+      "Data modeling"
+    ],
+    "answer": "Data cleaning"
+  },
+  {
+    "question": "Choose the step in EDA that involves transforming variables to make them more suitable for analysis.",
+    "options": [
+      "Data visualization",
+      "Data cleaning",
+      "Data transformation",
+      "Data modeling"
+    ],
+    "answer": "Data transformation"
+  },
+  {
+    "question": "Choose the two main phases of processing in MapReduce.",
+    "options": [
+      "Map and Sort",
+      "Map and Reduce",
+      "Shuffle and Merge",
+      "Sort and Reduce"
+    ],
+    "answer": "Map and Reduce"
+  },
+  {
+    "question": "Select the company that popularized the MapReduce programming model.",
+    "options": [
+      "Google",
+      "Amazon",
+      "Facebook",
+      "Microsoft"
+    ],
+    "answer": "Google"
+  },
+  {
+    "question": "Choose the role of the Reduce function in MapReduce.",
+    "options": [
+      "To split data into smaller chunks",
+      "To process and filter data",
+      "To aggregate and summarize results",
+      "To perform data extraction"
+    ],
+    "answer": "To aggregate and summarize results"
+  },
+  {
+    "question": "Choose the typical input and output format of data in a MapReduce job.",
+    "options": [
+      "JSON",
+      "CSV",
+      "TEXT",
+      "Binary"
+    ],
+    "answer": "TEXT"
+  },
+  {
+    "question": "Select the primary goal of machine learning.",
+    "options": [
+      "Classification",
+      "Predictive modeling",
+      "Data visualization",
+      "Data preprocessing"
+    ],
+    "answer": "Predictive modeling"
+  },
+  {
+    "question": "Select the supervised learning algorithm.",
+    "options": [
+      "K-Means",
+      "Decision Trees",
+      "Principal Component Analysis (PCA)",
+      "Apriori"
+    ],
+    "answer": "Decision Trees"
+  },
+  {
+    "question": "Select which option describes overfitting in machine learning.",
+    "options": [
+      "Fitting the training data too closely",
+      "Fitting the test data too closely",
+      "Generalizing well to new data",
+      "Underestimating model complexity"
+    ],
+    "answer": "Fitting the training data too closely"
+  },
+  {
+    "question": "In reinforcement learning, what is the agent's objective?",
+    "options": [
+      "Maximize the reward",
+      "Minimize the state space",
+      "Eliminate exploration",
+      "Avoid uncertainty"
+    ],
+    "answer": "Maximize the reward"
+  },
+  {
+    "question": "Select the unsupervised learning algorithm used for dimensionality reduction.",
+    "options": [
+      "Support Vector Machines (SVM)",
+      "Linear Regression",
+      "Principal Component Analysis (PCA)",
+      "Random Forest"
+    ],
+    "answer": "Principal Component Analysis (PCA)"
+  },
+  {
+    "question": "In machine learning, what does the term 'bias' refer to?",
+    "options": [
+      "The accuracy of a model on the training data",
+      "The systematic error introduced by a model's assumptions",
+      "The variance in the model's predictions",
+      "The number of parameters in a model"
+    ],
+    "answer": "The systematic error introduced by a model's assumptions"
+  },
+  {
+    "question": "Select the popular optimization algorithm used in deep learning for updating neural network weights.",
+    "options": [
+      "Gradient Descent",
+      "Naive Bayes",
+      "K-Means",
+      "Apriori"
+    ],
+    "answer": "Gradient Descent"
+  },
+  {
+    "question": "Select the purpose of the validation dataset in machine learning.",
+    "options": [
+      "Train the model",
+      "Evaluate the model's performance during training",
+      "Test the model's performance after training",
+      "Generate new data"
+    ],
+    "answer": "Evaluate the model's performance during training"
+  },
+  {
+    "question": "Select the machine learning approach that is most suitable for handling sequential data, such as time series or natural language.",
+    "options": [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Reinforcement Learning",
+      "Recurrent Neural Networks (RNN)"
+    ],
+    "answer": "Recurrent Neural Networks (RNN)"
+  },
+  {
+    "question": "Select the main advantage of ensemble learning methods, such as Random Forests.",
+    "options": [
+      "They are simple and easy to train.",
+      "They are highly interpretable.",
+      "They can improve model performance and reduce overfitting.",
+      "They require a small amount of data."
+    ],
+    "answer": "They can improve model performance and reduce overfitting."
+  },
+  {
+    "question": "Choose the main characteristic of supervised learning.",
+    "options": [
+      "It does not require labeled data.",
+      "It relies on historical data with known outcomes.",
+      "It is primarily used for clustering.",
+      "It works well with unstructured data."
+    ],
+    "answer": "It relies on historical data with known outcomes."
+  },
+  {
+    "question": "Classify the main types of tasks in supervised learning.",
+    "options": [
+      "Classification and regression",
+      "Clustering and dimensionality reduction",
+      "Reinforcement learning and unsupervised learning",
+      "Feature engineering and data preprocessing"
+    ],
+    "answer": "Classification and regression"
+  },
+  {
+    "question": "Choose an example of a classification problem in supervised learning.",
+    "options": [
+      "Predicting stock prices",
+      "Image segmentation",
+      "Spam email detection",
+      "Principal Component Analysis (PCA)"
+    ],
+    "answer": "Spam email detection"
+  },
+  {
+    "question": "Select the goal of regression analysis.",
+    "options": [
+      "To classify data points into different categories",
+      "To predict a continuous value or quantity",
+      "To cluster similar data points together",
+      "To reduce the dimensionality of the data"
+    ],
+    "answer": "To predict a continuous value or quantity"
+  },
+  {
+    "question": "Select the primary evaluation metric for a binary classification problem.",
+    "options": [
+      "Mean Absolute Error (MAE)",
+      "Mean Squared Error (MSE)",
+      "Accuracy",
+      "Silhouette Score"
+    ],
+    "answer": "Accuracy"
+  },
+  {
+    "question": "Select the primary objective of unsupervised learning.",
+    "options": [
+      "Predict an output value based on input data.",
+      "Find patterns or structures in data without labeled outcomes.",
+      "Minimize prediction errors.",
+      "Cluster data into categories."
+    ],
+    "answer": "Find patterns or structures in data without labeled outcomes."
+  },
+  {
+    "question": "Select the unsupervised learning method from the following options.",
+    "options": [
+      "Sentiment analysis",
+      "Anomaly detection",
+      "Image classification",
+      "Linear regression"
+    ],
+    "answer": "Anomaly detection"
+  },
+  {
+    "question": "Choose the purpose of clustering in unsupervised learning.",
+    "options": [
+      "To assign labels to data points based on their features.",
+      "To divide data into training and testing sets.",
+      "To group similar data points together based on their similarity.",
+      "To predict numerical values."
+    ],
+    "answer": "To group similar data points together based on their similarity."
+  },
+  {
+    "question": "Select the algorithm that is commonly used for dimensionality reduction in unsupervised learning.",
+    "options": [
+      "K-Means",
+      "Naive Bayes",
+      "Principal Component Analysis (PCA)",
+      "Decision Trees"
+    ],
+    "answer": "Principal Component Analysis (PCA)"
+  },
+  {
+    "question": "Select the primary evaluation metric for a clustering task in unsupervised learning.",
+    "options": [
+      "F1 Score",
+      "Precision",
+      "Silhouette Score",
+      "Root Mean Squared Error (RMSE)"
+    ],
+    "answer": "Silhouette Score"
+  },
+  {
+    "question": "Select the main objective of generative models in unsupervised learning.",
+    "options": [
+      "Group similar data points",
+      "Predict a target variable",
+      "Generate new data samples",
+      "Reduce dimensionality"
+    ],
+    "answer": "Generate new data samples"
+  },
+  {
+    "question": "Select the primary characteristic of supervised learning.",
+    "options": [
+      "No labeled data",
+      "Labeled data",
+      "No input features",
+      "No model training"
+    ],
+    "answer": "Labeled data"
+  },
+  {
+    "question": "Select the big data stack component that is designed for high-speed, fault tolerant data ingestion from various sources.",
+    "options": [
+      "Apache ZooKeeper",
+      "Apache Flume",
+      "Apache NiFi",
+      "Apache Ambari"
+    ],
+    "answer": "Apache Flume"
+  },
+  {
+    "question": "Choose the main function of Apache Flink in a big data stack.",
+    "options": [
+      "Real-time data processing and event time processing",
+      "Data storage and retrieval",
+      "Data visualization",
+      "Data security and encryption"
+    ],
+    "answer": "Real-time data processing and event time processing"
+  },
+  {
+    "question": "Choose the big data stack component that is commonly used for columnar storage and analytics.",
+    "options": [
+      "Apache Cassandra",
+      "Apache HBase",
+      "Apache Parquet",
+      "Apache Flume"
+    ],
+    "answer": "Apache Parquet"
+  },
+  {
+    "question": "Select the primary role of Apache Storm in a big data stack.",
+    "options": [
+      "Data storage",
+      "Real-time data processing",
+      "Data warehousing",
+      "Batch processing"
+    ],
+    "answer": "Real-time data processing"
+  },
+  {
+    "question": "Select the big data stack component that is known for its ability to handle real-time streaming data.",
+    "options": [
+      "Apache Hadoop",
+      "Apache Kafka",
+      "Apache Spark",
+      "Apache Cassandra"
+    ],
+    "answer": "Apache Kafka"
+  },
+  {
+    "question": "Select the component in a big data stack that is often used for querying and analyzing data using a SQL-like language.",
+    "options": [
+      "Apache Kafka",
+      "Apache Hadoop",
+      "Apache Hive",
+      "Apache Storm"
+    ],
+    "answer": "Apache Hive"
+  },
+  {
+    "question": "Select which option is NOT a component typically found in a big data stack.",
+    "options": [
+      "Hadoop",
+      "Spark",
+      "Hive",
+      "MySQL"
+    ],
+    "answer": "MySQL"
+  },
+  {
+    "question": "Select what is meant by a data stack in the context of big data.",
+    "options": [
+      "A pile of physical hard drives",
+      "A software ecosystem for managing and analyzing data",
+      "A type of data visualization chart",
+      "A data security protocol"
+    ],
+    "answer": "A software ecosystem for managing and analyzing data"
+  },
+  {
+    "question": "Choose the correct five Cs in ethics.",
+    "options": [
+      "Categorization, Compliance, Confidentiality, Communication, and Consequences",
+      "Care, Compassion, Courage, Communication, and Commitment",
+      "Character, Culture, Compliance, Consequences, and Context",
+      "Confidentiality, Consistency, Communication, Consequences, and Compliance"
+    ],
+    "answer": "Character, Culture, Compliance, Consequences, and Context"
+  },
+  {
+    "question": "Among the five Cs in the context of ethics, what does 'Character' refer to?",
+    "options": [
+      "The social and cultural environment",
+      "The moral integrity and virtues of individuals",
+      "The legal requirements and regulations",
+      "The consequences of actions"
+    ],
+    "answer": "The moral integrity and virtues of individuals"
+  },
+  {
+    "question": "What is the role of 'Compliance' in the five Cs of ethics?",
+    "options": [
+      "It focuses on the consequences of actions.",
+      "It concerns the legal and regulatory requirements.",
+      "It emphasizes communication within an organization.",
+      "It deals with individual character."
+    ],
+    "answer": "It concerns the legal and regulatory requirements."
+  },
+  {
+    "question": "Which of the five Cs is primarily concerned with the outcome or results of ethical decisions?",
+    "options": [
+      "Character",
+      "Culture",
+      "Compliance",
+      "Consequences"
+    ],
+    "answer": "Consequences"
+  },
+  {
+    "question": "In recent ethical trends, what does Corporate Social Responsibility (CSR) focus on?",
+    "options": [
+      "Maximizing shareholder profits at all costs",
+      "Balancing ethical obligations with financial success",
+      "Prioritizing individual interests over collective well-being",
+      "Ignoring the impact of business operations on society"
+    ],
+    "answer": "Balancing ethical obligations with financial success"
+  },
+    {
+    "question": "Select the significant trend in ethical considerations regarding data privacy and cybersecurity.",
+    "options": [
+      "Neglecting data protection in favor of business growth",
+      "Increased emphasis on securing personal data and privacy",
+      "Minimizing the importance of data breaches and cyber threats",
+      "Promoting unrestricted access to personal information"
+    ],
+    "answer": "Increased emphasis on securing personal data and privacy"
+  },
+  {
+    "question": "Select the trend that has emerged in recent years in environmental ethics and sustainability.",
+    "options": [
+      "Ignoring environmental concerns for economic gain",
+      "Stronger emphasis on eco-friendly practices and sustainability",
+      "Reducing regulations for environmental protection",
+      "Disregarding the impact of businesses on the environment"
+    ],
+    "answer": "Stronger emphasis on eco-friendly practices and sustainability"
+  },
+  {
+    "question": "Select the option regarding recent trends in workplace ethics that has been impacted by technological advancements.",
+    "options": [
+      "They have led to increased unethical behavior in the workplace.",
+      "They have facilitated remote work and ethical concerns around privacy.",
+      "They have reduced the need for ethical considerations in the workplace.",
+      "They have made it difficult to address ethical issues."
+    ],
+    "answer": "They have facilitated remote work and ethical concerns around privacy."
+  },
+  {
+    "question": "In recent trends related to ethical decision-making, what is the significance of Whistleblower Protection?",
+    "options": [
+      "It discourages employees from reporting unethical behavior.",
+      "It provides legal safeguards for individuals reporting misconduct.",
+      "It promotes unethical behavior within organizations.",
+      "It encourages unethical practices within the workplace."
+    ],
+    "answer": "It provides legal safeguards for individuals reporting misconduct."
+  },
+  {
+    "question": "Select the primary use of text visualization.",
+    "options": [
+      "Creating 3D models of text",
+      "Analyzing and representing textual data",
+      "Generating computer-generated text",
+      "Visualizing text fonts and typography"
+    ],
+    "answer": "Analyzing and representing textual data"
+  },
+  {
+    "question": "Choose the text visualization that is often used to explore the relationships between words in a corpus.",
+    "options": [
+      "Word clouds",
+      "Heatmaps",
+      "Tree maps",
+      "Scatter plots"
+    ],
+    "answer": "Word clouds"
+  },
+  {
+    "question": "Select what determines the size of a word in a word cloud.",
+    "options": [
+      "Its alphabetical order",
+      "Its font style",
+      "Its frequency in the text",
+      "Its length"
+    ],
+    "answer": "Its frequency in the text"
+  },
+  {
+    "question": "Choose the purpose of a scatter plot in text visualization.",
+    "options": [
+      "To show the spatial distribution of words",
+      "To display words in a hierarchical tree structure",
+      "To represent the relationship between two numerical variables",
+      "To arrange words in a circular pattern"
+    ],
+    "answer": "To represent the relationship between two numerical variables"
+  },
+  {
+    "question": "Select the type of text visualization that represents text data as a hierarchical structure with nodes and edges.",
+    "options": [
+      "Word cloud",
+      "Heatmap",
+      "Tree map",
+      "Scatter plot"
+    ],
+    "answer": "Tree map"
+  },
+  {
+    "question": "Choose the common purpose of text visualization techniques like bar charts.",
+    "options": [
+      "Analyzing sentiment in text",
+      "Representing text data as a matrix",
+      "Comparing word frequencies or document lengths",
+      "Creating interactive web-based documents"
+    ],
+    "answer": "Comparing word frequencies or document lengths"
+  },
+  {
+    "question": "Select the purpose of a heat map in text visualization.",
+    "options": [
+      "Typically shows the temperature of a document",
+      "Typically shows the sentiment of words in a text",
+      "Typically shows the relationship between words or phrases",
+      "Typically shows the alphabetical order of words"
+    ],
+    "answer": "Typically shows the relationship between words or phrases"
+  },
+  {
+    "question": "Select the type of text visualization suitable for analyzing the sentiments expressed in a large collection of documents.",
+    "options": [
+      "Scatter plot",
+      "Word cloud",
+      "Sentiment timeline",
+      "Heatmap"
+    ],
+    "answer": "Sentiment timeline"
+  },
+  {
+    "question": "Select the main purpose of a sentiment timeline in text visualization.",
+    "options": [
+      "To display the emotional content of a text",
+      "To track changes in sentiment over time",
+      "To visualize the font styles in a document",
+      "To represent the length of a document"
+    ],
+    "answer": "To track changes in sentiment over time"
+  },
+  {
+    "question": "Choose the definition of cartography.",
+    "options": [
+      "The study of ancient civilizations",
+      "The art and science of mapmaking",
+      "The analysis of demographic data",
+      "The study of celestial bodies"
+    ],
+    "answer": "The art and science of mapmaking"
+  },
+  {
+    "question": "Select the essential element in creating effective maps for data visualization.",
+    "options": [
+      "Colorful and decorative borders",
+      "A legend or key",
+      "A complex network of lines",
+      "Random placement of data points"
+    ],
+    "answer": "A legend or key"
+  },
+  {
+    "question": "A choropleth map is primarily used for what in data visualization?",
+    "options": [
+      "Displaying topographical features",
+      "Representing population density or data values by regions",
+      "Showing road networks and transportation routes",
+      "Visualizing weather patterns"
+    ],
+    "answer": "Representing population density or data values by regions"
+  },
+  {
+    "question": "Select the type of map projection that preserves the shape of continents but distorts their sizes, particularly near the poles.",
+    "options": [
+      "Mercator projection",
+      "Robinson projection",
+      "Polar projection",
+      "Equal-Area projection"
+    ],
+    "answer": "Mercator projection"
+  },
+  {
+    "question": "Select the term that describes the process of transforming geographic coordinates into a two-dimensional map.",
+    "options": [
+      "Cartography",
+      "Projection",
+      "Compass rose",
+      "Topography"
+    ],
+    "answer": "Projection"
+  },
+  {
+    "question": "In cartography, what does the term 'legend' refer to?",
+    "options": [
+      "A famous cartographer",
+      "A historical map",
+      "A representation of map symbols and their meanings",
+      "A mythical location"
+    ],
+    "answer": "A representation of map symbols and their meanings"
+  },
+  {
+    "question": "Select the type of map scale that is represented as a ratio or fraction (e.g., 1:50,000).",
+    "options": [
+      "Verbal scale",
+      "Graphic scale",
+      "Bar scale",
+      "Line scale"
+    ],
+    "answer": "Verbal scale"
+  },
+  {
+    "question": "Select the purpose of a compass rose on a map.",
+    "options": [
+      "To indicate magnetic north",
+      "To display the legend",
+      "To show the latitude and longitude lines",
+      "To represent topographical features"
+    ],
+    "answer": "To indicate magnetic north"
+  },
+  {
+    "question": "Select the type of map that is used to display the distribution of data points or events over a geographic area.",
+    "options": [
+      "Topographic map",
+      "Thematic map",
+      "Political map",
+      "Physical map"
+    ],
+    "answer": "Thematic map"
+  },
+  {
+    "question": "Select the purpose of model validation in machine learning.",
+    "options": [
+      "To prove the model is always correct",
+      "To ensure the model generalizes well to new data",
+      "To increase model complexity",
+      "To reduce training time"
+    ],
+    "answer": "To ensure the model generalizes well to new data"
+  },
+  {
+    "question": "Select the term that describes the practice of evaluating a model's performance on the same data it was trained on.",
+    "options": [
+      "Validation",
+      "Generalization",
+      "Overfitting",
+      "Cross-validation"
+    ],
+    "answer": "Overfitting"
+  },
+  {
+    "question": "Select the main goal of cross-validation in model validation.",
+    "options": [
+      "To fit the model to the training data",
+      "To test the model on a separate validation dataset",
+      "To assess the model's performance using multiple subsets of the data",
+      "To select the most complex model"
+    ],
+    "answer": "To assess the model's performance using multiple subsets of the data"
+  },
+  {
+    "question": "Select the validation technique that divides the dataset into a training set and a holdout validation set, usually with a 70/30 or 80/20 split.",
+    "options": [
+      "k-fold cross-validation",
+      "Leave-one-out cross-validation",
+      "Train-test split",
+      "Random sampling cross-validation"
+    ],
+    "answer": "Train-test split"
+  },
+  {
+    "question": "Select the metric commonly used for evaluating classification models on a validation dataset, focusing on the ratio of true positives to all positive cases.",
+    "options": [
+      "Precision",
+      "Recall",
+      "F1-score",
+      "R-squared"
+    ],
+    "answer": "Precision"
+  },
+  {
+    "question": "In regression model validation, what is the primary goal when assessing model performance?",
+    "options": [
+      "Minimizing the number of features",
+      "Maximizing the number of data points",
+      "Minimizing the mean squared error",
+      "Maximizing the mean squared error"
+    ],
+    "answer": "Minimizing the mean squared error"
+  },
+  {
+    "question": "Which statement is true regarding the bias-variance trade-off in model validation?",
+    "options": [
+      "Increasing model complexity reduces bias and increases variance.",
+      "Reducing model complexity reduces bias and increases variance.",
+      "Increasing model complexity reduces bias and variance.",
+      "Reducing model complexity increases bias and variance."
+    ],
+    "answer": "Increasing model complexity reduces bias and increases variance."
+  },
+  {
+    "question": "Select a common technique for addressing class imbalance when validating classification models.",
+    "options": [
+      "Oversampling the minority class",
+      "Undersampling the majority class",
+      "Using stratified cross-validation",
+      "Ignoring class distribution"
+    ],
+    "answer": "Using stratified cross-validation"
+  },
+  {
+    "question": "Select the purpose of hyperparameter tuning during model validation.",
+    "options": [
+      "To optimize the model for the training data",
+      "To evaluate model performance using k-fold cross-validation",
+      "To find the best settings for model parameters",
+      "To create additional validation datasets"
+    ],
+    "answer": "To find the best settings for model parameters"
+  },
+  {
+    "question": "Select an example of an interactive data visualization tool commonly used for exploring complex datasets.",
+    "options": [
+      "Microsoft Excel",
+      "Tableau",
+      "Static image",
+      "Bar chart"
+    ],
+    "answer": "Tableau"
+  },
+  {
+    "question": "Select the type of data visualization that is most appropriate for visualizing the relationship between two continuous variables.",
+    "options": [
+      "Pie chart",
+      "Bar chart",
+      "Scatter plot",
+      "Box plot"
+    ],
+    "answer": "Scatter plot"
+  },
+  {
+    "question": "Select the data visualization that is best suited for comparing multiple categories of data, especially when there are a large number of categories.",
+    "options": [
+      "Scatter plot",
+      "Bar chart",
+      "Line chart",
+      "Histogram"
+    ],
+    "answer": "Bar chart"
+  },
+  {
+    "question": "Select the purpose of a box plot (box-and-whisker plot).",
+    "options": [
+      "Showing data distribution",
+      "Comparing proportions",
+      "Displaying trends over time",
+      "Visualizing geographic data"
+    ],
+    "answer": "Showing data distribution"
+  },
+  {
+    "question": "Select the data visualization used to display data over time and often used for showing trends and patterns.",
+    "options": [
+      "Scatter plot",
+      "Bar chart",
+      "Line chart",
+      "Box plot"
+    ],
+    "answer": "Line chart"
+  },
+  {
+    "question": "In a heat map, what do the colors typically represent?",
+    "options": [
+      "Categories",
+      "Time intervals",
+      "Values or intensities",
+      "Data labels"
+    ],
+    "answer": "Values or intensities"
+  },
+  {
+    "question": "Select the type of data visualization suitable for comparing the parts of a whole.",
+    "options": [
+      "Line chart",
+      "Scatter plot",
+      "Pie chart",
+      "Histogram"
+    ],
+    "answer": "Pie chart"
+  },
+  {
+    "question": "What is typically represented on the x-axis in a scatter plot?",
+    "options": [
+      "Categorical data",
+      "Time series data",
+      "Independent variable",
+      "Dependent variable"
+    ],
+    "answer": "Independent variable"
+  },
+  {
+    "question": "Select the type of data visualization that is best suited for showing the distribution of a single continuous variable.",
+    "options": [
+      "Bar chart",
+      "Line chart",
+      "Scatter plot",
+      "Histogram"
+    ],
+    "answer": "Histogram"
+  },
+  {
+    "question": "Select the primary purpose of data visualization in data analysis.",
+    "options": [
+      "To make data look more appealing",
+      "To summarize and communicate information effectively",
+      "To hide data complexity",
+      "To add unnecessary details to charts"
+    ],
+    "answer": "To summarize and communicate information effectively"
+  },
+  {
+    "question": "Identify the role of a data lake in big data architecture.",
+    "options": [
+      "Storing data in a structured, relational database",
+      "Aggregating data from various sources into a single file",
+      "Providing real-time data processing capabilities",
+      "Storing large volumes of raw, unstructured data for future analysis"
+    ],
+    "answer": "Storing large volumes of raw, unstructured data for future analysis"
+  },
+  {
+    "question": "Select the primary purpose of ETL (Extract, Transform, Load) processes in big data workflows.",
+    "options": [
+      "To extract data from external sources",
+      "To visualize data for reporting",
+      "To clean, transform, and load data into a data warehouse",
+      "To create data schemas"
+    ],
+    "answer": "To clean, transform, and load data into a data warehouse"
+  },
+    {
+    "question": "Select the technology commonly used for real-time data processing in big data environments.",
+    "options": [
+      "MapReduce",
+      "Hadoop",
+      "Apache Kafka",
+      "Pig"
+    ],
+    "answer": "Apache Kafka"
+  },
+  {
+    "question": "In the context of big data, what does Data Sharding mean?",
+    "options": [
+      "Encrypting data for security",
+      "Splitting data into smaller partitions for storage and processing",
+      "Collecting data from external sources",
+      "Visualizing data patterns"
+    ],
+    "answer": "Splitting data into smaller partitions for storage and processing"
+  },
+  {
+    "question": "Select an example of semi-structured data commonly encountered in big data.",
+    "options": [
+      "Structured database tables",
+      "JSON files",
+      "Text documents",
+      "JPEG images"
+    ],
+    "answer": "JSON files"
+  },
+  {
+    "question": "In big data analytics, what is the main goal of data sampling?",
+    "options": [
+      "Reducing the variety of data",
+      "Reducing the velocity of data",
+      "Reducing the volume of data",
+      "Increasing data veracity"
+    ],
+    "answer": "Reducing the volume of data"
+  },
+  {
+    "question": "In the context of big data, what does the term data wrangling refer to?",
+    "options": [
+      "The process of collecting data from various sources",
+      "The process of cleaning, transforming, and organizing data",
+      "The process of analyzing data for insights",
+      "The process of visualizing data for reporting"
+    ],
+    "answer": "The process of cleaning, transforming, and organizing data"
+  },
+  {
+    "question": "Select the storage technology commonly used for handling large volumes of data in big data applications.",
+    "options": [
+      "SQL databases",
+      "Hadoop Distributed File System (HDFS)",
+      "NoSQL databases",
+      "Flat text files"
+    ],
+    "answer": "Hadoop Distributed File System (HDFS)"
+  },
+  {
+    "question": "Select an example of structured data in the context of big data.",
+    "options": [
+      "Social media posts",
+      "Sensor data from IoT devices",
+      "Sales transaction records",
+      "Unstructured text documents"
+    ],
+    "answer": "Sales transaction records"
+  },
+  {
+    "question": "Which option correctly characterizes big data in terms of the Three Vs framework?",
+    "options": [
+      "Volume, Value, and Visualization",
+      "Velocity, Variety, and Veracity",
+      "Validity, Vagueness, and Vortex",
+      "Visual Appeal, Volume, and Versatility"
+    ],
+    "answer": "Velocity, Variety, and Veracity"
+  },
+  {
+    "question": "What is the goal of data partitioning in distributed computing?",
+    "options": [
+      "Minimizing data volume",
+      "Maximizing data velocity",
+      "Improving data quality",
+      "Enhancing parallel processing efficiency"
+    ],
+    "answer": "Enhancing parallel processing efficiency"
+  },
+  {
+    "question": "What is the significance of the CAP theorem in distributed databases?",
+    "options": [
+      "Consistency, Availability, Partition tolerance",
+      "Convergence, Adaptability, Performance",
+      "Compression, Aggregation, Partitioning",
+      "Capacity, Accessibility, Performance"
+    ],
+    "answer": "Consistency, Availability, Partition tolerance"
+  },
+  {
+    "question": "What is the role of data preprocessing in big data analytics?",
+    "options": [
+      "Reducing data volume",
+      "Increasing data velocity",
+      "Enhancing data quality",
+      "All of these"
+    ],
+    "answer": "All of these"
+  },
+  {
+    "question": "Which of the following is a common challenge in big data analytics?",
+    "options": [
+      "Limited data sources",
+      "Low data velocity",
+      "Data security concerns",
+      "Small dataset sizes"
+    ],
+    "answer": "Data security concerns"
+  },
+  {
+    "question": "What is the primary purpose of Apache Spark in big data processing?",
+    "options": [
+      "Batch processing",
+      "Stream processing",
+      "In-memory data processing",
+      "Data storage"
+    ],
+    "answer": "In-memory data processing"
+  },
+  {
+    "question": "Which programming language is commonly used for writing MapReduce programs in the Hadoop ecosystem?",
+    "options": [
+      "Python",
+      "Java",
+      "C++",
+      "Ruby"
+    ],
+    "answer": "Java"
+  },
+  {
+    "question": "In the context of big data, what does MapReduce refer to?",
+    "options": [
+      "A programming model for processing and generating large datasets",
+      "A data visualization tool",
+      "A file storage system",
+      "A query language for databases"
+    ],
+    "answer": "A programming model for processing and generating large datasets"
+  },
+  {
+    "question": "What is the role of Hadoop in big data processing?",
+    "options": [
+      "Data storage only",
+      "Data processing and storage",
+      "Data analysis only",
+      "Data visualization"
+    ],
+    "answer": "Data processing and storage"
+  },
+  {
+    "question": "Which type of storage system is commonly used for distributed storage in big data environments?",
+    "options": [
+      "Relational Database Management System (RDBMS)",
+      "NoSQL databases",
+      "Flat files",
+      "Mainframe storage"
+    ],
+    "answer": "NoSQL databases"
+  },
+  {
+    "question": "What is the primary challenge in handling big data?",
+    "options": [
+      "Lack of data",
+      "Limited processing power",
+      "Volume, Velocity, Variety, and Complexity",
+      "Homogeneous data sources"
+    ],
+    "answer": "Volume, Velocity, Variety, and Complexity"
+  },
+  {
+    "question": "What is the term for combining and stacking data from multiple sources to create a unified view of the data?",
+    "options": [
+      "Data munging",
+      "Data wrangling",
+      "Data integration",
+      "Data segregation"
+    ],
+    "answer": "Data integration"
+  },
+  {
+    "question": "What is the primary objective of stacking data in big data systems?",
+    "options": [
+      "Reducing data redundancy",
+      "Improving data availability",
+      "Enhancing data security",
+      "Enabling efficient data analysis"
+    ],
+    "answer": "Enabling efficient data analysis"
+  },
+  {
+    "question": "Choose the most appropriate technique for ensuring that a graph effectively communicates the intended message.",
+    "options": [
+      "Experimentation with different color schemes",
+      "Random placement of data points",
+      "Ignoring user interaction feedback",
+      "Inconsistent use of scales"
+    ],
+    "answer": "Experimentation with different color schemes"
+  },
+  {
+    "question": "According to principles of graphical perception, which visual element is most easily interpreted by the human eye?",
+    "options": [
+      "Pie charts with multiple slices",
+      "3D bar charts",
+      "Line graphs with consistent spacing",
+      "Overlapping scatter plots"
+    ],
+    "answer": "Line graphs with consistent spacing"
+  },
+  {
+    "question": "Choose the best method for utilizing space effectively in a complex data visualization.",
+    "options": [
+      "Overcrowding the visualization with data points",
+      "Leaving significant white space around important elements",
+      "Using multiple colors indiscriminately",
+      "Employing a minimalistic approach with clear labeling"
+    ],
+    "answer": "Employing a minimalistic approach with clear labeling"
+  },
+  {
+    "question": "Which feature is most important for enhancing user engagement in a data visualization, based on interaction dynamics?",
+    "options": [
+      "Static images",
+      "Interactive sliders and filters",
+      "Non-interactive legends",
+      "Unchangeable visual formats"
+    ],
+    "answer": "Interactive sliders and filters"
+  },
+  {
+    "question": "Which visualization method is most suitable for representing hierarchical data within a network?",
+    "options": [
+      "Line graph",
+      "Bar chart",
+      "Tree diagram",
+      "Pie chart"
+    ],
+    "answer": "Tree diagram"
+  },
+  {
+    "question": "For which situation are stacked graphs most effectively used?",
+    "options": [
+      "During comparison of overall trends across categories",
+      "When displaying individual data points without aggregation",
+      "When only one data category is involved",
+      "When highlighting the differences between two data points"
+    ],
+    "answer": "During comparison of overall trends across categories"
+  },
+  {
+    "question": "What is the best approach to optimize geometry and aesthetics in a data visualization?",
+    "options": [
+      "Using random shapes and colors",
+      "Maintaining symmetry and balance in design elements",
+      "Ignoring the visual appeal",
+      "Overloading the graph with textures"
+    ],
+    "answer": "Maintaining symmetry and balance in design elements"
+  },
+  {
+    "question": "Which method is most effective for exploring large networks in graph visualization and navigation?",
+    "options": [
+      "Zooming in on individual nodes without context",
+      "Utilizing interactive exploration tools like panning and zooming",
+      "Presenting the entire network in one static image",
+      "Hiding connections between nodes"
+    ],
+    "answer": "Utilizing interactive exploration tools like panning and zooming"
+  },
+  {
+    "question": "Which mapping technique is most appropriate for visualizing geographic data in cartography?",
+    "options": [
+      "Choropleth map",
+      "Stacked bar chart",
+      "Scatter plot",
+      "Line graph"
+    ],
+    "answer": "Choropleth map"
+  },
+  {
+    "question": "According to principles of text visualization, which method is best for analyzing large volumes of textual data?",
+    "options": [
+      "Word clouds",
+      "Line graphs",
+      "Pie charts",
+      "Randomized text arrangements"
+    ],
+    "answer": "Word clouds"
+  },
+  {
+    "question": "Which term best describes the process of cleaning and preparing data for analysis?",
+    "options": [
+      "Data aggregation",
+      "Data normalization",
+      "Data wrangling",
+      "Data visualization"
+    ],
+    "answer": "Data wrangling"
+  },
+  {
+    "question": "Which type of analysis is used to identify patterns and relationships in data without a predefined hypothesis?",
+    "options": [
+      "Descriptive analysis",
+      "Predictive analysis",
+      "Exploratory analysis",
+      "Prescriptive analysis"
+    ],
+    "answer": "Exploratory analysis"
+  },
+  {
+    "question": "What is the primary purpose of data visualization in analytics?",
+    "options": [
+      "To increase data storage capacity",
+      "To enhance data security",
+      "To make complex data easier to understand and interpret",
+      "To replace data collection processes"
+    ],
+    "answer": "To make complex data easier to understand and interpret"
+  },
+  {
+    "question": "Which statistical measure describes the central tendency of a data set?",
+    "options": [
+      "Standard deviation",
+      "Variance",
+      "Mean",
+      "Range"
+    ],
+    "answer": "Mean"
+  },
+  {
+    "question": "Which type of chart is most suitable for showing the distribution of data across different categories?",
+    "options": [
+      "Line chart",
+      "Pie chart",
+      "Scatter plot",
+      "Histogram"
+    ],
+    "answer": "Pie chart"
+  },
+  {
+    "question": "Which type of data analytics focuses on analyzing historical data to understand past events and outcomes?",
+    "options": [
+      "Predictive Analytics",
+      "Descriptive Analytics",
+      "Prescriptive Analytics",
+      "Diagnostic Analytics"
+    ],
+    "answer": "Descriptive Analytics"
+  },
+  {
+    "question": "Which type of data analytics is used to forecast future trends based on historical data patterns?",
+    "options": [
+      "Diagnostic Analytics",
+      "Descriptive Analytics",
+      "Predictive Analytics",
+      "Prescriptive Analytics"
+    ],
+    "answer": "Predictive Analytics"
+  },
+  {
+    "question": "Which type of data analytics is aimed at determining the cause of past events and why they happened?",
+    "options": [
+      "Prescriptive Analytics",
+      "Diagnostic Analytics",
+      "Predictive Analytics",
+      "Descriptive Analytics"
+    ],
+    "answer": "Diagnostic Analytics"
+  },
+  {
+    "question": "Which type of data analytics recommends actions to optimize outcomes based on predictive data insights?",
+    "options": [
+      "Descriptive Analytics",
+      "Diagnostic Analytics",
+      "Prescriptive Analytics",
+      "Predictive Analytics"
+    ],
+    "answer": "Prescriptive Analytics"
+  },
+  {
+    "question": "Which type of data analytics helps in understanding and interpreting data to identify patterns and insights without focusing on causation?",
+    "options": [
+      "Diagnostic Analytics",
+      "Predictive Analytics",
+      "Prescriptive Analytics",
+      "Descriptive Analytics"
+    ],
+    "answer": "Descriptive Analytics"
+  },
+  {
+    "question": "What is the primary goal of doing good data science?",
+    "options": [
+      "Maximizing profit",
+      "Ensuring ethical standards are met",
+      "Collecting as much data as possible",
+      "Reducing computational costs"
+    ],
+    "answer": "Ensuring ethical standards are met"
+  },
+  {
+    "question": "What is the most critical aspect of valuing privacy?",
+    "options": [
+      "Making data available to everyone",
+      "Respecting individuals' control over their data",
+      "Maximizing data utility",
+      "Minimizing the cost of data storage"
+    ],
+    "answer": "Respecting individuals' control over their data"
+  },
+  {
+    "question": "Which component of the Five Cs is related to protecting sensitive data?",
+    "options": [
+      "Context",
+      "Consent",
+      "Confidence",
+      "Collaboration"
+    ],
+    "answer": "Confidence"
+  },
+  {
+    "question": "What is a key principle in future trends of data science ethics?",
+    "options": [
+      "Automation without oversight",
+      "Human-centric AI development",
+      "Data maximization",
+      "Profit-driven algorithms"
+    ],
+    "answer": "Human-centric AI development"
+  },
+  {
+    "question": "What is the importance of getting informed consent from data subjects?",
+    "options": [
+      "To enhance data quality",
+      "To comply with legal requirements",
+      "To reduce data storage costs",
+      "To increase data analysis speed"
+    ],
+    "answer": "To comply with legal requirements"
+  },
+  {
+    "question": "Which Five Cs component deals with protecting individual data rights?",
+    "options": [
+      "Context",
+      "Collaboration",
+      "Consent",
+      "Confidence"
+    ],
+    "answer": "Consent"
+  },
+  {
+    "question": "Which definition best describes informed consent in data science?",
+    "options": [
+      "Consent obtained through coercion",
+      "Consent given without understanding",
+      "Consent based on full disclosure",
+      "Consent implied by data collection"
+    ],
+    "answer": "Consent based on full disclosure"
+  },
+  {
+    "question": "What is the primary ethical concern in sharing data across borders?",
+    "options": [
+      "Speed of transmission",
+      "Legal compliance and privacy",
+      "Cost of sharing",
+      "Data format compatibility"
+    ],
+    "answer": "Legal compliance and privacy"
+  },
+  {
+    "question": "Which term refers to the practice of including marginalized groups in data science?",
+    "options": [
+      "Segregation",
+      "Exclusion",
+      "Isolation",
+      "Inclusion"
+    ],
+    "answer": "Inclusion"
+  },
+  {
+    "question": "What is the best reason for using diverse data sources in data science?",
+    "options": [
+      "Reducing data quality",
+      "Enhancing the representativeness of insights",
+      "Increasing data bias",
+      "Speeding up data collection"
+    ],
+    "answer": "Enhancing the representativeness of insights"
+  },
+  {
+    "question": "What is the most ethical approach when handling sensitive data?",
+    "options": [
+      "Sharing data freely",
+      "Selling data to third parties",
+      "Anonymizing data before sharing",
+      "Ignoring data security"
+    ],
+    "answer": "Anonymizing data before sharing"
+  },
+  {
+    "question": "What is the first step in obtaining informed consent?",
+    "options": [
+      "Analyzing the data",
+      "Informing individuals about data use",
+      "Starting data collection",
+      "Sharing results"
+    ],
+    "answer": "Informing individuals about data use"
+  },
+  {
+    "question": "Which aspect of diversity is most important in data science?",
+    "options": [
+      "Cultural diversity",
+      "Gender diversity",
+      "Data source diversity",
+      "Age diversity"
+    ],
+    "answer": "Data source diversity"
+  },
+  {
+    "question": "What is the most critical factor in ensuring ethical data ownership?",
+    "options": [
+      "Data storage location",
+      "Transparency in data use",
+      "Size of the dataset",
+      "Speed of data processing"
+    ],
+    "answer": "Transparency in data use"
+  },
+  {
+    "question": "Which component of the Five Cs involves providing clear information about data use?",
+    "options": [
+      "Communication",
+      "Clarity",
+      "Complexity",
+      "Compression"
+    ],
+    "answer": "Clarity"
+  },
+  {
+    "question": "Which aspect of diversity can improve data analysis?",
+    "options": [
+      "Cultural homogeneity",
+      "Limited data sources",
+      "Varied perspectives",
+      "Single demographic focus"
+    ],
+    "answer": "Varied perspectives"
+  },
+  {
+    "question": "Which ethical challenge is most associated with data ownership?",
+    "options": [
+      "Speed of data processing",
+      "Size of the dataset",
+      "Unclear data ownership rights",
+      "Complexity of data analysis"
+    ],
+    "answer": "Unclear data ownership rights"
+  },
+  {
+    "question": "What is the key reason for considering diversity in data science teams?",
+    "options": [
+      "Homogeneous perspectives",
+      "Faster decision-making",
+      "Richer insights from varied backgrounds",
+      "Reduced team communication"
+    ],
+    "answer": "Richer insights from varied backgrounds"
+  },
+  {
+    "question": "Which Five Cs component emphasizes understanding the context in which data is collected?",
+    "options": [
+      "Context",
+      "Collaboration",
+      "Clarity",
+      "Consent"
+    ],
+    "answer": "Context"
+  },
+  {
+    "question": "What is a key consideration when evaluating future trends in data science ethics?",
+    "options": [
+      "Cost reduction",
+      "Ethical AI development",
+      "Data monopolization",
+      "Maximizing data collection"
+    ],
+    "answer": "Ethical AI development"
+  },
+  {
+    "question": "Who are the rightful owners of the data in most scenarios?",
+    "options": [
+      "Data scientists",
+      "The organization collecting the data",
+      "The individuals who generate the data",
+      "Government agencies"
+    ],
+    "answer": "The individuals who generate the data"
+  },
+  {
+    "question": "Which term represents clear communication about data use?",
+    "options": [
+      "Confidentiality",
+      "Clarity",
+      "Complexity",
+      "Compression"
+    ],
+    "answer": "Clarity"
+  },
+  {
+    "question": "What is the most ethical approach to inclusion in data science?",
+    "options": [
+      "Excluding minority groups",
+      "Ensuring diverse representation",
+      "Focusing only on the majority population",
+      "Ignoring demographic differences"
+    ],
+    "answer": "Ensuring diverse representation"
+  },
+  {
+    "question": "What is the best practice for maintaining privacy in data science?",
+    "options": [
+      "Disregarding user preferences",
+      "Using encryption techniques",
+      "Sharing data without consent",
+      "Ignoring privacy laws"
+    ],
+    "answer": "Using encryption techniques"
+  },
+  {
+    "question": "Which ethical consideration is most relevant to future trends in data science?",
+    "options": [
+      "Maximizing data collection",
+      "Ensuring responsible AI development",
+      "Reducing data diversity",
+      "Ignoring data privacy"
+    ],
+    "answer": "Ensuring responsible AI development"
+  },
+  {
+    "question": "Which practice best ensures inclusion in data science projects?",
+    "options": [
+      "Focusing on a single demographic",
+      "Ignoring minority voices",
+      "Including diverse data sources",
+      "Minimizing input from underrepresented groups"
+    ],
+    "answer": "Including diverse data sources"
+  },
+  {
+    "question": "Which term best describes the practice of respecting individual autonomy in data use?",
+    "options": [
+      "Autocracy",
+      "Autonomy",
+      "Informed consent",
+      "Authority"
+    ],
+    "answer": "Informed consent"
+  },
+  {
+    "question": "What is the most appropriate action when data subjects withdraw consent?",
+    "options": [
+      "Ignoring the request",
+      "Continuing data use",
+      "Deleting their data",
+      "Selling the data"
+    ],
+    "answer": "Deleting their data"
+  },
+  {
+    "question": "Which ethical practice promotes fairness in AI algorithms?",
+    "options": [
+      "Ensuring diverse training data",
+      "Bias in training data",
+      "Excluding minority data",
+      "Ignoring bias"
+    ],
+    "answer": "Ensuring diverse training data"
+  },
+  {
+    "question": "What is the most important factor in obtaining consent for data use?",
+    "options": [
+      "Informing subjects of data use",
+      "Hiding the purpose of data collection",
+      "Ignoring privacy concerns",
+      "Collecting data without notification"
+    ],
+    "answer": "Informing subjects of data use"
+  }
+
+
+
+
+]
+
+}

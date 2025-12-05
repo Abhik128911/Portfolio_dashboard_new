@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCQ Practice Platform</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="app-logo">
+      <span class="app-logo-mark">M</span>
+      <span class="app-logo-text">MCQ Practice</span>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- ========== HOME / SUBJECT SELECTION ========== -->
+    <section id="home-section" class="home-section" aria-labelledby="home-title">
+      <div class="home-header">
+        <h1 id="home-title" class="home-title">Choose Your Subject</h1>
+        <p class="home-subtitle">
+          Select a subject to start practicing MCQ questions and track your progress.
+        </p>
+      </div>
+
+      <!-- Subject search -->
+      <div class="home-toolbar">
+        <label class="visually-hidden" for="subject-search">Search subjects</label>
+        <input
+          type="text"
+          id="subject-search"
+          class="subject-search-input"
+          placeholder="Search subjects..."
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- SUBJECT CARDS GRID -->
+      <div id="subjects-container" class="subjects-grid">
+        <!-- Subject cards injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- ========== QUIZ VIEW ========== -->
+    <section
+      id="quiz-section"
+      class="quiz-section"
+      aria-label="Quiz"
+      style="display: none;"
+    >
+      <!-- Top bar: back + question index -->
+      <div class="quiz-topbar">
+        <button id="back-btn" class="btn-link back-btn" type="button">
+          ← Back
+        </button>
+        <div class="quiz-top-right">
+          <span id="subject-short-title" class="quiz-subject-short">CN</span>
+          <span id="question-index-label" class="quiz-index-label">1 / 100</span>
+        </div>
+      </div>
+
+      <!-- Meta: timer + accuracy -->
+      <div class="quiz-meta-row">
+        <span>Time: <strong id="quiz-timer">00:00</strong></span>
+        <span>Accuracy: <strong id="quiz-accuracy">0%</strong></span>
+      </div>
+
+      <div class="quiz-layout">
+        <!-- LEFT SIDEBAR: stats + actions -->
+        <aside class="quiz-sidebar" aria-label="Quiz statistics">
+          <div class="sidebar-header">
+            <h2 id="sidebar-subject-code" class="sidebar-subject-code">CN</h2>
+          </div>
+
+          <div class="stats-row" aria-label="Question statistics">
+            <div class="stat-card">
+              <div class="stat-number" id="stat-attempted">0</div>
+              <div class="stat-label">ATTEMPTED</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number stat-correct" id="stat-correct">0</div>
+              <div class="stat-label">CORRECT</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number stat-incorrect" id="stat-incorrect">0</div>
+              <div class="stat-label">INCORRECT</div>
+            </div>
+          </div>
+
+          <!-- Sidebar actions -->
+          <div class="sidebar-actions">
+            <button id="reset-progress-btn" class="btn-reset" type="button">
+              ⟲ Reset Progress
+            </button>
+            <button id="back-home-btn" class="btn-outline" type="button">
+              ⬅ Back to Home
+            </button>
+          </div>
+        </aside>
+
+        <!-- MAIN QUESTION AREA -->
+        <section class="quiz-main" aria-label="Current question">
+          <article class="question-card">
+            <div class="question-card-inner">
+              <header class="question-card-header">
+                <span id="question-chip" class="question-chip">Question 1</span>
+                <button
+                  id="bookmark-btn"
+                  class="bookmark-btn"
+                  type="button"
+                  aria-label="Bookmark question"
+                >
+                  ☆
+                </button>
+              </header>
+
+              <h2 id="question-text" class="question-text">
+                <!-- Question text injected here -->
+              </h2>
+
+              <div
+                id="options"
+                class="options-list"
+                role="list"
+                aria-label="Answer options"
+              >
+                <!-- Option buttons injected here -->
+              </div>
+
+              <div class="question-footer">
+                <button id="show-answer-btn" class="btn-outline" type="button">
+                  👁 Show Answer
+                </button>
+                <button
+                  id="open-nav-modal-btn"
+                  class="btn-outline question-list-trigger"
+                  type="button"
+                >
+                  ☰ Question List
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- BOTTOM NAVIGATION -->
+          <nav class="quiz-nav" aria-label="Question navigation">
+            <button id="prev-btn" class="btn-secondary" type="button">
+              ← Previous
+            </button>
+            <button id="next-btn" class="btn-primary" type="button">
+              Next →
+            </button>
+          </nav>
+        </section>
+      </div>
+
+      <!-- SLIDING MODAL FOR QUESTION NAVIGATION (mobile / overlay) -->
+      <div id="nav-modal" class="nav-modal" aria-hidden="true">
+        <div class="nav-modal-overlay" id="nav-modal-overlay"></div>
+        <div class="nav-modal-panel" role="dialog" aria-modal="true" aria-label="Question list">
+          <div class="nav-modal-header">
+            <h3>Questions</h3>
+            <button
+              id="close-nav-modal-btn"
+              class="btn-link close-modal-btn"
+              type="button"
+              aria-label="Close question list"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="nav-modal-body">
+            <div class="nav-modal-stats">
+              <span><strong id="modal-stat-attempted">0</strong> Attempted</span>
+              <span><strong id="modal-stat-bookmarked">0</strong> Bookmarked</span>
+            </div>
+
+            <div
+              id="nav-modal-list"
+              class="nav-modal-grid"
+              aria-label="Question navigation list"
+            >
+              <!-- Question buttons cloned here via JS -->
+            </div>
+
+            <div class="nav-modal-legend">
+              <span><span class="dot dot-current"></span> Current</span>
+              <span><span class="dot dot-correct"></span> Correct</span>
+              <span><span class="dot dot-wrong"></span> Incorrect</span>
+              <span><span class="dot dot-bookmark"></span> Bookmarked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>MCQ Practice Platform • Made with ❤️ By <b>ABHIK</b> 🫰</p>
+  </footer>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
