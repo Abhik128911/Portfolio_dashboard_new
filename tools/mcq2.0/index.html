@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced MCQ Quiz Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="site-header">
+        <div class="logo">MCQ<span>Quiz</span></div>
+        <nav>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ========== SUBJECT SELECTION ========== -->
+    <section id="subject-section">
+        <div class="hero">
+            <h1>Choose Your Subject</h1>
+            <p>Select a subject to start your quiz journey</p>
+        </div>
+        <div id="subjects-container" class="subjects-grid"></div>
+    </section>
+
+    <!-- ========== QUIZ SECTION ========== -->
+<section id="quiz-section" style="display: none;">
+    <!-- Back Button -->
+    <button class="btn back-btn" id="back-btn">← Back to Subjects</button>
+    <h2 class="quiz-title" id="subject-title"></h2>
+
+    <!-- Two Column Layout -->
+    <div class="quiz-container">
+        <!-- LEFT: Quiz Main Area -->
+        <div class="quiz-left">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span class="progress-text" id="progress-text">0%</span>
+            </div>
+
+            <!-- Question Card -->
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-number" id="current-question-number">Question 1/10</span>
+                    <button class="bookmark-btn" id="bookmark-btn" title="Bookmark this question">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <p id="question-text">Loading question...</p>
+                <div id="options" class="options-container"></div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <button class="btn" id="prev-btn">← Previous</button>
+                <button class="btn filled" id="next-btn">Next →</button>
+                <button class="btn filled" id="finish-btn" style="display: none;">Finish Quiz</button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn outline-btn" id="reset-btn">🔄 Reset Quiz</button>
+            </div>
+        </div>
+
+        <!-- RIGHT: Tracking & Question List -->
+        <div class="quiz-right">
+            <!-- Stats Card -->
+            <div class="stats-card">
+                <h3 class="stats-title">📊 Quiz Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="timer">00:00</div>
+                            <div class="stat-label">Time Elapsed</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="attempted-count">0</div>
+                            <div class="stat-label">Attempted</div>
+                        </div>
+                    </div>
+                    <div class="stat-item stat-correct">
+                        <div class="stat-icon">✓</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="correct-count">0</div>
+                            <div class="stat-label">Correct</div>
+                        </div>
+                    </div>
+                    <div class="stat-item stat-incorrect">
+                        <div class="stat-icon">✗</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="incorrect-count">0</div>
+                            <div class="stat-label">Incorrect</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question List Card -->
+            <div class="question-list-card">
+                <h3 class="list-title">🔢 Question Navigator</h3>
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-box q-unattempted"></span>
+                        <span>Not Answered</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box q-answered"></span>
+                        <span>Answered</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box q-bookmarked"></span>
+                        <span>Bookmarked</span>
+                    </div>
+                </div>
+                <div id="question-list" class="question-number-container"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Keep all the modals (Results Modal, Question Modal) as they were -->
+
+
+    <!-- ========== RESULTS MODAL ========== -->
+    <div id="results-modal" class="modal">
+        <div class="modal-content results-modal-content">
+            <div class="results-header">
+                <h2>🎉 Quiz Completed!</h2>
+                <button class="modal-close" id="close-results">×</button>
+            </div>
+            <div class="results-body">
+                <div class="score-circle">
+                    <svg width="200" height="200">
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#e0e0e0" stroke-width="12"/>
+                        <circle id="score-circle" cx="100" cy="100" r="90" fill="none" stroke="#000" stroke-width="12" 
+                                stroke-dasharray="565.48" stroke-dashoffset="565.48" transform="rotate(-90 100 100)"/>
+                    </svg>
+                    <div class="score-text">
+                        <span id="score-percentage">0%</span>
+                    </div>
+                </div>
+                <div class="results-details">
+                    <div class="result-item">
+                        <span class="result-label">Total Questions:</span>
+                        <span class="result-value" id="total-questions">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Attempted:</span>
+                        <span class="result-value" id="result-attempted">0</span>
+                    </div>
+                    <div class="result-item correct">
+                        <span class="result-label">Correct:</span>
+                        <span class="result-value" id="result-correct">0</span>
+                    </div>
+                    <div class="result-item incorrect">
+                        <span class="result-label">Incorrect:</span>
+                        <span class="result-value" id="result-incorrect">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Time Taken:</span>
+                        <span class="result-value" id="result-time">00:00</span>
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button class="btn filled" id="review-answers">Review Answers</button>
+                    <button class="btn" id="restart-quiz">Restart Quiz</button>
+                    <button class="btn" id="back-to-subjects">Back to Subjects</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== QUESTION NAVIGATION MODAL ========== -->
+    <div id="question-modal" class="modal">
+        <div class="modal-content question-modal-content">
+            <div class="modal-header">
+                <h3>Question Navigator</h3>
+                <button class="modal-close" id="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="legend">
+                    <div class="legend-item">
+                        <span class="legend-box q-unattempted"></span>
+                        <span>Not Attempted</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box q-answered"></span>
+                        <span>Answered</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-box q-bookmarked"></span>
+                        <span>Bookmarked</span>
+                    </div>
+                </div>
+                <div id="question-list" class="question-number-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <p>&copy; 2025 MCQ Quiz Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
