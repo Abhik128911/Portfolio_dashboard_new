@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>College Lab Repository</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1 id="pageTitle">🎓 College Lab Repository</h1>
+    <p id="pageDesc">Select a subject to view assignments</p>
+  </div>
+</header>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<div class="search-wrapper">
+  <div class="search-box">
+    <button id="backBtn" class="hidden" onclick="goBack()">← Back</button>
+    
+    <div id="downloadOptions" class="hidden">
+        <button class="action-btn txt-btn" onclick="downloadTXT()">📄 TXT</button>
+        <button class="action-btn pdf-btn" onclick="downloadPDF()">📕 PDF</button>
+
+        <a href="data-analytics-lab.pdf" download="Data_Analytics_Manual.pdf" style="text-decoration: none;">
+        <button id="downloadBtn" style="background:#10b981; color:white; border:none; padding:8px 16px; border-radius:20px; font-weight:600; cursor:pointer; margin-right:10px;">
+            ⬇ Download PDF
+        </button>
+    </a>
+    </div>
+    
+
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search..." />
+  </div>
+</div>
+
+<main id="subjectContainer" class="grid-container"></main>
+
+<main id="assignmentContainer" class="grid-container hidden"></main>
+
+<div id="noResults" class="hidden">
+  <p>No results found matching your search.</p>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalTitle">Assignment Title</h2>
+      <button class="close-btn" onclick="closeModal()">×</button>
+    </div>
+    <div id="modalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+<footer>
+  <p>Designed with ❤️ by <b>ABHIK</b></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

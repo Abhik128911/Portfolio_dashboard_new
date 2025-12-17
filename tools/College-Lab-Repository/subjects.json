@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cloud",
+    "subjectName": "Cloud Computing",
+    "icon": "☁️",
+    "description": "Virtualization, AWS, Google App Engine, and CloudSim scenarios.",
+    "file": "cloud.json"
+  },
+  {
+    "id": "analytics",
+    "subjectName": "Data Analytics",
+    "icon": "📊",
+    "description": "Python, R, Pandas, NumPy, and Big Data visualization techniques.",
+    "file": "data_analytics.json"
+  },
+  {
+    "id": "networks",
+    "subjectName": "Computer Networks",
+    "icon": "🔗",
+    "description": "Cisco Packet Tracer, TCP/IP protocols, and Network simulations.",
+    "file": "networks.json"
+  },
+  {
+    "id": "dbms",
+    "subjectName": "DBMS",
+    "icon": "🗄️",
+    "description": "SQL queries, Normalization, MongoDB, and Database design.",
+    "file": "dbms.json"
+  }
+]
