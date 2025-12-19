@@ -5,7 +5,7 @@
     "questions": [
       {
         "question": "Write SQL command to create SALESMAN table",
-        "answer": "<pre>CREATE TABLE salesman (\n  salesman_id INT PRIMARY KEY,\n  name VARCHAR(25),\n  city VARCHAR(25),\n  commission DECIMAL(4,2)\n);</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>CREATE TABLE salesman (\n  salesman_id INT PRIMARY KEY,\n  name VARCHAR(25),\n  city VARCHAR(25),\n  commission DECIMAL(4,2)\n);</pre><p><b>Oracle SQL Developer:</b></p><pre>CREATE TABLE salesman (\n  salesman_id NUMBER(4) PRIMARY KEY,\n  name VARCHAR2(25),\n  city VARCHAR2(25),\n  commission NUMBER(4,2)\n);</pre>"
       }
     ]
   },
@@ -14,8 +14,8 @@
     "title": "Insert Values into SALESMAN Table",
     "questions": [
       {
-        "question": "Write SQL command to insert records into SALESMAN table",
-        "answer": "<pre>INSERT INTO salesman VALUES\n(5001, 'James Hoog', 'New York', 0.15),\n(5002, 'Nail Knite', 'Paris', 0.13),\n(5005, 'Pit Alex', 'London', 0.11),\n(5006, 'Mc Lyon', 'Paris', 0.14),\n(5007, 'Paul Adam', 'Rome', 0.13),\n(5003, 'Lauson Hen', 'San Jose', 0.12);</pre>"
+        "question": "Insert records into SALESMAN table",
+        "answer": "<p><b>MySQL:</b></p><pre>INSERT INTO salesman VALUES\n(5001, 'James Hoog', 'New York', 0.15),\n(5002, 'Nail Knite', 'Paris', 0.13),\n(5005, 'Pit Alex', 'London', 0.11),\n(5006, 'Mc Lyon', 'Paris', 0.14),\n(5007, 'Paul Adam', 'Rome', 0.13),\n(5003, 'Lauson Hen', 'San Jose', 0.12);</pre><p><b>Oracle SQL Developer:</b></p><pre>INSERT INTO salesman VALUES (5001, 'James Hoog', 'New York', 0.15);\nINSERT INTO salesman VALUES (5002, 'Nail Knite', 'Paris', 0.13);\nINSERT INTO salesman VALUES (5005, 'Pit Alex', 'London', 0.11);\nINSERT INTO salesman VALUES (5006, 'Mc Lyon', 'Paris', 0.14);\nINSERT INTO salesman VALUES (5007, 'Paul Adam', 'Rome', 0.13);\nINSERT INTO salesman VALUES (5003, 'Lauson Hen', 'San Jose', 0.12);\nCOMMIT;</pre>"
       }
     ]
   },
@@ -25,7 +25,7 @@
     "questions": [
       {
         "question": "Write SQL command to create CUSTOMER table",
-        "answer": "<pre>CREATE TABLE customer (\n  customer_id INT PRIMARY KEY,\n  cust_name VARCHAR(25),\n  city VARCHAR(25),\n  grade INT,\n  salesman_id INT\n);</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>CREATE TABLE customer (\n  customer_id INT PRIMARY KEY,\n  cust_name VARCHAR(25),\n  city VARCHAR(25),\n  grade INT,\n  salesman_id INT\n);</pre><p><b>Oracle SQL Developer:</b></p><pre>CREATE TABLE customer (\n  customer_id NUMBER(4) PRIMARY KEY,\n  cust_name VARCHAR2(25),\n  city VARCHAR2(25),\n  grade NUMBER(3),\n  salesman_id NUMBER(4)\n);</pre>"
       }
     ]
   },
@@ -34,8 +34,8 @@
     "title": "Insert Values into CUSTOMER Table",
     "questions": [
       {
-        "question": "Write SQL command to insert records into CUSTOMER table",
-        "answer": "<pre>INSERT INTO customer VALUES\n(3002, 'Nick Rimando', 'New York', 100, 5001),\n(3007, 'Brad Davis', 'New York', 200, 5001),\n(3005, 'Graham Zusi', 'California', 200, 5002),\n(3008, 'Julien Simon', 'London', 300, 5002),\n(3004, 'Fabian Johnson', 'Paris', 300, 5006),\n(3009, 'Geoff Cameron', 'Berlin', 100, 5003),\n(3003, 'Jozy Altidore', 'Moscow', 200, 5007),\n(3001, 'Brad Guzan', 'London', NULL, 5005);</pre>"
+        "question": "Insert records into CUSTOMER table",
+        "answer": "<p><b>MySQL:</b></p><pre>INSERT INTO customer VALUES\n(3002, 'Nick Rimando', 'New York', 100, 5001),\n(3007, 'Brad Davis', 'New York', 200, 5001),\n(3005, 'Graham Zusi', 'California', 200, 5002),\n(3008, 'Julien Simon', 'London', 300, 5002),\n(3004, 'Fabian Johnson', 'Paris', 300, 5006),\n(3009, 'Geoff Cameron', 'Berlin', 100, 5003),\n(3003, 'Jozy Altidore', 'Moscow', 200, 5007),\n(3001, 'Brad Guzan', 'London', NULL, 5005);</pre><p><b>Oracle SQL Developer:</b></p><pre>INSERT INTO customer VALUES (3002, 'Nick Rimando', 'New York', 100, 5001);\nINSERT INTO customer VALUES (3007, 'Brad Davis', 'New York', 200, 5001);\nINSERT INTO customer VALUES (3005, 'Graham Zusi', 'California', 200, 5002);\nINSERT INTO customer VALUES (3008, 'Julien Simon', 'London', 300, 5002);\nINSERT INTO customer VALUES (3004, 'Fabian Johnson', 'Paris', 300, 5006);\nINSERT INTO customer VALUES (3009, 'Geoff Cameron', 'Berlin', 100, 5003);\nINSERT INTO customer VALUES (3003, 'Jozy Altidore', 'Moscow', 200, 5007);\nINSERT INTO customer VALUES (3001, 'Brad Guzan', 'London', NULL, 5005);\nCOMMIT;</pre>"
       }
     ]
   },
@@ -45,7 +45,7 @@
     "questions": [
       {
         "question": "Find salesman and customer who live in the same city",
-        "answer": "<pre>SELECT s.name AS salesman_name, c.cust_name, s.city\nFROM salesman s\nJOIN customer c\nON s.city = c.city;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT s.name AS salesman_name, c.cust_name, s.city\nFROM salesman s\nJOIN customer c\nON s.city = c.city;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT s.name AS salesman_name, c.cust_name, s.city\nFROM salesman s\nJOIN customer c\nON s.city = c.city;</pre>"
       }
     ]
   },
@@ -55,7 +55,7 @@
     "questions": [
       {
         "question": "Find salesman and the customers he represents",
-        "answer": "<pre>SELECT s.name AS salesman_name, c.cust_name\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT s.name AS salesman_name, c.cust_name\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT s.name AS salesman_name, c.cust_name\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id;</pre>"
       }
     ]
   },
@@ -65,7 +65,7 @@
     "questions": [
       {
         "question": "Find salesmen whose commission is more than 12 percent",
-        "answer": "<pre>SELECT name, commission\nFROM salesman\nWHERE commission > 0.12;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT name, commission\nFROM salesman\nWHERE commission > 0.12;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT name, commission\nFROM salesman\nWHERE commission > 0.12;</pre>"
       }
     ]
   },
@@ -74,8 +74,8 @@
     "title": "Customers and Salesman from Different Cities",
     "questions": [
       {
-        "question": "Find customers and salesman where city is different and commission is more than 12 percent",
-        "answer": "<pre>SELECT c.cust_name, s.name AS salesman_name,\n       c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city\nAND s.commission > 0.12;</pre>"
+        "question": "Find customers and salesman where cities are different and commission > 12%",
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT c.cust_name, s.name AS salesman_name,\n       c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city\nAND s.commission > 0.12;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT c.cust_name, s.name AS salesman_name,\n       c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city\nAND s.commission > 0.12;</pre>"
       }
     ]
   },
@@ -85,17 +85,17 @@
     "questions": [
       {
         "question": "Find customers who do not live in the same city as their salesman",
-        "answer": "<pre>SELECT c.cust_name, c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT c.cust_name, c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT c.cust_name, c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city;</pre>"
       }
     ]
   },
   {
     "assignment": "SQL Query 10",
-    "title": "Customer and Salesman Full Details",
+    "title": "Customer and Salesman Details",
     "questions": [
       {
-        "question": "Display customer name, customer city, grade, salesman name and salesman city",
-        "answer": "<pre>SELECT c.cust_name, c.city AS customer_city, c.grade,\n       s.name AS salesman_name, s.city AS salesman_city\nFROM customer c\nJOIN salesman s\nON c.salesman_id = s.salesman_id;</pre>"
+        "question": "Display customer name, city, grade, salesman name and city",
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT c.cust_name, c.city, c.grade, s.name AS salesman_name, s.city AS salesman_city\nFROM customer c\nJOIN salesman s\nON c.salesman_id = s.salesman_id;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT c.cust_name, c.city, c.grade, s.name AS salesman_name, s.city AS salesman_city\nFROM customer c\nJOIN salesman s\nON c.salesman_id = s.salesman_id;</pre>"
       }
     ]
   },
@@ -105,7 +105,7 @@
     "questions": [
       {
         "question": "Find customers with grade less than 300",
-        "answer": "<pre>SELECT cust_name, grade\nFROM customer\nWHERE grade < 300;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT cust_name, grade\nFROM customer\nWHERE grade < 300;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT cust_name, grade\nFROM customer\nWHERE grade < 300;</pre>"
       }
     ]
   },
@@ -115,7 +115,7 @@
     "questions": [
       {
         "question": "Display customers ordered by customer_id",
-        "answer": "<pre>SELECT *\nFROM customer\nORDER BY customer_id;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT * FROM customer ORDER BY customer_id;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT * FROM customer ORDER BY customer_id;</pre>"
       }
     ]
   },
@@ -125,7 +125,7 @@
     "questions": [
       {
         "question": "Find customers who have not placed any order",
-        "answer": "<pre>SELECT cust_name\nFROM customer\nWHERE grade IS NULL;</pre>"
+        "answer": "<p><b>MySQL:</b></p><pre>SELECT cust_name FROM customer WHERE grade IS NULL;</pre><p><b>Oracle SQL Developer:</b></p><pre>SELECT cust_name FROM customer WHERE grade IS NULL;</pre>"
       }
     ]
   }
