@@ -1,0 +1,132 @@
+[
+  {
+    "assignment": "SQL Query 01",
+    "title": "Create SALESMAN Table",
+    "questions": [
+      {
+        "question": "Write SQL command to create SALESMAN table",
+        "answer": "<pre>CREATE TABLE salesman (\n  salesman_id INT PRIMARY KEY,\n  name VARCHAR(25),\n  city VARCHAR(25),\n  commission DECIMAL(4,2)\n);</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 02",
+    "title": "Insert Values into SALESMAN Table",
+    "questions": [
+      {
+        "question": "Write SQL command to insert records into SALESMAN table",
+        "answer": "<pre>INSERT INTO salesman VALUES\n(5001, 'James Hoog', 'New York', 0.15),\n(5002, 'Nail Knite', 'Paris', 0.13),\n(5005, 'Pit Alex', 'London', 0.11),\n(5006, 'Mc Lyon', 'Paris', 0.14),\n(5007, 'Paul Adam', 'Rome', 0.13),\n(5003, 'Lauson Hen', 'San Jose', 0.12);</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 03",
+    "title": "Create CUSTOMER Table",
+    "questions": [
+      {
+        "question": "Write SQL command to create CUSTOMER table",
+        "answer": "<pre>CREATE TABLE customer (\n  customer_id INT PRIMARY KEY,\n  cust_name VARCHAR(25),\n  city VARCHAR(25),\n  grade INT,\n  salesman_id INT\n);</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 04",
+    "title": "Insert Values into CUSTOMER Table",
+    "questions": [
+      {
+        "question": "Write SQL command to insert records into CUSTOMER table",
+        "answer": "<pre>INSERT INTO customer VALUES\n(3002, 'Nick Rimando', 'New York', 100, 5001),\n(3007, 'Brad Davis', 'New York', 200, 5001),\n(3005, 'Graham Zusi', 'California', 200, 5002),\n(3008, 'Julien Simon', 'London', 300, 5002),\n(3004, 'Fabian Johnson', 'Paris', 300, 5006),\n(3009, 'Geoff Cameron', 'Berlin', 100, 5003),\n(3003, 'Jozy Altidore', 'Moscow', 200, 5007),\n(3001, 'Brad Guzan', 'London', NULL, 5005);</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 05",
+    "title": "Salesman and Customer from Same City",
+    "questions": [
+      {
+        "question": "Find salesman and customer who live in the same city",
+        "answer": "<pre>SELECT s.name AS salesman_name, c.cust_name, s.city\nFROM salesman s\nJOIN customer c\nON s.city = c.city;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 06",
+    "title": "Salesman and Customers He Represents",
+    "questions": [
+      {
+        "question": "Find salesman and the customers he represents",
+        "answer": "<pre>SELECT s.name AS salesman_name, c.cust_name\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 07",
+    "title": "Salesmen with Commission More Than 12%",
+    "questions": [
+      {
+        "question": "Find salesmen whose commission is more than 12 percent",
+        "answer": "<pre>SELECT name, commission\nFROM salesman\nWHERE commission > 0.12;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 08",
+    "title": "Customers and Salesman from Different Cities",
+    "questions": [
+      {
+        "question": "Find customers and salesman where city is different and commission is more than 12 percent",
+        "answer": "<pre>SELECT c.cust_name, s.name AS salesman_name,\n       c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city\nAND s.commission > 0.12;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 09",
+    "title": "Customers Not Living in Same City as Salesman",
+    "questions": [
+      {
+        "question": "Find customers who do not live in the same city as their salesman",
+        "answer": "<pre>SELECT c.cust_name, c.city AS customer_city, s.city AS salesman_city\nFROM salesman s\nJOIN customer c\nON s.salesman_id = c.salesman_id\nWHERE s.city <> c.city;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 10",
+    "title": "Customer and Salesman Full Details",
+    "questions": [
+      {
+        "question": "Display customer name, customer city, grade, salesman name and salesman city",
+        "answer": "<pre>SELECT c.cust_name, c.city AS customer_city, c.grade,\n       s.name AS salesman_name, s.city AS salesman_city\nFROM customer c\nJOIN salesman s\nON c.salesman_id = s.salesman_id;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 11",
+    "title": "Customers with Grade Less Than 300",
+    "questions": [
+      {
+        "question": "Find customers with grade less than 300",
+        "answer": "<pre>SELECT cust_name, grade\nFROM customer\nWHERE grade < 300;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 12",
+    "title": "Order Customers by Customer ID",
+    "questions": [
+      {
+        "question": "Display customers ordered by customer_id",
+        "answer": "<pre>SELECT *\nFROM customer\nORDER BY customer_id;</pre>"
+      }
+    ]
+  },
+  {
+    "assignment": "SQL Query 13",
+    "title": "Customers Without Orders",
+    "questions": [
+      {
+        "question": "Find customers who have not placed any order",
+        "answer": "<pre>SELECT cust_name\nFROM customer\nWHERE grade IS NULL;</pre>"
+      }
+    ]
+  }
+]
