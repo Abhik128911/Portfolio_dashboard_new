@@ -1,0 +1,1664 @@
+{
+  "Software Project Management": [
+    {
+      "question": "Identify among the following methods the commonly used one for collecting data during software project management.[cite: 3]",
+      "options": [
+        "Guesswork",
+        "Surveying stakeholders",
+        "Ignoring data collection",
+        "Random sampling"
+      ],
+      "answer": "Surveying stakeholders"
+    },
+    {
+      "question": "Identify the primary purpose of collecting data in software project management.[cite: 3]",
+      "options": [
+        "To increase project costs",
+        "To complicate decision-making",
+        "To inform project planning and decision-making",
+        "To delay project completion"
+      ],
+      "answer": "To inform project planning and decision-making"
+    },
+    {
+      "question": "Select which of the following is NOT a common source of data in software project management?[cite: 3]",
+      "options": [
+        "Stakeholder feedback",
+        "Historical project data",
+        "Random internet searches",
+        "Performance metrics"
+      ],
+      "answer": "Random internet searches"
+    },
+    {
+      "question": "Select the significance of using data-driven approaches in software project management.[cite: 3]",
+      "options": [
+        "It reduces the need for stakeholder involvement",
+        "It increases project risks",
+        "It improves decision-making accuracy and project outcomes",
+        "It slows down the project timeline"
+      ],
+      "answer": "It improves decision-making accuracy and project outcomes"
+    },
+    {
+      "question": "Choose the purpose of project evaluation.[cite: 3]",
+      "options": [
+        "To initiate a project",
+        "To monitor project progress",
+        "To assess project outcomes and performance",
+        "To close a project"
+      ],
+      "answer": "To assess project outcomes and performance"
+    },
+    {
+      "question": "Name the primary purpose of project tracking in software project management.[cite: 3]",
+      "options": [
+        "Remembering project tasks",
+        "Understanding project requirements",
+        "Monitoring project progress",
+        "Planning project timelines"
+      ],
+      "answer": "Monitoring project progress"
+    },
+    {
+      "question": "Name the key benefit of utilizing project tracking tools in software project management.[cite: 3]",
+      "options": [
+        "Generating project documentation",
+        "Enhancing team collaboration",
+        "Automating code development",
+        "Monitoring and controlling project activities"
+      ],
+      "answer": "Monitoring and controlling project activities"
+    },
+    {
+      "question": "Name the primary purpose of change control in software project management.[cite: 3]",
+      "options": [
+        "Defining project scope",
+        "Implementing new technologies",
+        "Managing and controlling changes to project baselines",
+        "Documenting project risks"
+      ],
+      "answer": "Managing and controlling changes to project baselines"
+    },
+    {
+      "question": "Name the main objective of Software Configuration Management (SCM) in software project management.[cite: 3]",
+      "options": [
+        "Writing code efficiently",
+        "Managing changes to project artifacts",
+        "Conducting system testing",
+        "Creating project documentation"
+      ],
+      "answer": "Managing changes to project artifacts"
+    },
+    {
+      "question": "Select the SCM activity which is associated with ensuring that the project team is using the correct and approved versions of software components.[cite: 3]",
+      "options": [
+        "Version control",
+        "Change control",
+        "Code review",
+        "Requirement gathering"
+      ],
+      "answer": "Version control"
+    },
+    {
+      "question": "State the primary goal of managing contracts in software project management.[cite: 3]",
+      "options": [
+        "Writing project documentation",
+        "Ensuring project security",
+        "Establishing legal obligations and expectations",
+        "Conducting system testing"
+      ],
+      "answer": "Establishing legal obligations and expectations"
+    },
+    {
+      "question": "Identify the main aspect of managing contracts which is concerned with resolving disputes and ensuring that both parties adhere to the agreed-upon terms.[cite: 3]",
+      "options": [
+        "Contract negotiation",
+        "Contract monitoring",
+        "Contract closure",
+        "Contract enforcement"
+      ],
+      "answer": "Contract enforcement"
+    },
+    {
+      "question": "Match the primary purpose of contract management in software project management.[cite: 3]",
+      "options": [
+        "Developing project schedules",
+        "Creating project documentation",
+        "Establishing and maintaining vendor relationships",
+        "Conducting system testing"
+      ],
+      "answer": "Establishing and maintaining vendor relationships"
+    },
+    {
+      "question": "Identify the aspect of contract management involves reviewing and approving changes to the terms and conditions of the contract.[cite: 3]",
+      "options": [
+        "Contract negotiation",
+        "Contract monitoring",
+        "Contract closure",
+        "Contract modification"
+      ],
+      "answer": "Contract modification"
+    },
+    {
+      "question": "Identify the Critical Path in the context of the Critical Path Method (CPM)?[cite: 3]",
+      "options": [
+        "Longest path in the network",
+        "Shortest path in the network",
+        "Path with maximum resources",
+        "Path with minimum duration"
+      ],
+      "answer": "Longest path in the network"
+    },
+    {
+      "question": "Select, Which of the following is a key purpose of using the Critical Path Method in project management?[cite: 3]",
+      "options": [
+        "Resource allocation",
+        "Time and cost estimation",
+        "Quality assurance",
+        "Risk management"
+      ],
+      "answer": "Time and cost estimation"
+    },
+    {
+      "question": "Choose from the following where in CPM, the term \"float\" or \"slack\" act as:[cite: 3]",
+      "options": [
+        "The amount of time an activity can be delayed without delaying the project",
+        "The total duration of the project",
+        "The time taken by a critical activity",
+        "The duration of a non-critical activity"
+      ],
+      "answer": "The amount of time an activity can be delayed without delaying the project"
+    },
+    {
+      "question": "Predict the significance of the \"dummy activity\" in a CPM network.[cite: 3]",
+      "options": [
+        "Represents an activity with no duration",
+        "Represents a critical path activity",
+        "Represents a high-risk activity",
+        "Represents an optional activity"
+      ],
+      "answer": "Represents an activity with no duration"
+    },
+    {
+      "question": "Judge the term \"critical path drag\" refer to in CPM analysis.[cite: 3]",
+      "options": [
+        "The total float of an activity",
+        "The impact of a critical path activity on the project duration",
+        "The duration of the critical path",
+        "The resource constraints on the project"
+      ],
+      "answer": "The impact of a critical path activity on the project duration"
+    },
+    {
+      "question": "Choose the main advantage of using the Critical Path Method in project management?[cite: 3]",
+      "options": [
+        "Improved communication among team members",
+        "Enhanced risk management",
+        "Accurate estimation of project duration",
+        "Effective resource allocation"
+      ],
+      "answer": "Accurate estimation of project duration"
+    },
+    {
+      "question": "Choose, which technique is commonly used to estimate project duration by considering optimistic, pessimistic, and most likely time estimates for each activity?[cite: 3]",
+      "options": [
+        "Critical Path Method (CPM)",
+        "PERT (Program Evaluation and Review Technique)",
+        "Monte Carlo Simulation",
+        "Earned Value Management (EVM)"
+      ],
+      "answer": "PERT (Program Evaluation and Review Technique)"
+    },
+    {
+      "question": "Choose: Monte Carlo simulation gets its name from which of the following:[cite: 3]",
+      "options": [
+        "Analysis",
+        "Data collection",
+        "Model formulation",
+        "Random-number assignment"
+      ],
+      "answer": "Random-number assignment"
+    },
+    {
+      "question": "Choose: Simulation models can be used to obtain operating characteristic estimates in less time than with the real system using a feature of simulation called:[cite: 3]",
+      "options": [
+        "Microseconds",
+        "Warp speed",
+        "Time compression",
+        "None of these"
+      ],
+      "answer": "Time compression"
+    },
+    {
+      "question": "Select the following statistical methods are commonly used to analyze simulation results.[cite: 3]",
+      "options": [
+        "Regression analysis",
+        "t-tests",
+        "Analysis of variance",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "Predict a systematic attempt to determine threats to the project plan.[cite: 3]",
+      "options": [
+        "COCOMO",
+        "Software Sizing",
+        "Risk Identification",
+        "Linear Model"
+      ],
+      "answer": "Risk Identification"
+    },
+    {
+      "question": "Choose the term regarding SLOC.[cite: 3]",
+      "options": [
+        "Automated Estimation",
+        "Multiplicative",
+        "Problem Based",
+        "None of these"
+      ],
+      "answer": "Automated Estimation"
+    },
+    {
+      "question": "Choose the following are parameters involved in computing the total cost of software development project.[cite: 3]",
+      "options": [
+        "Travel and training costs",
+        "Hardware and Software costs",
+        "Effort costs",
+        "all of the above"
+      ],
+      "answer": "all of the above"
+    },
+    {
+      "question": "Write the one which is simplest Model of Software development paradigm[cite: 3]",
+      "options": [
+        "Big Bang model",
+        "Spiral Model",
+        "V-Model",
+        "Waterfall model"
+      ],
+      "answer": "Waterfall model"
+    },
+    {
+      "question": "Determine the PERT technique givesmost weightage to:[cite: 3]",
+      "options": [
+        "the most pessimistic estimate obtained",
+        "the most optimistic estimate obtained",
+        "the most likely estimate obtained",
+        "all the estimates obtained have equal weights"
+      ],
+      "answer": "the most likely estimate obtained"
+    },
+    {
+      "question": "Select the primary focus of Organizational Behavior in Software Project Management.[cite: 3]",
+      "options": [
+        "Technical specifications",
+        "Project scheduling",
+        "Human dynamics and interactions",
+        "Budget management"
+      ],
+      "answer": "Human dynamics and interactions"
+    },
+    {
+      "question": "Identify the key benefit of understanding Organizational Behavior in Software Project Management[cite: 3]",
+      "options": [
+        "Higher budget allocation",
+        "Increased project scope",
+        "Improved team collaboration and performance",
+        "Faster software development lifecycle"
+      ],
+      "answer": "Improved team collaboration and performance"
+    },
+    {
+      "question": "Select the aspect of Organizational Behavior is particularly relevant to managing software projects[cite: 3]",
+      "options": [
+        "Individual motivation",
+        "Economic theories",
+        "Political structures",
+        "Historical perspectives"
+      ],
+      "answer": "Individual motivation"
+    },
+    {
+      "question": "Identify the role that Organizational Behavior play in conflict resolution, in software project management.[cite: 3]",
+      "options": [
+        "Ignoring conflicts for faster progress",
+        "Avoiding conflicts altogether",
+        "Identifying and addressing underlying issues",
+        "Assigning blame to resolve conflicts"
+      ],
+      "answer": "Identifying and addressing underlying issues"
+    },
+    {
+      "question": "State, which Organizational Behavior concept helps in understanding how individuals adapt to change within software projects?[cite: 3]",
+      "options": [
+        "Leadership styles",
+        "Change management",
+        "Group dynamics",
+        "Organizational culture"
+      ],
+      "answer": "Change management"
+    },
+    {
+      "question": "Identify, Which method of staff selection in software project management focuses on assessing candidates' skills and expertise through practical tasks or challenges?[cite: 3]",
+      "options": [
+        "Personality tests",
+        "Panel interviews",
+        "Technical assessments",
+        "Reference checks"
+      ],
+      "answer": "Technical assessments"
+    },
+    {
+      "question": "State the primary advantage of using panel interviews in staff selection for software project management?[cite: 3]",
+      "options": [
+        "Faster decision-making",
+        "Reduced bias",
+        "Cost-effectiveness",
+        "Candidate flexibility"
+      ],
+      "answer": "Reduced bias"
+    },
+    {
+      "question": "Identify Which staff selection method in software project management involves evaluating candidates' past performance and qualifications through conversations with previous employers or colleagues?[cite: 3]",
+      "options": [
+        "Personality tests",
+        "Technical assessments",
+        "Panel interviews",
+        "Reference checks"
+      ],
+      "answer": "Reference checks"
+    },
+    {
+      "question": "Select the role of personality tests in staff selection for software project management?[cite: 3]",
+      "options": [
+        "Assessing technical skills",
+        "Evaluating communication abilities",
+        "Understanding candidates' work preferences and behavior",
+        "Identifying project management experience"
+      ],
+      "answer": "Understanding candidates' work preferences and behavior"
+    },
+    {
+      "question": "Select the method of staff selection in software project management focuses on evaluating candidates' compatibility with the organizational culture and team dynamics[cite: 3]",
+      "options": [
+        "Technical assessments",
+        "Personality tests",
+        "Panel interviews",
+        "Reference checks"
+      ],
+      "answer": "Personality tests"
+    },
+    {
+      "question": "Identify the primary purpose of project tracking in software project management.[cite: 3]",
+      "options": [
+        "To create project documentation",
+        "To monitor progress and performance",
+        "To define project requirements",
+        "To design the project architecture"
+      ],
+      "answer": "To monitor progress and performance"
+    },
+    {
+      "question": "Examine of the following is a key benefit of using a Gantt chart for project tracking.[cite: 3]",
+      "options": [
+        "Real-time collaboration",
+        "Resource allocation",
+        "Risk identification",
+        "Task dependencies visualization"
+      ],
+      "answer": "Task dependencies visualization"
+    },
+    {
+      "question": "Match the role of a burndown chart in project tracking.[cite: 3]",
+      "options": [
+        "Identifying project risks",
+        "Tracking team member attendance",
+        "Monitoring project progress over time",
+        "Assessing code quality"
+      ],
+      "answer": "Monitoring project progress over time"
+    },
+    {
+      "question": "Match the term \"milestone\" refer to -[cite: 3]",
+      "options": [
+        "A project manager's role",
+        "A significant project event or achievement",
+        "A software development methodology",
+        "A type of project documentation"
+      ],
+      "answer": "A significant project event or achievement"
+    },
+    {
+      "question": "Select the metric which is commonly used to measure project performance in terms of cost and schedule.[cite: 3]",
+      "options": [
+        "Return on investment (ROI)",
+        "Earned Value Management (EVM)",
+        "Scrum Velocity",
+        "Code Review Efficiency"
+      ],
+      "answer": "Earned Value Management (EVM)"
+    },
+    {
+      "question": "Identify the purpose of a Service Level Agreement (SLA) in contract management.[cite: 3]",
+      "options": [
+        "To define the financial terms of the contract",
+        "To establish the timeline for project completion",
+        "To outline the agreed-upon performance standards and expectations",
+        "To specify the termination clauses in case of contract breach"
+      ],
+      "answer": "To outline the agreed-upon performance standards and expectations"
+    },
+    {
+      "question": "Select from the following is a key element in a well-structured contract management plan?[cite: 3]",
+      "options": [
+        "Ignoring risk assessment",
+        "Ambiguous terms and conditions",
+        "Clear communication channels",
+        "Lack of performance monitoring"
+      ],
+      "answer": "Clear communication channels"
+    },
+    {
+      "question": "Observe the significance of a force majeure clause in a contract.[cite: 3]",
+      "options": [
+        "It defines the payment schedule",
+        "It outlines the penalties for non-compliance",
+        "It addresses unforeseen events or circumstances beyond control",
+        "It specifies the intellectual property rights"
+      ],
+      "answer": "It addresses unforeseen events or circumstances beyond control"
+    },
+    {
+      "question": "Identify of the following best describes the significance of Software Project Management (SPM)[cite: 3]",
+      "options": [
+        "It ensures the timely completion of software projects",
+        "It reduces the cost of software development.",
+        "It ensures the quality of software products.",
+        "All of the above."
+      ],
+      "answer": "All of the above."
+    },
+    {
+      "question": "Identify the following activities are typically included in Software Project Management[cite: 3]",
+      "options": [
+        "Requirement gathering and analysis.",
+        "Resource allocation and scheduling",
+        "Risk management and mitigation",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "Write the primary goal of risk management in software project management.[cite: 3]",
+      "options": [
+        "To eliminate all project risks",
+        "To identify, assess, and mitigate risks.",
+        "To ignore potential risks and focus on development",
+        "To transfer all risks to external parties."
+      ],
+      "answer": "To identify, assess, and mitigate risks."
+    },
+    {
+      "question": "Select the best definition of project portfolio of a software development organization.[cite: 3]",
+      "options": [
+        "All projects that are being carried out by the organization for a specific customer.",
+        "All projects that are being carried out within an organization",
+        "All projects that have been started in the same financial year.",
+        "All projects in the organizations that provide profit above certain amount."
+      ],
+      "answer": "All projects that have been started in the same financial year."
+    },
+    {
+      "question": "Define the following is an example of an Agile methodology used in Software Project Management[cite: 3]",
+      "options": [
+        "Waterfall",
+        "Scrum",
+        "PRINCE2",
+        "Six Sigma"
+      ],
+      "answer": "Scrum"
+    },
+    {
+      "question": "Indicate to the Agile methodology emphasizes continuous improvement through regular retrospectives[cite: 3]",
+      "options": [
+        "Scrum",
+        "Kanban",
+        "Lean",
+        "Extreme Programming (XP)"
+      ],
+      "answer": "Scrum"
+    },
+    {
+      "question": "Select the activity that is not part of maintenance.[cite: 3]",
+      "options": [
+        "Installation",
+        "Security issues",
+        "Coding",
+        "None of the above"
+      ],
+      "answer": "Security issues"
+    },
+    {
+      "question": "Select the primary purpose of setting objectives in Software Project Management (SPM)[cite: 3]",
+      "options": [
+        "To establish project timelines",
+        "To allocate resources efficiently",
+        "To define clear, achievable goals",
+        "To manage project risks"
+      ],
+      "answer": "To define clear, achievable goals"
+    },
+    {
+      "question": "Select to the following is NOT a characteristic of well-defined project objectives[cite: 3]",
+      "options": [
+        "Measurable",
+        "Ambiguous",
+        "Time-bound",
+        "Realistic"
+      ],
+      "answer": "Ambiguous"
+    },
+    {
+      "question": "Identify the aspect of project objectives ensures that they can be evaluated for success or failure[cite: 3]",
+      "options": [
+        "Measurability",
+        "Relevance",
+        "Specificity",
+        "Flexibility"
+      ],
+      "answer": "Measurability"
+    },
+    {
+      "question": "Select the term refers to the practice of ensuring that project objectives are attainable within the given constraints[cite: 3]",
+      "options": [
+        "Project feasibility",
+        "Objective alignment",
+        "Scope management",
+        "Resource optimization"
+      ],
+      "answer": "Project feasibility"
+    },
+    {
+      "question": "Choose the Answer: Microsoft's Windows Operating System is an example of[cite: 3]",
+      "options": [
+        "Domain specific software product",
+        "Outsourced product",
+        "Generic software product",
+        "Software service"
+      ],
+      "answer": "Domain specific software product"
+    },
+    {
+      "question": "Select from the following where the \"Management Control\" refer to in the context of management principles.[cite: 3]",
+      "options": [
+        "Implementing strict rules and regulations",
+        "Monitoring and influencing the behavior of individuals and systems within an organization",
+        "Centralizing decision-making processes",
+        "Delegating all authority to lower-level managers"
+      ],
+      "answer": "Monitoring and influencing the behavior of individuals and systems within an organization"
+    },
+    {
+      "question": "Identify to the following is NOT a primary objective of management control[cite: 3]",
+      "options": [
+        "Maximizing employee autonomy",
+        "Ensuring organizational goals are achieved",
+        "Safeguarding organizational assets",
+        "Promoting operational efficiency"
+      ],
+      "answer": "Maximizing employee autonomy"
+    },
+    {
+      "question": "Select the management control technique emphasizes the use of predetermined standards and performance measures to evaluate actual performance[cite: 3]",
+      "options": [
+        "Budgetary control",
+        "Bureaucratic control",
+        "Cultural control",
+        "Clan control"
+      ],
+      "answer": "Budgetary control"
+    },
+    {
+      "question": "Select from the following where the \"market control\" functions as a form of management control.[cite: 3]",
+      "options": [
+        "Through the use of financial incentives to motivate employees",
+        "By benchmarking against competitors and market trends",
+        "By shaping organizational culture and values",
+        "Through close supervision and micromanagement"
+      ],
+      "answer": "By benchmarking against competitors and market trends"
+    },
+    {
+      "question": "Select the definition of Project Portfolio Management (PPM).[cite: 3]",
+      "options": [
+        "Managing individual projects within an organization",
+        "Managing the portfolio of investments in various projects to achieve strategic objectives",
+        "Managing the operational activities of a project",
+        "Managing project teams"
+      ],
+      "answer": "Managing the portfolio of investments in various projects to achieve strategic objectives"
+    },
+    {
+      "question": "Choose the primary goal of Project Portfolio Management[cite: 3]",
+      "options": [
+        "Maximizing the number of projects in the portfolio",
+        "Minimizing project risks",
+        "Ensuring alignment with organizational goals and strategies",
+        "Completing projects as quickly as possible"
+      ],
+      "answer": "Ensuring alignment with organizational goals and strategies"
+    },
+    {
+      "question": "Select the factor is essential for successful Project Portfolio Management[cite: 3]",
+      "options": [
+        "Including all available projects in the portfolio",
+        "Balancing the portfolio based solely on financial metrics",
+        "Prioritizing projects based on strategic objectives",
+        "Allocating resources equally to all projects"
+      ],
+      "answer": "Prioritizing projects based on strategic objectives"
+    },
+    {
+      "question": "Select the approach that involves evaluating projects based on their potential return on investment (ROI) and strategic alignment[cite: 3]",
+      "options": [
+        "Cost-benefit analysis",
+        "Project scoring model",
+        "Balanced scorecard",
+        "Net present value (NPV) analysis"
+      ],
+      "answer": "Project scoring model"
+    },
+    {
+      "question": "Select the factor is NOT typically considered during project selection in Project Portfolio Management[cite: 3]",
+      "options": [
+        "Potential return on investment (ROI)",
+        "Strategic alignment with organizational goals",
+        "Project manager's preference",
+        "Resource availability"
+      ],
+      "answer": "Project manager's preference"
+    },
+    {
+      "question": "Write the primary purpose of cost-benefit evaluation technology[cite: 3]",
+      "options": [
+        "To maximize costs and minimize benefits",
+        "To assess the feasibility of a project",
+        "To compare the costs and benefits of a project or technology",
+        "To eliminate project risks"
+      ],
+      "answer": "To compare the costs and benefits of a project or technology"
+    },
+    {
+      "question": "Select to the following is NOT typically considered a cost in cost-benefit evaluation[cite: 3]",
+      "options": [
+        "Initial investment",
+        "Operational expenses",
+        "Revenue generation",
+        "Maintenance costs"
+      ],
+      "answer": "Revenue generation"
+    },
+    {
+      "question": "Select the benefit of using cost-benefit evaluation technology in decision-making processes[cite: 3]",
+      "options": [
+        "It guarantees project success",
+        "It ensures projects are completed under budget",
+        "It provides a systematic approach to evaluate project viability",
+        "It eliminates the need for project planning"
+      ],
+      "answer": "It provides a systematic approach to evaluate project viability"
+    },
+    {
+      "question": "Identify the analysis technique that involves comparing the present value of costs and benefits over the project's lifecycle.[cite: 3]",
+      "options": [
+        "Net Present Value (NPV)",
+        "Return on Investment (ROI)",
+        "Payback Period",
+        "Internal Rate of Return (IRR)"
+      ],
+      "answer": "Net Present Value (NPV)"
+    },
+    {
+      "question": "Select the cost-benefit analysis technique that calculates the time required for a project's benefits to repay the initial investment[cite: 3]",
+      "options": [
+        "Net Present Value (NPV)",
+        "Return on Investment (ROI)",
+        "Payback Period",
+        "Internal Rate of Return (IRR)"
+      ],
+      "answer": "Payback Period"
+    },
+    {
+      "question": "Select to a positive Net Present Value (NPV) indicate in cost-benefit evaluation[cite: 3]",
+      "options": [
+        "The project will generate a profit",
+        "The project is not financially viable",
+        "The project will break even",
+        "The project will result in a loss"
+      ],
+      "answer": "The project will generate a profit"
+    },
+    {
+      "question": "Indicate to the Internal Rate of Return (IRR) differ from the Net Present Value (NPV).[cite: 3]",
+      "options": [
+        "IRR considers the time value of money, while NPV does not.",
+        "NPV calculates the percentage return on investment, while IRR does not",
+        "IRR calculates the break-even point, while NPV does not.",
+        "NPV calculates the project's profitability, while IRR measures its efficiency"
+      ],
+      "answer": "NPV calculates the project's profitability, while IRR measures its efficiency"
+    },
+    {
+      "question": "Select to the cost-benefit evaluation technique focuses on quantifying the financial return on an investment relative to its cost[cite: 3]",
+      "options": [
+        "Net Present Value (NPV)",
+        "Return on Investment (ROI)",
+        "Payback Period",
+        "Benefit-Cost Ratio (BCR)"
+      ],
+      "answer": "Return on Investment (ROI)"
+    },
+    {
+      "question": "Estimate to the sensitivity analysis be beneficial in cost-benefit evaluation[cite: 3]",
+      "options": [
+        "It provides a precise estimation of project costs.",
+        "It identifies the key variables that significantly impact project outcomes.",
+        "It eliminates the need for discounting future cash flows.",
+        "It disregards uncertainties associated with project benefits"
+      ],
+      "answer": "It identifies the key variables that significantly impact project outcomes."
+    },
+    {
+      "question": "Identify the primary objective of risk evaluation.[cite: 3]",
+      "options": [
+        "To eliminate all project risks",
+        "To identify and assess potential risks",
+        "To ignore project uncertainties",
+        "To increase project complexity"
+      ],
+      "answer": "To identify and assess potential risks"
+    },
+    {
+      "question": "Identify to the following is NOT a typical step in the risk evaluation process[cite: 3]",
+      "options": [
+        "Risk identification",
+        "Risk prioritization",
+        "Risk acceptance",
+        "Risk avoidance"
+      ],
+      "answer": "Risk avoidance"
+    },
+    {
+      "question": "Indicate to the term \"risk likelihood\" refer to in risk evaluation[cite: 3]",
+      "options": [
+        "The impact of a risk on the project",
+        "The probability of a risk occurring",
+        "The cost associated with managing a risk",
+        "The timeframe within which a risk may occur"
+      ],
+      "answer": "The probability of a risk occurring"
+    },
+    {
+      "question": "Identify the risk evaluation technique involves assigning a numerical value to the likelihood and impact of each identified risk[cite: 3]",
+      "options": [
+        "Risk matrix",
+        "Delphi technique",
+        "Monte Carlo simulation",
+        "Risk scoring"
+      ],
+      "answer": "Risk scoring"
+    },
+    {
+      "question": "Select the risk evaluation technique involves comparing the potential benefits of a risk with its associated costs[cite: 3]",
+      "options": [
+        "Cost-benefit analysis",
+        "Risk scoring",
+        "SWOT analysis",
+        "Delphi technique"
+      ],
+      "answer": "SWOT analysis"
+    },
+    {
+      "question": "Select the risk evaluation technique involves grouping risks based on their common characteristics or root causes[cite: 3]",
+      "options": [
+        "Risk matrix",
+        "Fault tree analysis",
+        "SWOT analysis",
+        "Risk categorization"
+      ],
+      "answer": "Risk categorization"
+    },
+    {
+      "question": "Choose the criteria that does not ensure success of software project.[cite: 3]",
+      "options": [
+        "On time",
+        "The agreed functionality",
+        "Within budget",
+        "Employee satisfaction"
+      ],
+      "answer": "Within budget"
+    },
+    {
+      "question": "Define the purpose of benefits realization in Strategic Program Management[cite: 3]",
+      "options": [
+        "To increase program complexity",
+        "To ensure projects are completed under budget",
+        "To ensure that anticipated benefits from the program are achieved",
+        "To minimize stakeholder involvement"
+      ],
+      "answer": "To ensure that anticipated benefits from the program are achieved"
+    },
+    {
+      "question": "Identify the estimation that is not done in planning phase.[cite: 3]",
+      "options": [
+        "Cost",
+        "Duration",
+        "Effort",
+        "Effort"
+      ],
+      "answer": "Effort"
+    },
+    {
+      "question": "Identify the significance of risk management in Strategic Program Management[cite: 3]",
+      "options": [
+        "It increases program complexity",
+        "It ensures that projects are completed under budget",
+        "It helps identify, assess, and mitigate risks that may impact program objectives",
+        "It eliminates the need for strategic alignment"
+      ],
+      "answer": "It helps identify, assess, and mitigate risks that may impact program objectives"
+    },
+    {
+      "question": "Select the primary function of a project manager.[cite: 3]",
+      "options": [
+        "Technical expertise",
+        "Conflict resolution",
+        "Team management",
+        "Budget management"
+      ],
+      "answer": "Team management"
+    },
+    {
+      "question": "Identify a characteristic of a project constraint.[cite: 3]",
+      "options": [
+        "Flexibility",
+        "Stability",
+        "Adaptable",
+        "Rigid"
+      ],
+      "answer": "Rigid"
+    },
+    {
+      "question": "Select a key aspect of project risk management.[cite: 3]",
+      "options": [
+        "Risk acceptance",
+        "Risk avoidance",
+        "Risk analysis",
+        "Risk ignorance"
+      ],
+      "answer": "Risk analysis"
+    },
+    {
+      "question": "Select the one that is not a concern of project portfolio management in software development organization.[cite: 3]",
+      "options": [
+        "Dependency among projects",
+        "Selecting new projects",
+        "Prioritization of projects for resource allocation",
+        "Marketing"
+      ],
+      "answer": "Selecting new projects"
+    },
+    {
+      "question": "Select a risk response strategy in project management.[cite: 3]",
+      "options": [
+        "Risk tolerance",
+        "Risk acceptance",
+        "Risk ignorance",
+        "Risk anticipation"
+      ],
+      "answer": "Risk anticipation"
+    },
+    {
+      "question": "Identify project stakeholder from the following.[cite: 3]",
+      "options": [
+        "Project manager",
+        "Project team",
+        "Project sponsor",
+        "Anyone affected by project"
+      ],
+      "answer": "Anyone affected by project"
+    },
+    {
+      "question": "Identify a project management framework.[cite: 3]",
+      "options": [
+        "PRINCE2",
+        "SWOT analysis",
+        "PESTLE analysis",
+        "Gantt chart"
+      ],
+      "answer": "PRINCE2"
+    },
+    {
+      "question": "Select a key component of project quality management.[cite: 3]",
+      "options": [
+        "Cost management",
+        "Quality assurance",
+        "Time management",
+        "Scope management"
+      ],
+      "answer": "Quality assurance"
+    },
+    {
+      "question": "Identify a project constraint.[cite: 3]",
+      "options": [
+        "Unlimited resources",
+        "Fixed project deadline",
+        "Flexible scope",
+        "Open-ended budget"
+      ],
+      "answer": "Fixed project deadline"
+    },
+    {
+      "question": "Select a method for estimating project duration.[cite: 3]",
+      "options": [
+        "Expert judgment",
+        "Random guessing",
+        "Wishful thinking",
+        "Coin flipping"
+      ],
+      "answer": "Expert judgment"
+    },
+    {
+      "question": "Identify project baseline.[cite: 3]",
+      "options": [
+        "Initial project plan",
+        "Final project deliverables",
+        "Project risks",
+        "Project change requests"
+      ],
+      "answer": "Initial project plan"
+    },
+    {
+      "question": "Identify a characteristic of a project manager.[cite: 3]",
+      "options": [
+        "Technical skills",
+        "Strategic thinking",
+        "Conflict avoidance",
+        "Risk taking"
+      ],
+      "answer": "Strategic thinking"
+    },
+    {
+      "question": "Select a primary objective of project procurement.[cite: 3]",
+      "options": [
+        "Cost management",
+        "Quality assurance",
+        "Team management",
+        "Risk management"
+      ],
+      "answer": "Risk management"
+    },
+    {
+      "question": "Select stakeholder analysis in project management.[cite: 3]",
+      "options": [
+        "Identification of stakeholders",
+        "Risk assessment",
+        "Project budget",
+        "Project scope"
+      ],
+      "answer": "Identification of stakeholders"
+    },
+    {
+      "question": "Choose the SDLC model that carry testing over entire development cycle.[cite: 3]",
+      "options": [
+        "Iterative waterfall model",
+        "V-model",
+        "Prototype model",
+        "Classic Waterfall model"
+      ],
+      "answer": "V-model"
+    },
+    {
+      "question": "Identify the SDLC model that utilize pair-programming.[cite: 3]",
+      "options": [
+        "Classical Waterfall model",
+        "Iterative Waterfall model",
+        "Agile model",
+        "None of the above"
+      ],
+      "answer": "Classical Waterfall model"
+    },
+    {
+      "question": "Select project deliverables from the following.[cite: 3]",
+      "options": [
+        "Project documents",
+        "Completed project tasks",
+        "Project timeline",
+        "Project risks"
+      ],
+      "answer": "Completed project tasks"
+    },
+    {
+      "question": "Identify a tool for project cost estimation.[cite: 3]",
+      "options": [
+        "Bottom-up estimation",
+        "Top-down estimation",
+        "Budget report",
+        "Project charter"
+      ],
+      "answer": "Top-down estimation"
+    },
+    {
+      "question": "Select project schedule.[cite: 3]",
+      "options": [
+        "Timeline of project tasks",
+        "Allocation of project resources",
+        "Project budget",
+        "Project scope"
+      ],
+      "answer": "Timeline of project tasks"
+    },
+    {
+      "question": "Identify a technique for project risk mitigation.[cite: 3]",
+      "options": [
+        "Avoidance",
+        "Acceptance",
+        "Ignorance",
+        "Transference"
+      ],
+      "answer": "Transference"
+    },
+    {
+      "question": "Choose an example of a parametric estimation model.[cite: 3]",
+      "options": [
+        "COCOMO II",
+        "PERT",
+        "SWOT analysis",
+        "Gantt chart"
+      ],
+      "answer": "COCOMO II"
+    },
+    {
+      "question": "Choose the characteristic of COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Measures functionality",
+        "Estimates project duration",
+        "Assesses project risks",
+        "Determines team structure"
+      ],
+      "answer": "Measures functionality"
+    },
+    {
+      "question": "Predict a key feature of a parametric productivity model.[cite: 3]",
+      "options": [
+        "Scalability",
+        "Cost estimation",
+        "Risk management",
+        "Resource allocation"
+      ],
+      "answer": "Cost estimation"
+    },
+    {
+      "question": "Choose an advantage of COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Considers non-functional aspects",
+        "Measures only size",
+        "Highly subjective",
+        "Ignores project complexity"
+      ],
+      "answer": "Measures only size"
+    },
+    {
+      "question": "Predict a characteristic of the COCOMO II model.[cite: 3]",
+      "options": [
+        "Accounts for project complexity",
+        "Only considers size",
+        "Measures project risks",
+        "Focuses solely on resources"
+      ],
+      "answer": "Accounts for project complexity"
+    },
+    {
+      "question": "Choose a factor considered in the COCOMO II model.[cite: 3]",
+      "options": [
+        "Development platform",
+        "Team communication",
+        "Stakeholder satisfaction",
+        "Market trends"
+      ],
+      "answer": "Development platform"
+    },
+    {
+      "question": "Predict a benefit of using parametric productivity models.[cite: 3]",
+      "options": [
+        "Consistency in estimating",
+        "Subjectivity in estimation",
+        "Resource inefficiency",
+        "Cost overrun"
+      ],
+      "answer": "Consistency in estimating"
+    },
+    {
+      "question": "Choose a limitation of COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Complexity evaluation",
+        "Size-based estimation",
+        "Ignores functionality changes",
+        "Accounts for all project aspects"
+      ],
+      "answer": "Ignores functionality changes"
+    },
+    {
+      "question": "Choose a drawback of using parametric estimation models.[cite: 3]",
+      "options": [
+        "Lack of flexibility",
+        "Subjective estimation",
+        "Inaccurate cost estimates",
+        "Overemphasis on size"
+      ],
+      "answer": "Lack of flexibility"
+    },
+    {
+      "question": "Predict an advantage of COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Detailed functionality measurement",
+        "Complexity assessment",
+        "Biased towards large projects",
+        "Ignores project scope"
+      ],
+      "answer": "Complexity assessment"
+    },
+    {
+      "question": "Predict a key aspect of COCOMO II.[cite: 3]",
+      "options": [
+        "Size and complexity-based estimation",
+        "Subjective estimation",
+        "Risk assessment",
+        "Schedule adherence"
+      ],
+      "answer": "Size and complexity-based estimation"
+    },
+    {
+      "question": "Choose a factor not accounted for in COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Project duration",
+        "Project complexity",
+        "Functional requirements",
+        "Functional requirements"
+      ],
+      "answer": "Project duration"
+    },
+    {
+      "question": "Predict the SDLC model that lacks the characteristics of iterative software development model.[cite: 3]",
+      "options": [
+        "Spiral",
+        "Agile",
+        "Classical Waterfall model",
+        "Evolutionary model"
+      ],
+      "answer": "Spiral"
+    },
+    {
+      "question": "Choose an element considered in COCOMO II.[cite: 3]",
+      "options": [
+        "Productivity",
+        "Team size",
+        "Technical specifications",
+        "Customer satisfaction"
+      ],
+      "answer": "Productivity"
+    },
+    {
+      "question": "Choose a parameter accounted for in COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Functional size",
+        "Project duration",
+        "Risk management",
+        "Team motivation"
+      ],
+      "answer": "Functional size"
+    },
+    {
+      "question": "Identify the phase responsible for unit testing also in waterfall SDLC model.[cite: 3]",
+      "options": [
+        "Coding",
+        "Testing",
+        "Design",
+        "Maintenance"
+      ],
+      "answer": "Coding"
+    },
+    {
+      "question": "Choose a consideration in COSMIC Full Function Points.[cite: 3]",
+      "options": [
+        "Functional requirements",
+        "Technical debt",
+        "Market analysis",
+        "Team communication"
+      ],
+      "answer": "Functional requirements"
+    },
+    {
+      "question": "Predict a characteristic of COCOMO II.[cite: 3]",
+      "options": [
+        "Cost drivers",
+        "Size-based estimation",
+        "Ignores project complexity",
+        "Considers only duration"
+      ],
+      "answer": "Cost drivers"
+    },
+    {
+      "question": "Choose a limitation of COCOMO II.[cite: 3]",
+      "options": [
+        "Subjectivity in estimation",
+        "Flexibility in estimation",
+        "Ignores project complexity",
+        "Comprehensive estimation"
+      ],
+      "answer": "Ignores project complexity"
+    },
+    {
+      "question": "Choose the SDLC model that supports Extreme programming.[cite: 3]",
+      "options": [
+        "Agile model",
+        "V-model",
+        "Classic Waterfall model",
+        "All of the above"
+      ],
+      "answer": "Agile model"
+    },
+    {
+      "question": "Predict a characteristic of the Waterfall model.[cite: 3]",
+      "options": [
+        "Sequential phases",
+        "Iterative development",
+        "Continuous integration",
+        "Customer collaboration"
+      ],
+      "answer": "Sequential phases"
+    },
+    {
+      "question": "Choose a feature of the Agile model.[cite: 3]",
+      "options": [
+        "Iterative development",
+        "Sequential phases",
+        "Big bang deployment",
+        "Heavy documentation"
+      ],
+      "answer": "Iterative development"
+    },
+    {
+      "question": "Predict a benefit of the Spiral model.[cite: 3]",
+      "options": [
+        "Risk management",
+        "Quick project completion",
+        "Limited feedback",
+        "Linear progression"
+      ],
+      "answer": "Risk management"
+    },
+    {
+      "question": "Identify the feedback path that is not present in iterative waterfall model.[cite: 3]",
+      "options": [
+        "Design phase to feasibility study phase",
+        "Coding phase to design phase",
+        "Testing phase to design phase",
+        "All the above"
+      ],
+      "answer": "All the above"
+    },
+    {
+      "question": "Predict a characteristic of the V-Model.[cite: 3]",
+      "options": [
+        "Emphasizes testing",
+        "Customer collaboration",
+        "Continuous integration",
+        "Iterative development"
+      ],
+      "answer": "Emphasizes testing"
+    },
+    {
+      "question": "Predict the SDLC model that can be considered to be the most effective for determination of exact customer requirements.[cite: 3]",
+      "options": [
+        "Iterative Waterfall model",
+        "V-model",
+        "Prototype model",
+        "Classical Waterfall model"
+      ],
+      "answer": "Iterative Waterfall model"
+    },
+    {
+      "question": "Predict an advantage of the Iterative model.[cite: 3]",
+      "options": [
+        "Customer feedback",
+        "Sequential development",
+        "Fixed requirements",
+        "Linear progression"
+      ],
+      "answer": "Customer feedback"
+    },
+    {
+      "question": "Choose a feature of the Prototype model.[cite: 3]",
+      "options": [
+        "Early feedback",
+        "Sequential development",
+        "Limited customer involvement",
+        "No early validation"
+      ],
+      "answer": "Early feedback"
+    },
+    {
+      "question": "Choose a characteristic of the Spiral model.[cite: 3]",
+      "options": [
+        "Risk-driven development",
+        "Sequential development",
+        "Fixed requirements",
+        "Limited feedback"
+      ],
+      "answer": "Risk-driven development"
+    },
+    {
+      "question": "Identify the activity that spans all the stages of software development life cycle (SDLC).[cite: 3]",
+      "options": [
+        "Coding",
+        "Testing",
+        "Testing",
+        "Design"
+      ],
+      "answer": "Coding"
+    },
+    {
+      "question": "Predict from the following which is not a component of risk management?[cite: 3]",
+      "options": [
+        "Risk Identification",
+        "Risk Analysis",
+        "Risk Celebration",
+        "Risk Mitigation"
+      ],
+      "answer": "Risk Celebration"
+    },
+    {
+      "question": "Predict Monte Carlo simulation primarily used for from the following[cite: 3]",
+      "options": [
+        "Deterministic problem-solving",
+        "Predicting exact future outcomes",
+        "Estimating uncertainty and risk in decision-making",
+        "Eliminating randomness from data"
+      ],
+      "answer": "Estimating uncertainty and risk in decision-making"
+    },
+    {
+      "question": "Choose the amount of resources of each kind that are to be assigned to a specific activity in a certain time period[cite: 3]",
+      "options": [
+        "Resource leveling",
+        "Resource prioritizing",
+        "Resource loading",
+        "Resource Generation"
+      ],
+      "answer": "Resource loading"
+    },
+    {
+      "question": "Choose correct option from the given context: Simulate the activities, and data that allow information flow in a project, frequently computerized, in[cite: 3]",
+      "options": [
+        "PMID",
+        "PMIS",
+        "PMOS",
+        "PMOD"
+      ],
+      "answer": "PMIS"
+    },
+    {
+      "question": "Select an essential component of effective team dynamics[cite: 3]",
+      "options": [
+        "Avoiding conflict at all costs",
+        "Lack of diversity within the team",
+        "Encouraging open communication",
+        "Micromanaging team members"
+      ],
+      "answer": "Encouraging open communication"
+    },
+    {
+      "question": "Select the purpose of providing opportunities for growth and development in the workplace represent[cite: 3]",
+      "options": [
+        "To foster a positive work environment",
+        "To empower employees with autonomy",
+        "To enhance employee motivation and engagement",
+        "To promote work-life balance"
+      ],
+      "answer": "To enhance employee motivation and engagement"
+    },
+    {
+      "question": "Select the following factors contributes to creating a positive work environment[cite: 3]",
+      "options": [
+        "Micromanagement",
+        "Lack of communication",
+        "Trust, respect, and collaboration",
+        "Limited opportunities for career advancement"
+      ],
+      "answer": "Trust, respect, and collaboration"
+    },
+    {
+      "question": "Select the purpose of conducting regular safety training for employees indicate[cite: 3]",
+      "options": [
+        "To enhance awareness of potential hazards and safe practices",
+        "To decrease productivity",
+        "To increase workplace stress",
+        "To encourage risk-taking behavior"
+      ],
+      "answer": "To enhance awareness of potential hazards and safe practices"
+    },
+    {
+      "question": "Identify the importance of ethical behavior in the workplace[cite: 3]",
+      "options": [
+        "It fosters trust, integrity, and respect",
+        "It encourages dishonesty and deceit among employees",
+        "It promotes discrimination and harassment",
+        "It has no impact on organizational culture"
+      ],
+      "answer": "It fosters trust, integrity, and respect"
+    },
+    {
+      "question": "Select the potential consequences of chronic stress in the workplace represent[cite: 3]",
+      "options": [
+        "Increased productivity",
+        "Improved morale",
+        "Enhanced decision-making skills",
+        "Burnout and decreased performance"
+      ],
+      "answer": "Burnout and decreased performance"
+    },
+    {
+      "question": "Select the purpose of conducting regular safety training for employees[cite: 3]",
+      "options": [
+        "To increase workplace stress",
+        "To enhance awareness of potential hazards and safe practices",
+        "To decrease productivity",
+        "To encourage risk-taking behavior"
+      ],
+      "answer": "To encourage risk-taking behavior"
+    },
+    {
+      "question": "Identify that organizational structure groups employees based on specialized functions or activities[cite: 3]",
+      "options": [
+        "Matrix structure",
+        "Divisional structure",
+        "Flat structure",
+        "Functional structure"
+      ],
+      "answer": "Functional structure"
+    },
+    {
+      "question": "Select the purpose of establishing a timeline in a communication plan represent[cite: 3]",
+      "options": [
+        "To provide a framework for when communication activities will occur",
+        "To discourage timely communication",
+        "To limit feedback",
+        "To encourage delays"
+      ],
+      "answer": "To provide a framework for when communication activities will occur"
+    },
+    {
+      "question": "Select from the context: Feedback contributes to the effectiveness of a communication plan expressed as[cite: 3]",
+      "options": [
+        "By discouraging transparency",
+        "By limiting stakeholder involvement",
+        "By allowing for adjustments and improvements to the plan",
+        "By ignoring stakeholder concerns"
+      ],
+      "answer": "By allowing for adjustments and improvements to the plan"
+    },
+    {
+      "question": "Cite the primary objective of the Dynamic System Development Method (DSDM).[cite: 3]",
+      "options": [
+        "To create software quickly without user involvement",
+        "To provide a structured approach to agile software development",
+        "To replace all traditional software development models",
+        "To develop software without documentation"
+      ],
+      "answer": "To provide a structured approach to agile software development"
+    },
+    {
+      "question": "Identify the difference between COCOMO and COCOMO II.[cite: 3]",
+      "options": [
+        "COCOMO II is an advanced version that accounts for modern software development practices",
+        "COCOMO II is only applicable to waterfall model projects",
+        "COCOMO II ignores cost estimation",
+        "COCOMO II eliminates effort multipliers"
+      ],
+      "answer": "COCOMO II is an advanced version that accounts for modern software development practices"
+    },
+    {
+      "question": "Identify the primary reason for customer involvement in Extreme Programming[cite: 3]",
+      "options": [
+        "Minimizing risk",
+        "Maximizing risk",
+        "Reducing communication",
+        "Increasing confusion"
+      ],
+      "answer": "Minimizing risk"
+    },
+    {
+      "question": "Predict the main goal of continuous integration in Extreme Programming[cite: 3]",
+      "options": [
+        "Reducing defects",
+        "Increasing defects",
+        "Improving communication",
+        "Slowing down progress"
+      ],
+      "answer": "Reducing defects"
+    },
+    {
+      "question": "Identify a core practice of Extreme Programming[cite: 3]",
+      "options": [
+        "Big design upfront",
+        "Pair programming",
+        "Limited testing",
+        "Frequent releases"
+      ],
+      "answer": "Pair programming"
+    },
+    {
+      "question": "Predict the primary purpose of test-driven development in Extreme Programming[cite: 3]",
+      "options": [
+        "Reduce code quality issues",
+        "Improve code readability",
+        "Drive design and implementation",
+        "Delay software delivery"
+      ],
+      "answer": "Drive design and implementation"
+    },
+    {
+      "question": "Identify a benefit of having an on-site customer in Extreme Programming[cite: 3]",
+      "options": [
+        "Delayed feedback",
+        "Miscommunication",
+        "Rapid feedback",
+        "No feedback"
+      ],
+      "answer": "Rapid feedback"
+    },
+    {
+      "question": "Predict the reason behind frequent releases in Extreme Programming[cite: 3]",
+      "options": [
+        "Ensure large feature sets",
+        "Deliver value early and often",
+        "Minimize user feedback",
+        "Increase project complexity"
+      ],
+      "answer": "Deliver value early and often"
+    },
+    {
+      "question": "Choose from the following, in COCOMO II, the effort is measured in:[cite: 3]",
+      "options": [
+        "Person-days",
+        "Person-months",
+        "Hours",
+        "Dollars"
+      ],
+      "answer": "Person-months"
+    },
+    {
+      "question": "Predict the primary size metric used in COCOMO II.[cite: 3]",
+      "options": [
+        "Function Points (FP)",
+        "Lines of Code (LOC)",
+        "Use Case Points (UCP)",
+        "Both LOC and FP"
+      ],
+      "answer": "Both LOC and FP"
+    },
+    {
+      "question": "Choose the correct definition of a software process[cite: 3]",
+      "options": [
+        "A set of tools",
+        "A sequence of activities",
+        "A finished product",
+        "A software requirement"
+      ],
+      "answer": "A sequence of activities"
+    },
+    {
+      "question": "Predict the primary goal of software process models[cite: 3]",
+      "options": [
+        "Decrease efficiency",
+        "Increase uncertainty",
+        "Standardize development",
+        "Improve productivity"
+      ],
+      "answer": "Improve productivity"
+    },
+    {
+      "question": "Choose a characteristic of a good software process model[cite: 3]",
+      "options": [
+        "Rigidity",
+        "Flexibility",
+        "Complexity",
+        "Inefficiency"
+      ],
+      "answer": "Flexibility"
+    },
+    {
+      "question": "Choose from the following: RAD is most suitable for which type of projects.[cite: 3]",
+      "options": [
+        "Large-scale government projects requiring strict regulations",
+        "Projects with unclear and evolving requirements",
+        "Projects that do not require user involvement",
+        "Projects with a fixed, well-defined scope"
+      ],
+      "answer": "Projects with unclear and evolving requirements"
+    },
+    {
+      "question": "Choose the primary goal of Rapid Application Development (RAD).[cite: 3]",
+      "options": [
+        "To develop applications as quickly as possible with minimal planning",
+        "To follow a rigid, linear software development approach",
+        "To emphasize extensive documentation over working prototypes",
+        "To ensure that software development is slow and error-free"
+      ],
+      "answer": "To develop applications as quickly as possible with minimal planning"
+    }
+  ]
+}
