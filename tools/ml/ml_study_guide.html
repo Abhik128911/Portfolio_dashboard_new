@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCC-CSD601 — Machine Learning Ultimate Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0f14;
+  --bg2: #13161e;
+  --bg3: #1a1e2a;
+  --surface: #1f2435;
+  --surface2: #252b3b;
+  --gold: #c9a84c;
+  --gold2: #e8c96b;
+  --teal: #4ecdc4;
+  --rose: #ff6b6b;
+  --lavender: #a78bfa;
+  --text: #e8e4d9;
+  --text2: #b8b4a8;
+  --text3: #7a7670;
+  --border: #2e3347;
+  --correct: #4ade80;
+  --correct-bg: rgba(74,222,128,0.08);
+  --wrong-bg: rgba(255,107,107,0.08);
+  --highlight: rgba(201,168,76,0.1);
+  --shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #0d0f14 0%, #1a1428 40%, #0d1a1f 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%);
+}
+.hero-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--text2);
+  margin-bottom: 2rem;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold2);
+  display: block;
+}
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--text3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== NAV ===== */
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,15,20,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 14px 18px;
+  border: none;
+  background: none;
+  color: var(--text3);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.nav-btn:hover { color: var(--gold); }
+.nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ===== LAYOUT ===== */
+.container { max-width: 980px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+.section { display: none; }
+.section.active { display: block; }
+
+/* ===== MODULE HEADER ===== */
+.module-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.module-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.module-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.module-desc { color: var(--text2); font-size: 1rem; }
+
+/* ===== QUESTION CARD ===== */
+.q-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 1.75rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.q-card:hover { border-color: rgba(201,168,76,0.3); }
+.q-head {
+  padding: 1rem 1.5rem;
+  background: var(--bg3);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+.q-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  background: var(--highlight);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.q-text {
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  font-size: 1rem;
+}
+.q-toggle {
+  font-size: 1.2rem;
+  color: var(--text3);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.q-card.open .q-toggle { transform: rotate(180deg); }
+.q-body {
+  display: none;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.q-card.open .q-body { display: block; }
+
+/* ===== ANSWER CONTENT ===== */
+.answer-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.answer-text { color: var(--text); line-height: 1.8; }
+.answer-text p { margin-bottom: 0.75rem; }
+.answer-text strong { color: var(--gold2); font-weight: 600; }
+.answer-text em { color: var(--lavender); font-style: italic; }
+
+/* ===== FORMULA BOX ===== */
+.formula-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--gold2);
+  overflow-x: auto;
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+  background: rgba(78,205,196,0.06);
+  border: 1px solid rgba(78,205,196,0.2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+.info-box-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--teal);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.warn-box {
+  background: rgba(255,107,107,0.06);
+  border: 1px solid rgba(255,107,107,0.2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+.warn-box-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--rose);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== TABLE ===== */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.styled-table th {
+  background: var(--surface);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+.styled-table td {
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+.styled-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+
+/* ===== DIAGRAM (SVG inline) ===== */
+.diagram-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+.diagram-caption {
+  font-size: 0.82rem;
+  color: var(--text3);
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+/* ===== MCQ ===== */
+.mcq-group {
+  margin-bottom: 2.5rem;
+}
+.mcq-group-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--gold2);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+.mcq-item {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.mcq-question {
+  padding: 0.9rem 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--bg3);
+}
+.mcq-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--lavender);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.mcq-options {
+  display: none;
+  padding: 0.75rem 1.25rem 1rem;
+  border-top: 1px solid var(--border);
+}
+.mcq-item.open .mcq-options { display: block; }
+.mcq-opt {
+  padding: 7px 12px;
+  margin: 4px 0;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s;
+  position: relative;
+}
+.mcq-opt.correct {
+  background: var(--correct-bg);
+  border-color: rgba(74,222,128,0.3);
+  color: var(--correct);
+  font-weight: 600;
+}
+.mcq-opt.correct::after {
+  content: ' ✓ CORRECT';
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--correct);
+  opacity: 0.7;
+}
+.mcq-opt:not(.correct):hover { background: rgba(255,255,255,0.03); }
+
+/* ===== COMPARISON ===== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+@media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+.compare-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.compare-card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.compare-card-title.blue { color: var(--teal); }
+.compare-card-title.orange { color: #fb923c; }
+.compare-card-title.purple { color: var(--lavender); }
+.compare-card-title.green { color: var(--correct); }
+.compare-card ul { padding-left: 1.25rem; color: var(--text2); font-size: 0.95rem; }
+.compare-card li { margin-bottom: 0.4rem; }
+
+/* ===== CALC BOX ===== */
+.calc-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--teal);
+}
+.calc-box .result {
+  color: var(--gold2);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin: 2.5rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-divider::before {
+  content: '§';
+  font-size: 0.9rem;
+  color: var(--text3);
+}
+
+/* ===== PROGRESS BAR (MCQ answer show) ===== */
+.show-all-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s;
+}
+.show-all-btn:hover { background: var(--highlight); }
+
+/* ===== CONFUSION MATRIX ===== */
+.confusion-matrix {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  gap: 2px;
+  margin: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+}
+.cm-cell {
+  padding: 10px 16px;
+  text-align: center;
+  border-radius: 4px;
+}
+.cm-header { background: var(--surface); color: var(--text3); font-size: 10px; letter-spacing: 1px; }
+.cm-tp { background: rgba(74,222,128,0.12); color: var(--correct); border: 1px solid rgba(74,222,128,0.25); }
+.cm-tn { background: rgba(74,222,128,0.12); color: var(--correct); border: 1px solid rgba(74,222,128,0.25); }
+.cm-fp { background: rgba(255,107,107,0.12); color: var(--rose); border: 1px solid rgba(255,107,107,0.25); }
+.cm-fn { background: rgba(255,107,107,0.12); color: var(--rose); border: 1px solid rgba(255,107,107,0.25); }
+
+/* ===== LIFE CYCLE STEPS ===== */
+.steps-list {
+  counter-reset: step;
+  list-style: none;
+  margin: 1rem 0;
+}
+.steps-list li {
+  counter-increment: step;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+  align-items: flex-start;
+}
+.steps-list li::before {
+  content: counter(step);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: var(--gold);
+  color: var(--bg);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-weight: 700;
+}
+.steps-list li span { color: var(--text2); }
+.steps-list li strong { color: var(--text); }
+
+/* ===== SCROLL TOP ===== */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--gold);
+  color: var(--bg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 999;
+}
+.scroll-top.visible { opacity: 1; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container { padding: 2rem 1rem 5rem; }
+  .hero { padding: 3rem 1rem 2rem; }
+  .hero-stats { gap: 1.5rem; }
+  .nav-btn { padding: 12px 12px; font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge">Brainware University · B.Tech CSE 2023</div>
+    <h1>Machine Learning &amp;<br><span>Its Applications</span></h1>
+    <p class="hero-sub">PCC-CSD601 — Complete Question Bank with Detailed Answers</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">55</span><span class="hero-stat-label">Short Answers</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">52</span><span class="hero-stat-label">Long Answers</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">158</span><span class="hero-stat-label">MCQs</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Modules</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<div class="nav-wrapper">
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showSection('s1',this)">01 · Statistics &amp; Math</button>
+    <button class="nav-btn" onclick="showSection('s2',this)">02 · Linear Algebra</button>
+    <button class="nav-btn" onclick="showSection('s3',this)">03 · ML Fundamentals</button>
+    <button class="nav-btn" onclick="showSection('s4',this)">04 · Data &amp; EDA</button>
+    <button class="nav-btn" onclick="showSection('s5',this)">05 · Algorithms</button>
+    <button class="nav-btn" onclick="showSection('s6',this)">06 · Model Evaluation</button>
+    <button class="nav-btn" onclick="showSection('s7',this)">07 · MCQs</button>
+  </nav>
+</div>
+
+<div class="container">
+
+<!-- ===== MODULE 1: STATISTICS & MATH ===== -->
+<div id="s1" class="section active">
+  <div class="module-header">
+    <div class="module-tag">Module 01</div>
+    <div class="module-title">Statistics &amp; Probability</div>
+    <p class="module-desc">Mean, Median, Mode, Variance, Standard Deviation, Distributions, Hypothesis Testing, Permutations &amp; Combinations</p>
+  </div>
+
+  <!-- Q1 -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-01 / L-01</span>
+      <span class="q-text">Calculate Mean, Variance &amp; Standard Deviation for: 2, 4, 5, 6, 8, 17, 23, 25, 27, 29</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="calc-box">
+          n = 10, Sum = 2+4+5+6+8+17+23+25+27+29 = 146<br>
+          Mean (μ) = 146 / 10 = <strong>14.6</strong><br><br>
+          Deviations² = (2−14.6)²+(4−14.6)²+...+(29−14.6)² = 1026.4<br>
+          Variance (σ²) = 1026.4 / 10 = <strong>102.64</strong><br><br>
+          <div class="result">Standard Deviation (σ) = √102.64 ≈ <strong>10.13</strong></div>
+        </div>
+        <div class="formula-box">Mean = Σx/n &nbsp;|&nbsp; Variance = Σ(xᵢ−μ)²/n &nbsp;|&nbsp; SD = √Variance</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-02</span>
+      <span class="q-text">Find Mean, Median, Mode for: 1,5,3,8,7,2,6,3,5,8,1,4,6,9,7,7,3,6,1,1,1</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        n = 21, Sorted: 1,1,1,1,1,2,3,3,3,4,5,5,6,6,6,7,7,7,8,8,9<br>
+        Sum = 94 → Mean = 94/21 ≈ <strong>4.48</strong><br>
+        Median = 11th value (middle of 21) = <strong>5</strong><br>
+        Frequency: 1 appears 5 times → Mode = <strong>1</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-09</span>
+      <span class="q-text">Find Mean, Mode, Median for: 32,6,21,10,8,11,12,36,17,16,15,18,40,24,21,23,24,24,29,16,32,31,10,30,35,32,18,39,12,20,23,25,18</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        n = 33, Sum = 728<br>
+        Mean = 728 / 33 ≈ <strong>22.067</strong><br>
+        Sorted — Middle value (17th): <strong>Median = 21</strong><br>
+        32 appears 3 times (most frequent) → <strong>Mode = 32</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q L1 detailed stats -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">L-01</span>
+      <span class="q-text">Define and calculate mean, median, mode, variance, and SD for: [5, 8, 12, 10, 8, 7, 15]</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Definitions:</strong></p>
+        <p>• <strong>Mean</strong>: Average of all values = Σx / n</p>
+        <p>• <strong>Median</strong>: Middle value when sorted (odd n), or average of two middle values (even n)</p>
+        <p>• <strong>Mode</strong>: Most frequently occurring value</p>
+        <p>• <strong>Variance</strong>: Average of squared deviations from mean</p>
+        <p>• <strong>Standard Deviation</strong>: Square root of variance — tells how spread out values are</p>
+        <div class="calc-box">
+          Data: [5, 8, 12, 10, 8, 7, 15], n = 7<br>
+          Sum = 65 → Mean = 65/7 ≈ <strong>9.29</strong><br>
+          Sorted: [5, 7, 8, 8, 10, 12, 15] → Median = 4th = <strong>8</strong><br>
+          8 appears twice → Mode = <strong>8</strong><br>
+          Σ(xᵢ−9.29)² ≈ 73.71 → Variance = 73.71/7 ≈ <strong>10.53</strong><br>
+          <div class="result">SD = √10.53 ≈ <strong>3.24</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q S5 -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-05</span>
+      <span class="q-text">Mean, Variance, SD for: 200, 350, 540, 110, 300, 270, 276, 280, 250, 299</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        n = 10, Sum = 2875 → Mean = 2875/10 = <strong>287.5</strong><br>
+        Variance = Σ(xᵢ−287.5)²/10 ≈ <strong>10,901.45</strong><br>
+        <div class="result">Standard Deviation ≈ <strong>104.41</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hypothesis -->
+  <div class="section-divider">Hypothesis Testing</div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-03 / L-08</span>
+      <span class="q-text">Define different types of hypotheses with examples (Null, Alternative, One-tailed, Two-tailed)</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <table class="styled-table">
+          <tr><th>Type</th><th>Definition</th><th>Example</th></tr>
+          <tr><td><strong>Null (H₀)</strong></td><td>No significant difference or effect exists. The default assumption.</td><td>"Mean IQ of tutored students = 100"</td></tr>
+          <tr><td><strong>Alternative (H₁)</strong></td><td>Contradicts H₀; a significant effect exists.</td><td>"Mean IQ of tutored students ≠ 100"</td></tr>
+          <tr><td><strong>One-Tailed</strong></td><td>Tests effect in one specific direction only (greater than OR less than).</td><td>"New ML model has higher accuracy than baseline"</td></tr>
+          <tr><td><strong>Two-Tailed</strong></td><td>Tests for any difference in either direction.</td><td>"New model performs significantly different (higher or lower)"</td></tr>
+        </table>
+        <div class="info-box">
+          <div class="info-box-title">Significance in ML</div>
+          Hypothesis testing validates new algorithms, feature selection techniques, and performance improvements. It helps determine if a new model genuinely outperforms an existing one.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type I and II errors -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-08 / S-51 / L-07</span>
+      <span class="q-text">Define Type I and Type II errors with practical examples</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-title orange">Type I Error (False Positive)</div>
+            <ul>
+              <li><strong>Definition:</strong> Rejecting a TRUE null hypothesis</li>
+              <li><strong>In Statistics:</strong> Concluding an effect exists when it doesn't</li>
+              <li><strong>ML Example 1:</strong> Classifying a genuine email as spam</li>
+              <li><strong>ML Example 2:</strong> A healthy patient diagnosed as diseased</li>
+              <li><strong>Symbol:</strong> α (significance level)</li>
+              <li><strong>Also called:</strong> False Alarm</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-title purple">Type II Error (False Negative)</div>
+            <ul>
+              <li><strong>Definition:</strong> Failing to reject a FALSE null hypothesis</li>
+              <li><strong>In Statistics:</strong> Missing a real effect</li>
+              <li><strong>ML Example 1:</strong> Spam email classified as normal (missed)</li>
+              <li><strong>ML Example 2:</strong> A diseased patient diagnosed as healthy</li>
+              <li><strong>Symbol:</strong> β</li>
+              <li><strong>Also called:</strong> Miss</li>
+            </ul>
+          </div>
+        </div>
+        <div class="warn-box">
+          <div class="warn-box-title">Key Tradeoff</div>
+          Reducing Type I errors (lower α) tends to increase Type II errors and vice versa. The balance depends on application — in medical diagnosis, Type II errors can be life-threatening, so high recall (low Type II) is prioritized.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLT -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-04 / L-05</span>
+      <span class="q-text">State and describe the Central Limit Theorem (CLT) and its significance in ML</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">CLT: As sample size n → ∞, X̄ ~ N(μ, σ²/n) regardless of population distribution (n ≥ 30 typically sufficient)</div>
+        <p><strong>Statement:</strong> The sampling distribution of the sample mean approaches a normal (Gaussian) distribution as the sample size increases, regardless of the population's shape.</p>
+        <p><strong>Key Points:</strong></p>
+        <ul style="padding-left:1.5rem;color:var(--text2);margin:0.5rem 0;">
+          <li>Requires independent observations and finite variance</li>
+          <li>Works even if the underlying population is skewed or uniform</li>
+          <li>The approximation improves as n increases</li>
+        </ul>
+        <div class="info-box">
+          <div class="info-box-title">Significance in Machine Learning</div>
+          <ul style="padding-left:1.25rem;color:var(--text2);">
+            <li><strong>Algorithm Assumptions:</strong> Many ML models (Linear Regression, Naïve Bayes) assume normally distributed errors — justified by CLT</li>
+            <li><strong>Hypothesis Testing:</strong> Enables statistical inference on model performance</li>
+            <li><strong>Confidence Intervals:</strong> Helps estimate population parameters from sample data</li>
+            <li><strong>Bootstrapping &amp; Cross-Validation:</strong> Relies on CLT for stability</li>
+            <li><strong>Feature Scaling:</strong> Z-score normalization is meaningful due to CLT</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Normal Distribution -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-06 / L-04</span>
+      <span class="q-text">Describe the significance of Normal Distribution in ML &amp; measures of data spread</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">f(x) = (1/σ√2π) · e^(−(x−μ)²/2σ²) &nbsp;|&nbsp; Defined by: μ (mean) and σ (std dev)</div>
+        <!-- Bell curve SVG -->
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;width:100%">
+            <defs>
+              <linearGradient id="bell" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M 30 160 Q 80 158 110 155 Q 130 150 150 135 Q 170 110 180 85 Q 188 60 200 45 Q 212 60 220 85 Q 230 110 250 135 Q 270 150 290 155 Q 320 158 370 160 Z" fill="url(#bell)" stroke="#c9a84c" stroke-width="2"/>
+            <line x1="200" y1="45" x2="200" y2="165" stroke="#c9a84c" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+            <text x="200" y="175" text-anchor="middle" fill="#c9a84c" font-size="11" font-family="JetBrains Mono">μ (mean=median=mode)</text>
+            <text x="140" y="135" fill="#4ecdc4" font-size="9" font-family="JetBrains Mono">−1σ</text>
+            <text x="252" y="135" fill="#4ecdc4" font-size="9" font-family="JetBrains Mono">+1σ</text>
+            <text x="35" y="40" fill="#7a7670" font-size="9" font-family="JetBrains Mono">68% within ±1σ</text>
+            <text x="35" y="52" fill="#7a7670" font-size="9" font-family="JetBrains Mono">95% within ±2σ</text>
+            <text x="35" y="64" fill="#7a7670" font-size="9" font-family="JetBrains Mono">99.7% within ±3σ</text>
+          </svg>
+          <div class="diagram-caption">Normal (Gaussian) Distribution — Bell Curve with 68-95-99.7 Rule</div>
+        </div>
+        <p><strong>Significance in ML:</strong></p>
+        <ul style="padding-left:1.5rem;color:var(--text2);margin:0.5rem 0 1rem;">
+          <li>Models like Linear Regression, Naïve Bayes, and PCA perform optimally with normally distributed data</li>
+          <li>Gaussian Mixture Models (GMM) use normality for clustering</li>
+          <li>Outliers detected based on standard deviations (Z-score method)</li>
+          <li>Z-score normalization (feature scaling) improves convergence</li>
+        </ul>
+        <p><strong>Measures of Spread:</strong></p>
+        <table class="styled-table">
+          <tr><th>Measure</th><th>Formula</th><th>Use</th></tr>
+          <tr><td>Range</td><td>Max − Min</td><td>Simple spread; affected by outliers</td></tr>
+          <tr><td>Variance (σ²)</td><td>Σ(xᵢ−μ)²/n</td><td>Average squared deviation</td></tr>
+          <tr><td>Std Deviation (σ)</td><td>√Variance</td><td>Same unit as data; most common</td></tr>
+          <tr><td>IQR</td><td>Q3 − Q1</td><td>Robust to outliers; used in box plots</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-10 / S-54</span>
+      <span class="q-text">Significance of PDF (Probability Density Function) in ML. Calculate PDF for μ=60, σ²=7, x=65</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p>A <strong>Probability Density Function (PDF)</strong> describes the probability distribution of a continuous random variable. Unlike discrete distributions, it gives the relative likelihood of a value occurring in a range (probability = area under the curve).</p>
+        <p><strong>Key roles in ML:</strong></p>
+        <ul style="padding-left:1.5rem;color:var(--text2);margin:0.5rem 0 1rem;">
+          <li>Probability estimation and statistical modeling</li>
+          <li>Kernel Density Estimation (KDE) for non-parametric modeling</li>
+          <li>Generative models (VAEs, GANs) rely on learned PDFs</li>
+          <li>Anomaly detection — points in low-probability regions are outliers</li>
+        </ul>
+        <div class="calc-box">
+          Given: μ = 60, σ² = 7, x = 65 → σ = √7 ≈ 2.6458<br><br>
+          f(x) = (1/(σ√2π)) · e^(−(x−μ)²/(2σ²))<br>
+          = (1/(2.6458·√2π)) · e^(−(65−60)²/(2·7))<br>
+          = (1/6.6228) · e^(−25/14)<br>
+          = 0.1510 · e^(−1.7857)<br>
+          = 0.1510 · 0.1674<br>
+          <div class="result">f(65) ≈ <strong>0.025</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sampling Distribution -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-12 / L-02 / L-03</span>
+      <span class="q-text">Sampling Distribution, Binomial Distribution, population &amp; sample, sampling techniques</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Population:</strong> The entire set of data points under study. In ML, it represents the complete dataset from which models are derived.</p>
+        <p><strong>Sample:</strong> A representative subset of the population, used to reduce computational cost while maintaining accuracy.</p>
+        <p><strong>Sampling Distribution:</strong> The probability distribution of a statistic (e.g., mean) obtained from multiple samples. It helps estimate population parameters.</p>
+        <div class="formula-box">Binomial: P(X=k) = C(n,k)·pᵏ·(1−p)^(n−k) &nbsp;|&nbsp; k successes in n trials, each with probability p</div>
+        <p><strong>Sampling Techniques:</strong></p>
+        <table class="styled-table">
+          <tr><th>Technique</th><th>Description</th><th>Use in ML</th></tr>
+          <tr><td>Random Sampling</td><td>Every element has equal chance of selection</td><td>General purpose; unbiased</td></tr>
+          <tr><td>Stratified Sampling</td><td>Divide into subgroups; sample proportionally from each</td><td>Class-balanced datasets</td></tr>
+          <tr><td>Systematic Sampling</td><td>Select every kᵗʰ data point from ordered list</td><td>Time-series data</td></tr>
+          <tr><td>Cluster Sampling</td><td>Randomly select whole clusters</td><td>Large geographic datasets</td></tr>
+          <tr><td>Convenience Sampling</td><td>Chosen based on ease of access</td><td>Quick prototyping (introduces bias)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Permutations & Combinations -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-13</span>
+      <span class="q-text">Define permutations and combinations with examples in the context of ML</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">Permutation: P(n,r) = n!/(n−r)! &nbsp;&nbsp;&nbsp; Combination: C(n,r) = n! / (r! · (n−r)!)</div>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-title blue">Permutation (Order Matters)</div>
+            <ul>
+              <li>Ordered arrangement of r items from n</li>
+              <li>Example: 3 hyperparameters in 3! = 6 orderings for tuning</li>
+              <li>Used in: hyperparameter search, sequence modeling</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-title orange">Combination (Order Doesn't Matter)</div>
+            <ul>
+              <li>Selection of r items from n, without regard to order</li>
+              <li>Example: Choose 3 features from 10: C(10,3) = 120 subsets</li>
+              <li>Used in: feature selection, ensemble methods</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Probability Problems -->
+  <div class="section-divider">Probability Problems</div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-53</span>
+      <span class="q-text">Fishing Bet Problem: Pond with 50 trout &amp; 50 sunfish — win Rs.500 if next 3 fishes are sunfish caught by A, lose Rs.50. Find expected profit.</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        P(catching a sunfish each time) = 50/100 = 1/2 (fish is released each time)<br>
+        P(3 sunfish in a row) = (1/2)³ = 1/8<br><br>
+        Expected Profit = P(win)×(+500) + P(lose)×(−50)<br>
+        = (1/8)(500) + (7/8)(−50)<br>
+        = 62.5 − 43.75<br>
+        <div class="result">Expected Profit = <strong>Rs. 18.75</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-55</span>
+      <span class="q-text">Phone Company Problem: 70 phones, 1 faulty. Profit Rs.500 per phone, Loss Rs.5000 for faulty. Find expected profit.</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        P(good phone) = 69/70, Profit = +500<br>
+        P(faulty phone) = 1/70, Profit = −5000<br><br>
+        E(profit) = (69/70)(500) + (1/70)(−5000)<br>
+        = 492.857 − 71.429<br>
+        <div class="result">Expected Profit ≈ <strong>Rs. 421.43</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Variance/SD importance -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-11</span>
+      <span class="q-text">Importance of variance and standard deviation in machine learning</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <ul style="padding-left:1.5rem;color:var(--text2);">
+          <li><strong>Model Evaluation:</strong> High variance in predictions → overfitting; low variance → better generalization</li>
+          <li><strong>Feature Scaling:</strong> SD used in Z-score normalization (x−μ)/σ to standardize features</li>
+          <li><strong>Regularization:</strong> Penalizes large weight variance to reduce overfitting</li>
+          <li><strong>Anomaly Detection:</strong> Points beyond ±3σ flagged as outliers</li>
+          <li><strong>Model Stability:</strong> Tracking variance across cross-validation folds reveals stability</li>
+          <li><strong>Probabilistic Models:</strong> Gaussian distributions parameterized by μ and σ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s1 -->
+
+<!-- ===== MODULE 2: LINEAR ALGEBRA ===== -->
+<div id="s2" class="section">
+  <div class="module-header">
+    <div class="module-tag">Module 02</div>
+    <div class="module-title">Linear Algebra for ML</div>
+    <p class="module-desc">Vectors, Matrices, Rank, Eigenvalues, Eigenvectors, SVD, PCA, Matrix Operations</p>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-07</span>
+      <span class="q-text">Define the rank of a matrix and its importance in ML</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p>The <strong>rank</strong> of a matrix is the number of <em>linearly independent rows or columns</em> in it. It represents the dimensionality of the vector space spanned by those rows/columns.</p>
+        <div class="formula-box">rank(A) = max(number of linearly independent rows, number of independent columns)</div>
+        <p><strong>If rank(A) = min(m, n)</strong> → Full rank (non-singular) — unique solution exists<br>
+        <strong>If rank(A) &lt; min(m, n)</strong> → Rank-deficient (singular) — infinite or no solutions</p>
+        <div class="info-box">
+          <div class="info-box-title">Applications in ML</div>
+          <ul style="padding-left:1.25rem;color:var(--text2);">
+            <li>Solving linear equations in regression (checking if A has full rank)</li>
+            <li>PCA: dimensionality = effective rank of covariance matrix</li>
+            <li>SVD: rank equals number of non-zero singular values</li>
+            <li>Feature engineering: detecting redundant/collinear features</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-14 / L-09</span>
+      <span class="q-text">Importance of Eigenvalues &amp; Eigenvectors in ML; define Vectors &amp; Matrices</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">Eigenvector equation: A·v = λ·v &nbsp;&nbsp;|&nbsp;&nbsp; Eigenvalue equation: det(A − λI) = 0</div>
+        <p><strong>Eigenvector (v):</strong> A non-zero vector whose direction does not change under a linear transformation A. Only its magnitude may scale.</p>
+        <p><strong>Eigenvalue (λ):</strong> The scalar that indicates how much the eigenvector is scaled during the transformation.</p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-title blue">Vectors</div>
+            <ul>
+              <li>1D array: magnitude + direction</li>
+              <li>Represent features or data points</li>
+              <li>Row vector [x₁,x₂,...xₙ] or column</li>
+              <li>Used in: model parameters, embeddings</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-title orange">Matrices</div>
+            <ul>
+              <li>2D array: rows × columns</li>
+              <li>Store entire datasets (rows=samples)</li>
+              <li>Weight matrices in neural networks</li>
+              <li>Used in: transformations, covariance</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-title">Applications of Eigenvalues/Eigenvectors</div>
+          <ul style="padding-left:1.25rem;color:var(--text2);">
+            <li><strong>PCA:</strong> Eigenvectors of covariance matrix = principal components; eigenvalues = variance explained</li>
+            <li><strong>Spectral Clustering:</strong> Uses eigendecomposition of graph Laplacian</li>
+            <li><strong>Eigenfaces:</strong> Facial recognition using eigenvectors of pixel covariance</li>
+            <li><strong>Stability Analysis:</strong> Eigenvalues of Hessian matrix guide gradient descent</li>
+            <li><strong>PageRank:</strong> Dominant eigenvector of web graph</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-15 / S-16 / L-06</span>
+      <span class="q-text">Applications of Linear Algebra in ML (vectors, matrices, operations, PCA, regression, SVD)</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <table class="styled-table">
+          <tr><th>Application</th><th>Linear Algebra Used</th><th>How</th></tr>
+          <tr><td><strong>Linear Regression</strong></td><td>Matrix multiplication, inversion</td><td>β = (XᵀX)⁻¹Xᵀy for closed-form solution</td></tr>
+          <tr><td><strong>Neural Networks</strong></td><td>Matrix multiplication, transposition</td><td>Forward pass: Z = W·X + b; backprop uses Wᵀ</td></tr>
+          <tr><td><strong>PCA</strong></td><td>Eigenvalue decomposition</td><td>Reduce dimensions preserving max variance</td></tr>
+          <tr><td><strong>SVM</strong></td><td>Dot products, hyperplanes</td><td>Decision: sign(wᵀx + b); kernel trick via dot products</td></tr>
+          <tr><td><strong>Recommendation</strong></td><td>Matrix factorization (SVD)</td><td>R ≈ U·Σ·Vᵀ for user-item ratings</td></tr>
+          <tr><td><strong>NLP</strong></td><td>Word embeddings, SVD</td><td>Word2Vec, LSA via matrix factorization</td></tr>
+          <tr><td><strong>CNNs</strong></td><td>Convolution (matrix ops)</td><td>Apply filters to image matrices</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s2 -->
+
+<!-- ===== MODULE 3: ML FUNDAMENTALS ===== -->
+<div id="s3" class="section">
+  <div class="module-header">
+    <div class="module-tag">Module 03</div>
+    <div class="module-title">Machine Learning Fundamentals</div>
+    <p class="module-desc">Types of ML, Supervised / Unsupervised / Reinforcement Learning, ML Life Cycle, Overfitting &amp; Underfitting</p>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-17 / L-11 / L-12</span>
+      <span class="q-text">What is Machine Learning? Discuss types and applications across domains</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p>Machine Learning is a subset of Artificial Intelligence that enables computers to learn from data and improve performance over time without being explicitly programmed for each task.</p>
+        <!-- ML Types Diagram -->
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;width:100%">
+            <rect x="190" y="10" width="120" height="38" rx="6" fill="#1f2435" stroke="#c9a84c" stroke-width="1.5"/>
+            <text x="250" y="34" text-anchor="middle" fill="#c9a84c" font-size="12" font-family="JetBrains Mono">Machine Learning</text>
+            <line x1="250" y1="48" x2="80" y2="85" stroke="#2e3347" stroke-width="1.5"/>
+            <line x1="250" y1="48" x2="250" y2="85" stroke="#2e3347" stroke-width="1.5"/>
+            <line x1="250" y1="48" x2="420" y2="85" stroke="#2e3347" stroke-width="1.5"/>
+            <rect x="20" y="85" width="120" height="38" rx="6" fill="#1f2435" stroke="#4ecdc4" stroke-width="1.5"/>
+            <text x="80" y="109" text-anchor="middle" fill="#4ecdc4" font-size="11" font-family="JetBrains Mono">Supervised</text>
+            <rect x="190" y="85" width="120" height="38" rx="6" fill="#1f2435" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="250" y="109" text-anchor="middle" fill="#a78bfa" font-size="11" font-family="JetBrains Mono">Unsupervised</text>
+            <rect x="360" y="85" width="120" height="38" rx="6" fill="#1f2435" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="420" y="109" text-anchor="middle" fill="#fb923c" font-size="11" font-family="JetBrains Mono">Reinforcement</text>
+            <text x="80" y="148" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Classification</text>
+            <text x="80" y="160" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Regression</text>
+            <text x="250" y="148" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Clustering</text>
+            <text x="250" y="160" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Association</text>
+            <text x="420" y="148" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Agent &amp; Rewards</text>
+            <text x="420" y="160" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Trial &amp; Error</text>
+          </svg>
+          <div class="diagram-caption">Three main paradigms of Machine Learning</div>
+        </div>
+        <table class="styled-table">
+          <tr><th>Domain</th><th>Applications</th></tr>
+          <tr><td>Healthcare</td><td>Disease diagnosis, drug discovery, personalized treatment</td></tr>
+          <tr><td>Finance</td><td>Fraud detection, stock prediction, risk management</td></tr>
+          <tr><td>Marketing</td><td>Recommendation systems, customer segmentation</td></tr>
+          <tr><td>Autonomous Systems</td><td>Self-driving cars, robotics (RL)</td></tr>
+          <tr><td>NLP</td><td>Chatbots, sentiment analysis, translation</td></tr>
+          <tr><td>Cybersecurity</td><td>Anomaly &amp; threat detection</td></tr>
+          <tr><td>Agriculture</td><td>Crop monitoring, yield prediction</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-18 / S-20 / S-21 / L-13 / L-14 / L-15</span>
+      <span class="q-text">Supervised Learning — definition, labeled data, training/test split, types, steps, methodology</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Supervised Learning</strong> trains a model on <em>labeled data</em> (input–output pairs) to learn a mapping function f(X) → y, then makes predictions on new unseen data.</p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-title blue">Classification</div>
+            <ul>
+              <li>Output: discrete class labels</li>
+              <li>Binary: spam/not spam</li>
+              <li>Multi-class: digit recognition</li>
+              <li>Algorithms: Decision Tree, SVM, Logistic Regression, KNN, Naïve Bayes</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-title orange">Regression</div>
+            <ul>
+              <li>Output: continuous numerical values</li>
+              <li>Examples: house price, stock price</li>
+              <li>Algorithms: Linear Regression, Polynomial Regression, Ridge, Lasso</li>
+              <li>Metric: MSE, RMSE, R²</li>
+            </ul>
+          </div>
+        </div>
+        <p><strong>Steps in Supervised Learning:</strong></p>
+        <ol class="steps-list">
+          <li><strong>Data Collection</strong> <span>— Gather labeled input-output pairs</span></li>
+          <li><strong>Preprocessing</strong> <span>— Handle missing values, normalize, encode categories</span></li>
+          <li><strong>Train-Test Split</strong> <span>— Typically 70-80% train, 20-30% test</span></li>
+          <li><strong>Algorithm Selection</strong> <span>— Choose based on problem type and data characteristics</span></li>
+          <li><strong>Model Training</strong> <span>— Optimize parameters to minimize error (e.g., gradient descent)</span></li>
+          <li><strong>Evaluation</strong> <span>— Test on unseen data using accuracy, precision, recall, F1, RMSE</span></li>
+          <li><strong>Hyperparameter Tuning</strong> <span>— Grid search / random search to optimize</span></li>
+          <li><strong>Deployment</strong> <span>— Serve model in production; monitor and retrain as needed</span></li>
+        </ol>
+        <div class="info-box">
+          <div class="info-box-title">Labeled Data</div>
+          Labeled data consists of input features paired with correct output labels. Example: emails labeled "spam" or "not spam". Without labels, learning direction is impossible in supervised settings. Manual labeling is expensive but tools like active learning and semi-supervised methods reduce the burden.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-22</span>
+      <span class="q-text">Differentiate between Classification and Regression</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <table class="styled-table">
+        <tr><th>Aspect</th><th>Classification</th><th>Regression</th></tr>
+        <tr><td>Output</td><td>Discrete class labels</td><td>Continuous numerical values</td></tr>
+        <tr><td>Example</td><td>Spam detection, disease diagnosis</td><td>House price prediction, stock trend</td></tr>
+        <tr><td>Algorithms</td><td>Decision Tree, SVM, Logistic Regression</td><td>Linear Regression, Polynomial Reg.</td></tr>
+        <tr><td>Evaluation</td><td>Accuracy, Precision, Recall, F1-score</td><td>MSE, RMSE, MAE, R²</td></tr>
+        <tr><td>Decision boundary</td><td>Separates classes in feature space</td><td>Best-fit line/curve through data</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-24 / S-25 / S-26 / L-16</span>
+      <span class="q-text">Unsupervised Learning — features, advantages, disadvantages, types</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Unsupervised Learning</strong> works with <em>unlabeled data</em> to discover hidden patterns, structures, and relationships without predefined output labels.</p>
+        <p><strong>Types:</strong></p>
+        <ul style="padding-left:1.5rem;color:var(--text2);margin:0.5rem 0 1rem;">
+          <li><strong>Clustering:</strong> Group similar data — K-Means, DBSCAN, Hierarchical</li>
+          <li><strong>Association Rule Mining:</strong> Find co-occurrence patterns — Apriori, FP-Growth</li>
+          <li><strong>Dimensionality Reduction:</strong> Compress features — PCA, t-SNE, Autoencoders</li>
+          <li><strong>Anomaly Detection:</strong> Identify outliers in unlabeled data</li>
+        </ul>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-title green">Advantages</div>
+            <ul>
+              <li>No labeled data required (cost-effective)</li>
+              <li>Discovers hidden patterns</li>
+              <li>Useful for exploratory analysis</li>
+              <li>Adapts to new/evolving data patterns</li>
+              <li>Scalable to large datasets</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-title orange">Disadvantages</div>
+            <ul>
+              <li>Results difficult to interpret</li>
+              <li>May produce arbitrary groupings</li>
+              <li>Less accurate than supervised models</li>
+              <li>Sensitive to algorithm choice</li>
+              <li>No ground truth for validation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-27 / S-28 / L-18</span>
+      <span class="q-text">Reinforcement Learning — definition, benefits, working with example</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;width:100%">
+            <rect x="10" y="60" width="100" height="40" rx="6" fill="#1f2435" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="60" y="85" text-anchor="middle" fill="#fb923c" font-size="12" font-family="JetBrains Mono">AGENT</text>
+            <rect x="180" y="60" width="100" height="40" rx="6" fill="#1f2435" stroke="#4ecdc4" stroke-width="1.5"/>
+            <text x="230" y="85" text-anchor="middle" fill="#4ecdc4" font-size="12" font-family="JetBrains Mono">ENVIRON-</text>
+            <text x="230" y="97" text-anchor="middle" fill="#4ecdc4" font-size="11" font-family="JetBrains Mono">MENT</text>
+            <rect x="350" y="60" width="100" height="40" rx="6" fill="#1f2435" stroke="#c9a84c" stroke-width="1.5"/>
+            <text x="400" y="82" text-anchor="middle" fill="#c9a84c" font-size="12" font-family="JetBrains Mono">REWARD</text>
+            <text x="400" y="94" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="JetBrains Mono">/ STATE</text>
+            <path d="M 110 72 Q 145 40 180 72" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr)"/>
+            <text x="145" y="38" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="JetBrains Mono">Action</text>
+            <path d="M 280 88 Q 315 115 350 88" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+            <text x="315" y="122" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="JetBrains Mono">Reward+State</text>
+            <path d="M 350 72 Q 230 15 110 72" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="230" y="18" text-anchor="middle" fill="#4ade80" font-size="10" font-family="JetBrains Mono">Feedback loop (learn policy)</text>
+          </svg>
+          <div class="diagram-caption">Reinforcement Learning: Agent–Environment–Reward Loop</div>
+        </div>
+        <p><strong>Benefits:</strong></p>
+        <ul style="padding-left:1.5rem;color:var(--text2);margin:0.5rem 0 1rem;">
+          <li>Learns complex behaviors without explicit programming</li>
+          <li>Adapts dynamically to new situations via feedback</li>
+          <li>Optimizes long-term cumulative rewards</li>
+          <li>No labeled data needed — learns from experience</li>
+        </ul>
+        <p><strong>Real-World Example — Self-Driving Car:</strong><br>
+        The car (agent) takes actions (steer, accelerate, brake) in the road environment. It receives rewards for staying in lane, obeying traffic lights, and penalties for collisions. Over time it learns the optimal driving policy.</p>
+        <div class="info-box">
+          <div class="info-box-title">Common RL Algorithms</div>
+          Q-Learning · Deep Q-Network (DQN) · Policy Gradient (REINFORCE) · Actor-Critic · Proximal Policy Optimization (PPO)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ML Life Cycle -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">L-17</span>
+      <span class="q-text">Illustrate the seven major steps involved in the Machine Learning Life Cycle</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <ol class="steps-list">
+        <li><strong>Problem Definition</strong> <span>— Clearly state the objective; decide supervised/unsupervised/RL; define success metrics</span></li>
+        <li><strong>Data Collection</strong> <span>— Gather from databases, APIs, web scraping, sensors; ensure relevance and diversity</span></li>
+        <li><strong>Data Preprocessing</strong> <span>— Handle missing values, normalize, encode categoricals, remove duplicates &amp; outliers</span></li>
+        <li><strong>Model Selection</strong> <span>— Choose algorithm based on problem type, data size, interpretability needs</span></li>
+        <li><strong>Model Training</strong> <span>— Feed training data; optimize parameters via gradient descent or other optimizers</span></li>
+        <li><strong>Model Evaluation</strong> <span>— Test on unseen data; measure accuracy, F1, RMSE etc.; use cross-validation</span></li>
+        <li><strong>Model Deployment</strong> <span>— Integrate into production via API/cloud; monitor performance; retrain as data drifts</span></li>
+      </ol>
+      <div class="info-box">
+        <div class="info-box-title">Note</div>
+        The life cycle is <strong>iterative</strong> — poor evaluation results trigger going back to data collection, feature engineering, or model selection. Continuous monitoring ensures long-term effectiveness.
+      </div>
+    </div>
+  </div>
+
+  <!-- Overfitting vs Underfitting -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-19 / L-10</span>
+      <span class="q-text">Differentiate between Overfitting and Underfitting — causes, effects, solutions</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;width:100%">
+            <!-- Underfitting -->
+            <text x="83" y="18" text-anchor="middle" fill="#ff6b6b" font-size="12" font-family="JetBrains Mono">Underfitting</text>
+            <circle cx="20" cy="120" r="3" fill="#c9a84c"/><circle cx="35" cy="100" r="3" fill="#c9a84c"/>
+            <circle cx="50" cy="90" r="3" fill="#c9a84c"/><circle cx="65" cy="70" r="3" fill="#c9a84c"/>
+            <circle cx="80" cy="80" r="3" fill="#c9a84c"/><circle cx="95" cy="60" r="3" fill="#c9a84c"/>
+            <circle cx="110" cy="50" r="3" fill="#c9a84c"/><circle cx="125" cy="40" r="3" fill="#c9a84c"/>
+            <line x1="15" y1="130" x2="140" y2="30" stroke="#ff6b6b" stroke-width="2"/>
+            <text x="83" y="148" text-anchor="middle" fill="#7a7670" font-size="10" font-family="Crimson Pro">High Bias</text>
+            <!-- Good fit -->
+            <text x="250" y="18" text-anchor="middle" fill="#4ade80" font-size="12" font-family="JetBrains Mono">Good Fit</text>
+            <circle cx="170" cy="110" r="3" fill="#c9a84c"/><circle cx="185" cy="90" r="3" fill="#c9a84c"/>
+            <circle cx="200" cy="75" r="3" fill="#c9a84c"/><circle cx="215" cy="60" r="3" fill="#c9a84c"/>
+            <circle cx="230" cy="55" r="3" fill="#c9a84c"/><circle cx="245" cy="65" r="3" fill="#c9a84c"/>
+            <circle cx="260" cy="80" r="3" fill="#c9a84c"/><circle cx="275" cy="95" r="3" fill="#c9a84c"/>
+            <path d="M 168 115 Q 215 40 280 100" fill="none" stroke="#4ade80" stroke-width="2"/>
+            <text x="250" y="148" text-anchor="middle" fill="#7a7670" font-size="10" font-family="Crimson Pro">Balanced</text>
+            <!-- Overfitting -->
+            <text x="415" y="18" text-anchor="middle" fill="#fb923c" font-size="12" font-family="JetBrains Mono">Overfitting</text>
+            <circle cx="330" cy="110" r="3" fill="#c9a84c"/><circle cx="345" cy="90" r="3" fill="#c9a84c"/>
+            <circle cx="360" cy="75" r="3" fill="#c9a84c"/><circle cx="375" cy="60" r="3" fill="#c9a84c"/>
+            <circle cx="390" cy="55" r="3" fill="#c9a84c"/><circle cx="405" cy="65" r="3" fill="#c9a84c"/>
+            <circle cx="420" cy="80" r="3" fill="#c9a84c"/><circle cx="440" cy="95" r="3" fill="#c9a84c"/>
+            <path d="M 328 112 L 345 92 L 358 70 L 375 62 L 390 56 L 405 63 L 420 78 L 440 97" fill="none" stroke="#fb923c" stroke-width="2"/>
+            <text x="415" y="148" text-anchor="middle" fill="#7a7670" font-size="10" font-family="Crimson Pro">High Variance</text>
+          </svg>
+          <div class="diagram-caption">Model Complexity Spectrum: Underfitting → Good Fit → Overfitting</div>
+        </div>
+        <table class="styled-table">
+          <tr><th>Aspect</th><th>Underfitting</th><th>Overfitting</th></tr>
+          <tr><td>Definition</td><td>Model too simple to capture patterns</td><td>Model memorizes training data incl. noise</td></tr>
+          <tr><td>Bias/Variance</td><td>High Bias, Low Variance</td><td>Low Bias, High Variance</td></tr>
+          <tr><td>Training Error</td><td>High</td><td>Very Low</td></tr>
+          <tr><td>Test Error</td><td>High</td><td>High (poor generalization)</td></tr>
+          <tr><td>Causes</td><td>Too few features, over-regularization, small model</td><td>Too complex model, insufficient training data, too many features</td></tr>
+          <tr><td>Solutions</td><td>More features, increase model complexity, reduce regularization</td><td>Regularization (L1/L2), dropout, pruning, cross-validation, more data</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s3 -->
+
+<!-- ===== MODULE 4: DATA & EDA ===== -->
+<div id="s4" class="section">
+  <div class="module-header">
+    <div class="module-tag">Module 04</div>
+    <div class="module-title">Data Processing &amp; EDA</div>
+    <p class="module-desc">CRISP-DM, EDA techniques, Data Cleaning, Feature Engineering, Visualization, Missing Values, Outliers</p>
+  </div>
+
+  <!-- CRISP-DM -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-29 / S-31 / L-21 / L-22 / L-23</span>
+      <span class="q-text">CRISP-DM Methodology — all 6 phases, Data Understanding &amp; Data Preparation focus</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;width:100%">
+            <defs>
+              <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#2e3347"/>
+              </marker>
+            </defs>
+            <!-- Circular arrangement -->
+            <circle cx="210" cy="125" r="90" fill="none" stroke="#2e3347" stroke-width="1"/>
+            <!-- Phase boxes -->
+            <rect x="165" y="15" width="90" height="30" rx="5" fill="#1f2435" stroke="#c9a84c" stroke-width="1.5"/>
+            <text x="210" y="35" text-anchor="middle" fill="#c9a84c" font-size="10" font-family="JetBrains Mono">Business</text>
+            <rect x="295" y="50" width="100" height="30" rx="5" fill="#1f2435" stroke="#4ecdc4" stroke-width="1.5"/>
+            <text x="345" y="70" text-anchor="middle" fill="#4ecdc4" font-size="10" font-family="JetBrains Mono">Data Understanding</text>
+            <rect x="315" y="135" width="90" height="30" rx="5" fill="#1f2435" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="360" y="155" text-anchor="middle" fill="#a78bfa" font-size="10" font-family="JetBrains Mono">Data Prep</text>
+            <rect x="185" y="210" width="80" height="30" rx="5" fill="#1f2435" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="225" y="230" text-anchor="middle" fill="#fb923c" font-size="10" font-family="JetBrains Mono">Modeling</text>
+            <rect x="55" y="135" width="90" height="30" rx="5" fill="#1f2435" stroke="#4ade80" stroke-width="1.5"/>
+            <text x="100" y="155" text-anchor="middle" fill="#4ade80" font-size="10" font-family="JetBrains Mono">Evaluation</text>
+            <rect x="20" y="50" width="95" height="30" rx="5" fill="#1f2435" stroke="#ff6b6b" stroke-width="1.5"/>
+            <text x="67" y="70" text-anchor="middle" fill="#ff6b6b" font-size="10" font-family="JetBrains Mono">Deployment</text>
+          </svg>
+          <div class="diagram-caption">CRISP-DM: Cross-Industry Standard Process for Data Mining</div>
+        </div>
+        <table class="styled-table">
+          <tr><th>Phase</th><th>Purpose</th><th>Key Activities</th></tr>
+          <tr><td><strong>1. Business Understanding</strong></td><td>Define problem and goals</td><td>Set KPIs, define success criteria, assess risks</td></tr>
+          <tr><td><strong>2. Data Understanding</strong></td><td>Explore raw data, identify patterns &amp; quality issues</td><td>Initial data collection, descriptive stats, EDA, detect anomalies</td></tr>
+          <tr><td><strong>3. Data Preparation</strong></td><td>Transform data into model-ready format</td><td>Cleaning, encoding, scaling, feature engineering, train-test split</td></tr>
+          <tr><td><strong>4. Modeling</strong></td><td>Build &amp; train ML models</td><td>Select algorithms, train, tune hyperparameters</td></tr>
+          <tr><td><strong>5. Evaluation</strong></td><td>Validate model against business objectives</td><td>Cross-validation, performance metrics, model comparison</td></tr>
+          <tr><td><strong>6. Deployment</strong></td><td>Put model into production</td><td>API integration, monitoring, retraining pipeline</td></tr>
+        </table>
+        <div class="info-box">
+          <div class="info-box-title">Data Preparation Challenges</div>
+          <ul style="padding-left:1.25rem;color:var(--text2);">
+            <li><strong>Missing Data:</strong> Can cause model bias — use imputation (mean/median/mode) or removal if minimal</li>
+            <li><strong>Outliers:</strong> Skew results — use Z-score, IQR trimming, or Winsorization</li>
+            <li><strong>Scaling:</strong> Min-Max scaling [0,1] or Z-score standardization essential for distance-based algorithms</li>
+            <li><strong>Encoding:</strong> One-hot encoding for nominal, label encoding for ordinal categorical variables</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDA -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-30 / S-32 / S-34 / L-24 / L-28</span>
+      <span class="q-text">EDA — definition, role, visualization techniques, univariate/bivariate/multivariate analysis</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>EDA (Exploratory Data Analysis)</strong> is the process of visually and statistically analyzing data to summarize characteristics, detect patterns, identify anomalies, and uncover relationships before model building.</p>
+        <table class="styled-table">
+          <tr><th>Analysis Type</th><th>Definition</th><th>Tools &amp; Plots</th></tr>
+          <tr><td><strong>Univariate</strong></td><td>Analyzes one variable at a time</td><td>Histogram, Box plot, Bar chart, Density plot</td></tr>
+          <tr><td><strong>Bivariate</strong></td><td>Relationship between two variables</td><td>Scatter plot, Correlation, Chi-square test</td></tr>
+          <tr><td><strong>Multivariate</strong></td><td>Multiple variables simultaneously</td><td>Heatmap (correlation matrix), PCA, Pair plot</td></tr>
+        </table>
+        <p style="margin-top:1rem;"><strong>Key Visualization Techniques:</strong></p>
+        <table class="styled-table">
+          <tr><th>Plot</th><th>Best For</th></tr>
+          <tr><td>Histogram</td><td>Distribution shape, skewness, frequency of continuous data</td></tr>
+          <tr><td>Box Plot</td><td>Detecting outliers, spread (IQR), median</td></tr>
+          <tr><td>Scatter Plot</td><td>Correlation between two continuous variables</td></tr>
+          <tr><td>Heatmap</td><td>Correlation matrix; detecting multicollinearity</td></tr>
+          <tr><td>Bar Chart</td><td>Comparing categories; frequency of discrete values</td></tr>
+          <tr><td>Line Chart</td><td>Trends over time (time series)</td></tr>
+          <tr><td>Violin Plot</td><td>Combination of box plot + density plot</td></tr>
+          <tr><td>Pair Plot</td><td>All pairwise scatterplots in a dataset</td></tr>
+          <tr><td>Pie Chart</td><td>Proportions of categorical data</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Cleaning vs Transformation -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-35 / L-25</span>
+      <span class="q-text">Difference between Data Cleaning and Data Transformation</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <table class="styled-table">
+        <tr><th>Aspect</th><th>Data Cleaning</th><th>Data Transformation</th></tr>
+        <tr><td>Goal</td><td>Fix data quality issues</td><td>Modify structure/format for modeling</td></tr>
+        <tr><td>Activities</td><td>Handle missing values, remove duplicates, fix outliers, correct errors</td><td>Scaling, normalization, encoding, dimensionality reduction</td></tr>
+        <tr><td>Example</td><td>Filling null ages with median age</td><td>Scaling age to [0,1] range</td></tr>
+        <tr><td>When?</td><td>Before analysis / before transformation</td><td>After cleaning, before model training</td></tr>
+        <tr><td>Output</td><td>Corrected, consistent dataset</td><td>Properly formatted, model-ready dataset</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Feature scaling / outliers / missing values -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-33 / S-36 / S-37 / L-27 / L-29</span>
+      <span class="q-text">Missing values, outliers, feature scaling — detection, impact, and handling techniques</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Missing Values:</strong></p>
+        <table class="styled-table">
+          <tr><th>Strategy</th><th>When to Use</th><th>Example</th></tr>
+          <tr><td>Mean Imputation</td><td>Continuous data, normally distributed</td><td>Fill missing age with mean age</td></tr>
+          <tr><td>Median Imputation</td><td>Skewed data or with outliers</td><td>Fill salary with median salary</td></tr>
+          <tr><td>Mode Imputation</td><td>Categorical features</td><td>Fill missing city with most common city</td></tr>
+          <tr><td>Predictive Imputation</td><td>Complex patterns exist</td><td>Use regression model to predict missing values</td></tr>
+          <tr><td>Deletion</td><td>Missing data is &lt;5% of dataset</td><td>Drop rows/columns with null values</td></tr>
+        </table>
+        <p style="margin-top:1rem;"><strong>Outlier Detection &amp; Handling:</strong></p>
+        <div class="formula-box">Z-score: z = (x − μ)/σ &nbsp;(|z| &gt; 3 = outlier) &nbsp;|&nbsp; IQR: Q1 − 1.5·IQR  to  Q3 + 1.5·IQR</div>
+        <p>Handling: Remove, Winsorize (cap at percentile), Log-transform, Treat as separate class</p>
+        <p style="margin-top:1rem;"><strong>Feature Scaling (necessary for KNN, SVM, gradient descent-based models):</strong></p>
+        <div class="formula-box">Min-Max: x' = (x − xₘᵢₙ)/(xₘₐₓ − xₘᵢₙ) → [0,1] &nbsp;|&nbsp; Z-score: x' = (x − μ)/σ → Mean=0, SD=1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature Selection vs Extraction -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-42 / L-26</span>
+      <span class="q-text">Feature Selection vs Feature Extraction — differences and impact on ML</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <table class="styled-table">
+        <tr><th>Aspect</th><th>Feature Selection</th><th>Feature Extraction</th></tr>
+        <tr><td>Concept</td><td>Chooses a subset of original features</td><td>Creates new features from original ones</td></tr>
+        <tr><td>Interpretability</td><td>High — original features retained</td><td>Lower — new abstract features</td></tr>
+        <tr><td>Methods</td><td>Chi-square, RFE, LASSO, Mutual Information</td><td>PCA, LDA, Autoencoders, t-SNE</td></tr>
+        <tr><td>Use Case</td><td>When original features are interpretable and relevant</td><td>High-dimensional data (images, text)</td></tr>
+        <tr><td>Data Loss</td><td>Yes — dropped features are lost</td><td>Less — variance is preserved in new space</td></tr>
+      </table>
+      <div class="info-box">
+        <div class="info-box-title">Impact on Logistic Regression</div>
+        Feature selection on logistic regression (e.g., in fraud detection): removing irrelevant features reduces overfitting, speeds up training, and improves interpretability. Example: using transaction amount + location + frequency vs. all 50+ features → better precision with fewer false positives.
+      </div>
+    </div>
+  </div>
+
+  <!-- Dimensionality Reduction -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">L-30</span>
+      <span class="q-text">Significance of Dimensionality Reduction — PCA explained</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>PCA (Principal Component Analysis)</strong> finds a new orthogonal coordinate system where axes (principal components) align with directions of maximum variance in the data.</p>
+        <ol class="steps-list">
+          <li><strong>Standardize</strong> <span>— Zero mean, unit variance</span></li>
+          <li><strong>Covariance Matrix</strong> <span>— Compute Σ = XᵀX/(n−1)</span></li>
+          <li><strong>Eigendecomposition</strong> <span>— Get eigenvalues (λ) and eigenvectors (v) of Σ</span></li>
+          <li><strong>Sort</strong> <span>— Sort eigenvectors by eigenvalues descending</span></li>
+          <li><strong>Project</strong> <span>— X' = X · V_k (top-k eigenvectors)</span></li>
+        </ol>
+        <div class="info-box">
+          <div class="info-box-title">Benefits</div>
+          Reduces dimensionality → faster training, less overfitting, easier visualization. Removes multicollinearity. Retains maximum variance with fewest dimensions.
+        </div>
+        <div class="warn-box">
+          <div class="warn-box-title">Limitation</div>
+          Principal components lose interpretability as they are linear combinations of original features. PCA assumes linear relationships.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Imbalance -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">L-27 / L-38</span>
+      <span class="q-text">Data Imbalance — impact on model training and techniques to handle it</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Data Imbalance</strong> occurs when one class significantly outnumbers another (e.g., fraud = 0.1%, normal = 99.9%). The model learns to predict the majority class always, achieving high accuracy but zero utility for the minority class.</p>
+        <table class="styled-table">
+          <tr><th>Technique</th><th>Description</th><th>When to Use</th></tr>
+          <tr><td>SMOTE</td><td>Synthetic Minority Over-sampling — creates synthetic minority samples by interpolation</td><td>When dataset is small to medium</td></tr>
+          <tr><td>Oversampling</td><td>Duplicate minority class samples randomly</td><td>Quick fix; risk of overfitting</td></tr>
+          <tr><td>Undersampling</td><td>Remove majority class samples randomly</td><td>Large datasets where data loss is acceptable</td></tr>
+          <tr><td>Cost-Sensitive Learning</td><td>Assign higher misclassification penalty to minority class</td><td>When modifying data is undesirable</td></tr>
+          <tr><td>Threshold Tuning</td><td>Adjust decision threshold (e.g., 0.3 instead of 0.5)</td><td>During prediction phase</td></tr>
+          <tr><td>Ensemble Methods</td><td>BalancedBagging, EasyEnsemble</td><td>Complex imbalance scenarios</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Train-Test split -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-38 / S-39</span>
+      <span class="q-text">Why is Train-Test split essential? Explain model selection importance.</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Train-Test Split</strong> partitions data so the model trains on one portion and is evaluated on a completely unseen portion, mimicking real-world deployment.</p>
+        <div class="formula-box">Common splits: 70/30 · 80/20 · 60/20/20 (Train/Validation/Test)</div>
+        <p>Without it: the model memorizes training data (overfitting) and we have no unbiased estimate of generalization.</p>
+        <p style="margin-top:0.75rem;"><strong>Model Selection</strong> involves choosing the best algorithm for the data based on:</p>
+        <ul style="padding-left:1.5rem;color:var(--text2);">
+          <li>Dataset characteristics (size, dimensionality, noise)</li>
+          <li>Problem type (classification/regression/clustering)</li>
+          <li>Computational constraints</li>
+          <li>Interpretability requirements</li>
+          <li>Cross-validation performance across multiple models</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s4 -->
+
+<!-- ===== MODULE 5: ALGORITHMS ===== -->
+<div id="s5" class="section">
+  <div class="module-header">
+    <div class="module-tag">Module 05</div>
+    <div class="module-title">ML Algorithms</div>
+    <p class="module-desc">Linear Regression, Logistic Regression, Decision Trees, K-Means Clustering, Hierarchical Clustering</p>
+  </div>
+
+  <!-- Linear Regression -->
+  <div class="section-divider">Linear Regression</div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-23 / L-40 / L-41 / L-43</span>
+      <span class="q-text">Linear Regression — concept, equation, cost function, gradient descent, simple vs multiple</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">Simple: y = β₀ + β₁x + ε &nbsp;&nbsp;|&nbsp;&nbsp; Multiple: y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ + ε<br>Matrix form: y = Xβ + ε &nbsp;→&nbsp; β = (XᵀX)⁻¹Xᵀy (Ordinary Least Squares)</div>
+        <p><strong>Cost Function (MSE):</strong></p>
+        <div class="formula-box">J(β) = (1/n) Σ(yᵢ − ŷᵢ)² = (1/n) Σ(yᵢ − β₀ − β₁xᵢ)²</div>
+        <p><strong>Gradient Descent:</strong> Iteratively updates parameters to minimize J(β):</p>
+        <div class="formula-box">βⱼ := βⱼ − α · ∂J/∂βⱼ &nbsp;&nbsp; (α = learning rate)</div>
+        <table class="styled-table">
+          <tr><th>Aspect</th><th>Simple Linear Regression</th><th>Multiple Linear Regression</th></tr>
+          <tr><td>Predictors</td><td>One independent variable</td><td>Multiple independent variables</td></tr>
+          <tr><td>Example</td><td>House price ~ Area only</td><td>House price ~ Area + Bedrooms + Location</td></tr>
+          <tr><td>Interpretation</td><td>Easier, single slope</td><td>More complex; each β is partial effect</td></tr>
+          <tr><td>Accuracy</td><td>Limited — ignores other factors</td><td>Higher — captures combined effect</td></tr>
+        </table>
+        <div class="info-box">
+          <div class="info-box-title">Advantages &amp; Limitations</div>
+          ✓ Simple, interpretable, fast training &nbsp;&nbsp; ✗ Assumes linearity, sensitive to outliers, multicollinearity issues
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logistic Regression -->
+  <div class="section-divider">Logistic Regression</div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-41 / S-48 / L-35 / L-42 / L-50</span>
+      <span class="q-text">Logistic Regression — concept, sigmoid function, real-world applications (fraud, medical)</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">Sigmoid: σ(z) = 1 / (1 + e⁻ᶻ) &nbsp;where z = β₀ + β₁x₁ + ... + βₙxₙ<br>Output P(Y=1|X) ∈ (0,1) &nbsp;→&nbsp; Classify as 1 if P &gt; 0.5</div>
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;width:100%">
+            <line x1="30" y1="10" x2="30" y2="150" stroke="#2e3347" stroke-width="1"/>
+            <line x1="20" y1="140" x2="390" y2="140" stroke="#2e3347" stroke-width="1"/>
+            <text x="15" y="30" fill="#7a7670" font-size="9" font-family="JetBrains Mono">1.0</text>
+            <text x="15" y="85" fill="#7a7670" font-size="9" font-family="JetBrains Mono">0.5</text>
+            <text x="15" y="140" fill="#7a7670" font-size="9" font-family="JetBrains Mono">0.0</text>
+            <path d="M 40 138 Q 80 137 120 130 Q 160 118 185 85 Q 210 52 240 30 Q 280 18 370 15" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+            <line x1="185" y1="10" x2="185" y2="150" stroke="#4ecdc4" stroke-width="1" stroke-dasharray="4,3" opacity="0.5"/>
+            <text x="180" y="158" fill="#4ecdc4" font-size="9" font-family="JetBrains Mono">z=0</text>
+            <text x="200" y="80" fill="#a78bfa" font-size="10" font-family="JetBrains Mono">P=0.5</text>
+            <text x="300" y="145" fill="#7a7670" font-size="9" font-family="Crimson Pro">z (log-odds)</text>
+            <text x="40" y="25" fill="#7a7670" font-size="9" font-family="Crimson Pro">Sigmoid S-curve</text>
+          </svg>
+          <div class="diagram-caption">Sigmoid Function — maps any real value to (0, 1)</div>
+        </div>
+        <p><strong>Case Study 1 — Fraud Detection:</strong><br>
+        Features: transaction amount, location, time, user behavior. If P(fraud) > 0.5 → flag transaction. Logistic regression assigns higher probability to unusual patterns.</p>
+        <p style="margin-top:0.75rem;"><strong>Case Study 2 — Medical Diagnosis (Diabetes):</strong><br>
+        Features: glucose level, BMI, age, blood pressure. If P(diabetes) > 0.5 → positive prediction → early intervention.</p>
+        <div class="info-box">
+          <div class="info-box-title">Evaluation Metrics</div>
+          Accuracy · Precision · Recall · F1-score · Log Loss · ROC-AUC
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decision Tree -->
+  <div class="section-divider">Decision Trees</div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-45 / S-46 / S-49 / L-19 / L-36 / L-37 / L-46 / L-48</span>
+      <span class="q-text">Decision Trees — structure, splitting criteria, hyperparameters, pruning, applications</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <!-- Decision Tree Diagram -->
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;width:100%">
+            <!-- Root -->
+            <rect x="160" y="10" width="100" height="35" rx="5" fill="#1f2435" stroke="#c9a84c" stroke-width="1.5"/>
+            <text x="210" y="32" text-anchor="middle" fill="#c9a84c" font-size="11" font-family="JetBrains Mono">Income &gt; 50k?</text>
+            <!-- Left branch No -->
+            <line x1="190" y1="45" x2="100" y2="90" stroke="#2e3347" stroke-width="1.5"/>
+            <text x="130" y="75" fill="#ff6b6b" font-size="9" font-family="JetBrains Mono">No</text>
+            <!-- Right branch Yes -->
+            <line x1="230" y1="45" x2="320" y2="90" stroke="#2e3347" stroke-width="1.5"/>
+            <text x="285" y="75" fill="#4ade80" font-size="9" font-family="JetBrains Mono">Yes</text>
+            <!-- Internal nodes -->
+            <rect x="50" y="90" width="100" height="35" rx="5" fill="#1f2435" stroke="#4ecdc4" stroke-width="1.5"/>
+            <text x="100" y="112" text-anchor="middle" fill="#4ecdc4" font-size="10" font-family="JetBrains Mono">Age &gt; 30?</text>
+            <rect x="270" y="90" width="100" height="35" rx="5" fill="#1f2435" stroke="#4ecdc4" stroke-width="1.5"/>
+            <text x="320" y="112" text-anchor="middle" fill="#4ecdc4" font-size="10" font-family="JetBrains Mono">Credit &gt; 700?</text>
+            <!-- Leaves -->
+            <line x1="75" y1="125" x2="40" y2="175" stroke="#2e3347" stroke-width="1.5"/>
+            <line x1="125" y1="125" x2="155" y2="175" stroke="#2e3347" stroke-width="1.5"/>
+            <line x1="295" y1="125" x2="255" y2="175" stroke="#2e3347" stroke-width="1.5"/>
+            <line x1="345" y1="125" x2="375" y2="175" stroke="#2e3347" stroke-width="1.5"/>
+            <rect x="10" y="175" width="70" height="30" rx="4" fill="rgba(255,107,107,0.1)" stroke="#ff6b6b" stroke-width="1"/>
+            <text x="45" y="195" text-anchor="middle" fill="#ff6b6b" font-size="9" font-family="JetBrains Mono">Reject</text>
+            <rect x="125" y="175" width="70" height="30" rx="4" fill="rgba(74,222,128,0.1)" stroke="#4ade80" stroke-width="1"/>
+            <text x="160" y="195" text-anchor="middle" fill="#4ade80" font-size="9" font-family="JetBrains Mono">Approve</text>
+            <rect x="225" y="175" width="70" height="30" rx="4" fill="rgba(255,107,107,0.1)" stroke="#ff6b6b" stroke-width="1"/>
+            <text x="260" y="195" text-anchor="middle" fill="#ff6b6b" font-size="9" font-family="JetBrains Mono">Reject</text>
+            <rect x="345" y="175" width="70" height="30" rx="4" fill="rgba(74,222,128,0.1)" stroke="#4ade80" stroke-width="1"/>
+            <text x="380" y="195" text-anchor="middle" fill="#4ade80" font-size="9" font-family="JetBrains Mono">Approve</text>
+            <!-- Labels -->
+            <text x="45" y="220" text-anchor="middle" fill="#7a7670" font-size="8" font-family="Crimson Pro">Leaf Node</text>
+            <text x="210" y="58" text-anchor="middle" fill="#7a7670" font-size="8" font-family="Crimson Pro">Internal Node</text>
+            <text x="210" y="8" text-anchor="middle" fill="#7a7670" font-size="8" font-family="Crimson Pro">Root Node</text>
+          </svg>
+          <div class="diagram-caption">Decision Tree for Loan Approval — Example</div>
+        </div>
+        <p><strong>Splitting Criteria:</strong></p>
+        <div class="formula-box">Gini Impurity: G = 1 − Σpᵢ² &nbsp;(0=pure, 0.5=max impurity)<br>Entropy: H = −Σpᵢ·log₂(pᵢ) &nbsp;(used in ID3, C4.5)<br>Information Gain: IG = H(parent) − weighted avg H(children)</div>
+        <p style="margin-top:1rem;"><strong>Key Hyperparameters:</strong></p>
+        <table class="styled-table">
+          <tr><th>Hyperparameter</th><th>Effect</th></tr>
+          <tr><td>max_depth</td><td>Limits tree depth — prevents overfitting; too small causes underfitting</td></tr>
+          <tr><td>min_samples_split</td><td>Min samples to allow a split; higher = simpler tree</td></tr>
+          <tr><td>min_samples_leaf</td><td>Min samples at a leaf node; prevents tiny, noisy leaves</td></tr>
+          <tr><td>criterion</td><td>gini vs entropy — affects split quality measure</td></tr>
+          <tr><td>max_features</td><td>Number of features considered for each split</td></tr>
+        </table>
+        <p style="margin-top:1rem;"><strong>Pruning:</strong></p>
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-title blue">Pre-Pruning (Early Stopping)</div>
+            <ul><li>Stop tree growth based on conditions (max depth, min gain)</li><li>Faster, avoids useless branches</li><li>Risk: might stop too early (underfitting)</li></ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-title orange">Post-Pruning</div>
+            <ul><li>Allow full growth, then trim branches</li><li>Methods: Cost Complexity Pruning (α)</li><li>Better generalization; more thorough</li></ul>
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-title">Decision Trees vs Logistic Regression</div>
+          Decision trees handle non-linear boundaries, are highly interpretable but prone to overfitting. Logistic regression is linear, stable, better generalization on linear problems. Use DT when complex patterns exist; LR for simpler interpretable models.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- K-Means -->
+  <div class="section-divider">K-Means &amp; Hierarchical Clustering</div>
+
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-47 / L-20 / L-45 / L-49</span>
+      <span class="q-text">K-Means Clustering — algorithm, example, vs Hierarchical Clustering, when to use which</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>K-Means Algorithm Steps:</strong></p>
+        <ol class="steps-list">
+          <li><strong>Initialize</strong> <span>— Randomly place K centroids in feature space</span></li>
+          <li><strong>Assign</strong> <span>— Assign each data point to nearest centroid (by Euclidean distance)</span></li>
+          <li><strong>Update</strong> <span>— Recalculate centroids as mean of assigned points</span></li>
+          <li><strong>Repeat</strong> <span>— Repeat assign+update until centroids stop moving (convergence)</span></li>
+        </ol>
+        <div class="formula-box">Objective: minimize J = Σₖ Σᵢ∈Cₖ ||xᵢ − μₖ||² &nbsp;(within-cluster sum of squares)</div>
+        <p style="margin-top:1rem;"><strong>Choosing K:</strong> Use the <em>Elbow Method</em> — plot inertia vs K; pick K at the "elbow" point.</p>
+        <table class="styled-table">
+          <tr><th>Aspect</th><th>K-Means</th><th>Hierarchical Clustering</th></tr>
+          <tr><td>Approach</td><td>Partition-based (flat)</td><td>Tree-based (dendrogram)</td></tr>
+          <tr><td>K required?</td><td>Yes, must specify K upfront</td><td>No — cut dendrogram at desired level</td></tr>
+          <tr><td>Complexity</td><td>O(n·K·I) — scalable</td><td>O(n²·log n) — expensive for large data</td></tr>
+          <tr><td>Output</td><td>K flat clusters</td><td>Hierarchy / dendrogram</td></tr>
+          <tr><td>Best for</td><td>Large datasets, globular clusters</td><td>Small datasets, exploring hierarchical structure</td></tr>
+          <tr><td>Outlier sensitivity</td><td>High (centroids pulled by outliers)</td><td>Moderate</td></tr>
+          <tr><td>Distance metric</td><td>Euclidean by default</td><td>Euclidean, Manhattan, Cosine (flexible)</td></tr>
+        </table>
+        <div class="info-box">
+          <div class="info-box-title">Real-World Example: Customer Segmentation</div>
+          An e-commerce platform uses K-Means (K=4) on: purchase frequency, average spend, product categories. Segments: Budget Shoppers · Loyal Customers · Occasional Buyers · High Spenders. Each cluster gets tailored marketing campaigns.
+        </div>
+        <div class="warn-box">
+          <div class="warn-box-title">K-Means Limitations</div>
+          Assumes spherical clusters · Sensitive to outliers · Must specify K in advance · May converge to local minima (use K-Means++ initialization)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cross-validation -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-50 / L-52</span>
+      <span class="q-text">K-Fold Cross-Validation and types of validation methods</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 420 150" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;width:100%">
+            <text x="210" y="18" text-anchor="middle" fill="#c9a84c" font-size="11" font-family="JetBrains Mono">K-Fold Cross Validation (K=5)</text>
+            <!-- Fold 1 -->
+            <rect x="10" y="35" width="50" height="20" rx="3" fill="rgba(255,107,107,0.3)" stroke="#ff6b6b" stroke-width="1"/>
+            <rect x="65" y="35" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <rect x="120" y="35" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <rect x="175" y="35" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <rect x="230" y="35" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <text x="35" y="50" text-anchor="middle" fill="#ff6b6b" font-size="8" font-family="JetBrains Mono">TEST</text>
+            <text x="155" y="50" text-anchor="middle" fill="#4ecdc4" font-size="8" font-family="JetBrains Mono">TRAIN</text>
+            <text x="310" y="50" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Iteration 1</text>
+            <!-- Fold 2 -->
+            <rect x="10" y="62" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <rect x="65" y="62" width="50" height="20" rx="3" fill="rgba(255,107,107,0.3)" stroke="#ff6b6b" stroke-width="1"/>
+            <rect x="120" y="62" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <rect x="175" y="62" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <rect x="230" y="62" width="50" height="20" rx="3" fill="#1f2435" stroke="#2e3347" stroke-width="1"/>
+            <text x="90" y="77" text-anchor="middle" fill="#ff6b6b" font-size="8" font-family="JetBrains Mono">TEST</text>
+            <text x="310" y="77" text-anchor="middle" fill="#7a7670" font-size="9" font-family="Crimson Pro">Iteration 2</text>
+            <!-- ... -->
+            <text x="155" y="105" text-anchor="middle" fill="#7a7670" font-size="10" font-family="JetBrains Mono">... (and so on for K=5)</text>
+            <text x="155" y="130" text-anchor="middle" fill="#4ecdc4" font-size="10" font-family="JetBrains Mono">Final score = average of all K evaluation scores</text>
+          </svg>
+          <div class="diagram-caption">K-Fold Cross-Validation — each fold serves as test set once</div>
+        </div>
+        <table class="styled-table">
+          <tr><th>Method</th><th>Description</th><th>Pros</th><th>Cons</th></tr>
+          <tr><td>Hold-Out</td><td>Single train/test split (70/30)</td><td>Fast, simple</td><td>High variance estimate; wastes data</td></tr>
+          <tr><td>K-Fold (K=5 or 10)</td><td>K rounds, each fold as test once</td><td>Reliable, uses all data</td><td>K× slower training</td></tr>
+          <tr><td>Stratified K-Fold</td><td>K-Fold preserving class proportions</td><td>Best for imbalanced data</td><td>Same as K-Fold</td></tr>
+          <tr><td>LOOCV</td><td>Each single sample is the test set</td><td>Max data usage</td><td>Extremely slow for large n</td></tr>
+          <tr><td>Time-Series Split</td><td>Respects temporal order — no future leakage</td><td>Required for time data</td><td>Less data for training early</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s5 -->
+
+<!-- ===== MODULE 6: MODEL EVALUATION ===== -->
+<div id="s6" class="section">
+  <div class="module-header">
+    <div class="module-tag">Module 06</div>
+    <div class="module-title">Model Evaluation Metrics</div>
+    <p class="module-desc">Confusion Matrix, Accuracy, Precision, Recall, F1-Score, Specificity, MSE, RMSE, MAE, R², ROC-AUC</p>
+  </div>
+
+  <!-- Confusion Matrix -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-43 / S-52 / L-34 / L-51</span>
+      <span class="q-text">Confusion Matrix — structure, all metrics derived from it, Sensitivity vs Specificity</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="diagram-wrap">
+          <div class="confusion-matrix">
+            <div class="cm-cell cm-header"></div>
+            <div class="cm-cell cm-header">Predicted: Positive</div>
+            <div class="cm-cell cm-header">Predicted: Negative</div>
+            <div class="cm-cell cm-header">Actual: Positive</div>
+            <div class="cm-cell cm-tp">TP<br><small>True Positive</small></div>
+            <div class="cm-cell cm-fn">FN<br><small>False Negative (Type II)</small></div>
+            <div class="cm-cell cm-header">Actual: Negative</div>
+            <div class="cm-cell cm-fp">FP<br><small>False Positive (Type I)</small></div>
+            <div class="cm-cell cm-tn">TN<br><small>True Negative</small></div>
+          </div>
+          <div class="diagram-caption">Binary Classification Confusion Matrix</div>
+        </div>
+        <div class="formula-box">
+          Accuracy = (TP + TN) / (TP + TN + FP + FN)<br>
+          Precision = TP / (TP + FP) &nbsp;&nbsp;&nbsp; [How many predicted positives are correct?]<br>
+          Recall (Sensitivity) = TP / (TP + FN) &nbsp;&nbsp;&nbsp; [How many actual positives were found?]<br>
+          Specificity (TNR) = TN / (TN + FP) &nbsp;&nbsp;&nbsp; [How many actual negatives were correctly rejected?]<br>
+          F1-Score = 2 × (Precision × Recall) / (Precision + Recall)<br>
+          FPR = FP / (FP + TN) &nbsp;&nbsp;&nbsp; FNR = FN / (FN + TP)
+        </div>
+        <table class="styled-table">
+          <tr><th>Metric</th><th>When to Prioritize</th><th>Example Domain</th></tr>
+          <tr><td>Accuracy</td><td>Balanced dataset, equal class importance</td><td>Digit recognition</td></tr>
+          <tr><td>Precision</td><td>Cost of false positives is high</td><td>Email spam filter (FP = real email blocked)</td></tr>
+          <tr><td>Recall (Sensitivity)</td><td>Cost of false negatives is high</td><td>Cancer detection (FN = missed cancer)</td></tr>
+          <tr><td>Specificity</td><td>Need to correctly identify negatives</td><td>Drug testing (FP = false accusation)</td></tr>
+          <tr><td>F1-Score</td><td>Imbalanced dataset; both errors matter</td><td>Fraud detection</td></tr>
+          <tr><td>ROC-AUC</td><td>Overall discrimination ability at all thresholds</td><td>Medical diagnosis, risk scoring</td></tr>
+        </table>
+        <div class="warn-box">
+          <div class="warn-box-title">Sensitivity vs Specificity Tradeoff</div>
+          Increasing sensitivity (lower threshold) → catches more true positives → but more false positives (lower specificity). This is the ROC curve tradeoff — choose operating point based on application consequences.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Precision/Recall/F1 numerical -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">MCQ-clv / MCQ-clviii</span>
+      <span class="q-text">Calculate Precision for: (1) TP=233, TN=79, FP=13, FN=9 &nbsp;&nbsp; (2) TP=178, TN=92, FN=13, FP=9</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        Case 1: TP=233, FP=13<br>
+        Precision = TP/(TP+FP) = 233/(233+13) = 233/246 ≈ <strong>0.95</strong><br><br>
+        Case 2: TP=178, FP=9<br>
+        Precision = 178/(178+9) = 178/187 ≈ <strong>0.95</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entropy and Gini -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">MCQ-clvi / MCQ-clvii</span>
+      <span class="q-text">Calculate Entropy and Gini Score for: GOOD=200, BAD=50, MODERATE=250</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="calc-box">
+        Total = 500 &nbsp;→&nbsp; p(GOOD)=0.4, p(BAD)=0.1, p(MOD)=0.5<br><br>
+        Entropy H = −Σ pᵢ·log₂(pᵢ)<br>
+        = −[0.4·log₂(0.4) + 0.1·log₂(0.1) + 0.5·log₂(0.5)]<br>
+        = −[0.4·(−1.322) + 0.1·(−3.322) + 0.5·(−1)]<br>
+        = −[−0.529 − 0.332 − 0.5]<br>
+        <div class="result">Entropy ≈ <strong>1.361 ≈ 1.35</strong></div>
+        <br>
+        Gini G = 1 − Σ pᵢ²<br>
+        = 1 − (0.4² + 0.1² + 0.5²)<br>
+        = 1 − (0.16 + 0.01 + 0.25)<br>
+        = 1 − 0.42<br>
+        <div class="result">Gini ≈ <strong>0.58</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MSE MAE RMSE -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">S-40 / L-31 / L-32 / L-33</span>
+      <span class="q-text">Compare MSE, MAE, RMSE for regression evaluation; Accuracy, Precision, Recall, F1 for classification</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <div class="formula-box">
+          MSE = (1/n)Σ(yᵢ−ŷᵢ)² &nbsp;&nbsp; RMSE = √MSE &nbsp;&nbsp; MAE = (1/n)Σ|yᵢ−ŷᵢ|<br>
+          R² = 1 − SS_res/SS_tot &nbsp;(1 = perfect fit, 0 = baseline, &lt;0 = worse than mean)
+        </div>
+        <table class="styled-table">
+          <tr><th>Metric</th><th>Properties</th><th>Best When</th></tr>
+          <tr><td>MSE</td><td>Heavily penalizes large errors (squared); differentiable for gradient descent</td><td>Large errors must be penalized severely</td></tr>
+          <tr><td>RMSE</td><td>Same units as target; interpretable; still penalizes large errors</td><td>Most common regression metric; interpretable</td></tr>
+          <tr><td>MAE</td><td>Treats all errors equally; robust to outliers</td><td>Outliers present; want simple interpretation</td></tr>
+          <tr><td>R²</td><td>Proportion of variance explained; scale-free</td><td>Comparing models on same dataset</td></tr>
+        </table>
+        <p style="margin-top:1rem;"><strong>Classification Metrics Comparison:</strong></p>
+        <table class="styled-table">
+          <tr><th>Metric</th><th>Formula</th><th>Strength</th><th>Weakness</th></tr>
+          <tr><td>Accuracy</td><td>(TP+TN)/Total</td><td>Intuitive, overall performance</td><td>Misleading for imbalanced data</td></tr>
+          <tr><td>Precision</td><td>TP/(TP+FP)</td><td>Minimizes false positives</td><td>Ignores false negatives</td></tr>
+          <tr><td>Recall</td><td>TP/(TP+FN)</td><td>Minimizes false negatives</td><td>Ignores false positives</td></tr>
+          <tr><td>F1-Score</td><td>2·P·R/(P+R)</td><td>Balances Precision and Recall</td><td>Doesn't consider TN</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Model Validation -->
+  <div class="q-card">
+    <div class="q-head" onclick="toggleQ(this)">
+      <span class="q-num">L-39</span>
+      <span class="q-text">Model Validation and Deployment — significance and real-world impact</span>
+      <span class="q-toggle">▼</span>
+    </div>
+    <div class="q-body">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">
+        <p><strong>Validation</strong> assesses the trained model before deployment using techniques like cross-validation, train-test splits, and evaluation metrics (accuracy, precision, RMSE, AUC-ROC). It prevents overfitting and ensures generalizability.</p>
+        <p><strong>Deployment Strategies:</strong></p>
+        <ul style="padding-left:1.5rem;color:var(--text2);margin:0.5rem 0 1rem;">
+          <li><strong>REST API:</strong> Model served via HTTP endpoint (Flask, FastAPI)</li>
+          <li><strong>Cloud ML Services:</strong> AWS SageMaker, Google Vertex AI, Azure ML</li>
+          <li><strong>Edge Computing:</strong> Model embedded in devices (IoT, mobile)</li>
+          <li><strong>Batch Prediction:</strong> Offline scoring of large datasets</li>
+        </ul>
+        <div class="warn-box">
+          <div class="warn-box-title">Deployment Challenges</div>
+          Data drift · Concept drift · Scalability · Latency · Model monitoring · Version control · A/B testing of model versions
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s6 -->
+
+<!-- ===== MODULE 7: MCQ ===== -->
+<div id="s7" class="section">
+  <div class="module-header">
+    <div class="module-tag">Module 07</div>
+    <div class="module-title">Multiple Choice Questions</div>
+    <p class="module-desc">158 MCQs — Click each question to reveal all options and see the correct answer highlighted</p>
+  </div>
+
+  <button class="show-all-btn" onclick="expandAllMCQ()">▼ Expand All MCQs</button>
+
+  <!-- MCQ Group 1 -->
+  <div class="mcq-group">
+    <div class="mcq-group-title">§ Mathematics &amp; Statistics Foundations (i–xxxii)</div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(i)</span><span>Fundamental mathematical concept for optimization algorithms in ML:</span></div><div class="mcq-options"><div class="mcq-opt">a) Calculus</div><div class="mcq-opt correct">b) Linear Algebra</div><div class="mcq-opt">c) Probability Theory</div><div class="mcq-opt">d) Number Theory</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(ii)</span><span>The gradient of a function in ML:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) The rate of change of the function</div><div class="mcq-opt">b) The area under the curve</div><div class="mcq-opt">c) The value at a specific point</div><div class="mcq-opt">d) The integral of the function</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(iii)</span><span>Matrix operation to find eigenvalues and eigenvectors of a square matrix:</span></div><div class="mcq-options"><div class="mcq-opt">a) Transposition</div><div class="mcq-opt">b) Inversion</div><div class="mcq-opt">c) Singular Value Decomposition</div><div class="mcq-opt correct">d) Diagonalization</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(iv)</span><span>Mathematical technique commonly used for dimensionality reduction in ML:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Singular Value Decomposition</div><div class="mcq-opt">b) Fourier Transform</div><div class="mcq-opt">c) Taylor Series Expansion</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(v)</span><span>Probability distribution to model continuous random variables in ML:</span></div><div class="mcq-options"><div class="mcq-opt">a) Poisson Distribution</div><div class="mcq-opt">b) Binomial Distribution</div><div class="mcq-opt correct">c) Gaussian Distribution</div><div class="mcq-opt">d) Bernoulli Distribution</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(vi)</span><span>Measure of central tendency least affected by extreme values:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean</div><div class="mcq-opt">b) Mode</div><div class="mcq-opt correct">c) Median</div><div class="mcq-opt">d) Range</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(vii)</span><span>In a symmetric distribution, the relationship of mean, median, and mode:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean &lt; Median</div><div class="mcq-opt">b) Mean &gt; Median</div><div class="mcq-opt correct">c) Mean = Median = Mode</div><div class="mcq-opt">d) Mean = Mode only</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(viii)</span><span>The most frequently occurring value in a dataset:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean</div><div class="mcq-opt">b) Median</div><div class="mcq-opt">c) Range</div><div class="mcq-opt correct">d) Mode</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(ix)</span><span>Normal distribution is commonly referred to as:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Bell curve</div><div class="mcq-opt">b) Uniform curve</div><div class="mcq-opt">c) Skewed curve</div><div class="mcq-opt">d) Exponential curve</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(x)</span><span>Relationship between mean and median in a normal distribution:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean &lt; Median</div><div class="mcq-opt">b) Mean &gt; Median</div><div class="mcq-opt correct">c) Mean = Median</div><div class="mcq-opt">d) They differ</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xi)</span><span>Condition applicable to a binomial experiment:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Trials with two outcomes</div><div class="mcq-opt">b) Trials with continuous outcomes</div><div class="mcq-opt">c) Trials with infinite outcomes</div><div class="mcq-opt">d) Trials with non-random outcomes</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xii)</span><span>Sum of all probabilities in a binomial experiment:</span></div><div class="mcq-options"><div class="mcq-opt">a) 0</div><div class="mcq-opt correct">b) 1</div><div class="mcq-opt">c) Equal to number of trials</div><div class="mcq-opt">d) Greater than 1</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xiii)</span><span>Parameters that completely determine a normal distribution:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean and mode</div><div class="mcq-opt correct">b) Mean and standard deviation</div><div class="mcq-opt">c) Median and range</div><div class="mcq-opt">d) Variance and skewness</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xiv)</span><span>Property that distinguishes permutations from combinations:</span></div><div class="mcq-options"><div class="mcq-opt">a) Permutations ignore order</div><div class="mcq-opt correct">b) Permutations consider order</div><div class="mcq-opt">c) Permutations yield fewer outcomes</div><div class="mcq-opt">d) Permutations apply only to identical items</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xv)</span><span>The sampling distribution of the sample mean represents:</span></div><div class="mcq-options"><div class="mcq-opt">a) Distribution of individual data points</div><div class="mcq-opt correct">b) Distribution of all possible sample means</div><div class="mcq-opt">c) Distribution of population values</div><div class="mcq-opt">d) Distribution of sample variances</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xvi)</span><span>Effect on standard error when sample size increases:</span></div><div class="mcq-options"><div class="mcq-opt">a) Standard error increases</div><div class="mcq-opt correct">b) Standard error decreases</div><div class="mcq-opt">c) Standard error remains constant</div><div class="mcq-opt">d) Standard error becomes zero</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xvii)</span><span>Relationship between population mean and mean of sampling distribution:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) They are equal</div><div class="mcq-opt">b) Population mean is greater</div><div class="mcq-opt">c) Sample mean is greater</div><div class="mcq-opt">d) They are unrelated</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xviii)</span><span>Standard deviation of the sampling distribution of the sample mean is called:</span></div><div class="mcq-options"><div class="mcq-opt">a) Standard deviation</div><div class="mcq-opt correct">b) Standard error</div><div class="mcq-opt">c) Mean square error</div><div class="mcq-opt">d) Sampling variance</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xix)</span><span>Requirement for a transformation T to be linear:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Satisfies additivity and scalar multiplication properties</div><div class="mcq-opt">b) Satisfies only additivity</div><div class="mcq-opt">c) Satisfies only scalar multiplication</div><div class="mcq-opt">d) Satisfies commutativity and associativity</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xx)</span><span>Procedure to determine eigenvalues of square matrix A:</span></div><div class="mcq-options"><div class="mcq-opt">a) Solve det(A + λI) = 0</div><div class="mcq-opt correct">b) Solve det(A − λI) = 0</div><div class="mcq-opt">c) Solve A·v = 0</div><div class="mcq-opt">d) Solve A − λI = 0</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxi)</span><span>Correct interpretation of "eigenvector" in ML:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) A vector whose direction remains unchanged after a linear transformation</div><div class="mcq-opt">b) A vector representing the mean of a dataset</div><div class="mcq-opt">c) A vector orthogonal to the hyperplane in SVM</div><div class="mcq-opt">d) A vector representing the slope of a regression line</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxii)</span><span>Significance of "variance" in statistical analysis:</span></div><div class="mcq-options"><div class="mcq-opt">a) Measure of total deviation from the mean</div><div class="mcq-opt">b) Measure of skewness</div><div class="mcq-opt">c) Measure of frequency of occurrence</div><div class="mcq-opt correct">d) Measure of spread of data around the mean</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxiii)</span><span>Process of dimensionality reduction that reduces features:</span></div><div class="mcq-options"><div class="mcq-opt">a) Feature extraction</div><div class="mcq-opt">b) Feature engineering</div><div class="mcq-opt">c) Feature augmentation</div><div class="mcq-opt correct">d) Feature selection</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxiv)</span><span>Distribution used for repeated independent trials with two possible outcomes:</span></div><div class="mcq-options"><div class="mcq-opt">a) Normal Distribution</div><div class="mcq-opt correct">b) Binomial Distribution</div><div class="mcq-opt">c) Exponential Distribution</div><div class="mcq-opt">d) Log-normal distribution</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxv)</span><span>Concept that states sample mean approximates population mean as sample size increases:</span></div><div class="mcq-options"><div class="mcq-opt">a) Law of Large Numbers</div><div class="mcq-opt correct">b) Central Limit Theorem</div><div class="mcq-opt">c) Bayes' Theorem</div><div class="mcq-opt">d) Probability Density Function</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxvi)</span><span>Method used for ordering elements in a sequence:</span></div><div class="mcq-options"><div class="mcq-opt">a) Combination</div><div class="mcq-opt">b) Probability Distribution</div><div class="mcq-opt correct">c) Permutation</div><div class="mcq-opt">d) Normalization</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxvii)</span><span>Concept used to choose a subset of elements without considering order:</span></div><div class="mcq-options"><div class="mcq-opt">a) Permutation</div><div class="mcq-opt correct">b) Combination</div><div class="mcq-opt">c) Mean Calculation</div><div class="mcq-opt">d) Variance Calculation</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxviii)</span><span>Function that describes the likelihood of a continuous random variable:</span></div><div class="mcq-options"><div class="mcq-opt">a) Probability Mass Function</div><div class="mcq-opt">b) Cumulative Distribution Function</div><div class="mcq-opt correct">c) Probability Density Function</div><div class="mcq-opt">d) Normalization Function</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxix)</span><span>Function used to determine probability of a variable falling within a specific range:</span></div><div class="mcq-options"><div class="mcq-opt">a) Probability Mass Function</div><div class="mcq-opt correct">b) Probability Density Function</div><div class="mcq-opt">c) Poisson Distribution</div><div class="mcq-opt">d) Regression Function</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxx)</span><span>Matrix operation that swaps rows and columns:</span></div><div class="mcq-options"><div class="mcq-opt">a) Inversion</div><div class="mcq-opt">b) Rank Calculation</div><div class="mcq-opt correct">c) Transpose</div><div class="mcq-opt">d) Determinant Calculation</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxi)</span><span>Operation that results in an identity matrix when applied to a square matrix:</span></div><div class="mcq-options"><div class="mcq-opt">a) Transpose</div><div class="mcq-opt">b) Determinant</div><div class="mcq-opt correct">c) Inversion</div><div class="mcq-opt">d) Dot Product</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxii)</span><span>Matrix operation used to check linear dependence of rows or columns:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Rank Calculation</div><div class="mcq-opt">b) Transpose</div><div class="mcq-opt">c) Inversion</div><div class="mcq-opt">d) Determinant</div></div></div>
+  </div>
+
+  <!-- MCQ Group 2: Bias/Variance/Errors -->
+  <div class="mcq-group">
+    <div class="mcq-group-title">§ Bias, Variance, Errors &amp; Sampling (xxxiii–l)</div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxiii)</span><span>ML technique that relies on eigenvectors and eigenvalues:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Principal Component Analysis (PCA)</div><div class="mcq-opt">b) Linear Regression</div><div class="mcq-opt">c) K-Means Clustering</div><div class="mcq-opt">d) Naive Bayes</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxiv)</span><span>ML algorithm that relies heavily on dot products of vectors:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Support Vector Machines (SVM)</div><div class="mcq-opt">b) Decision Trees</div><div class="mcq-opt">c) Naive Bayes</div><div class="mcq-opt">d) K-Nearest Neighbors</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxv)</span><span>Error that occurs when a true null hypothesis is rejected:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Type I Error</div><div class="mcq-opt">b) Type II Error</div><div class="mcq-opt">c) Bias Error</div><div class="mcq-opt">d) Variance Error</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxvi)</span><span>Error when a false null hypothesis is not rejected:</span></div><div class="mcq-options"><div class="mcq-opt">a) Type I Error</div><div class="mcq-opt correct">b) Type II Error</div><div class="mcq-opt">c) Bias Error</div><div class="mcq-opt">d) Model Overfitting</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxvii)</span><span>Error type associated with false positives:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Type I Error</div><div class="mcq-opt">b) Type II Error</div><div class="mcq-opt">c) Regularization</div><div class="mcq-opt">d) Underfitting</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxviii)</span><span>Hypothesis that assumes no effect or difference in a statistical test:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Null Hypothesis</div><div class="mcq-opt">b) Alternative Hypothesis</div><div class="mcq-opt">c) Probability Hypothesis</div><div class="mcq-opt">d) Gaussian Hypothesis</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xxxix)</span><span>Relationship between bias and variance in model performance:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Increasing bias decreases variance and vice versa</div><div class="mcq-opt">b) Increasing bias increases variance</div><div class="mcq-opt">c) Bias and variance are independent</div><div class="mcq-opt">d) Both increase together</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xl)</span><span>Error type when model is too simple and fails to capture patterns:</span></div><div class="mcq-options"><div class="mcq-opt">a) High Variance</div><div class="mcq-opt correct">b) High Bias</div><div class="mcq-opt">c) Overfitting</div><div class="mcq-opt">d) Low Bias</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xli)</span><span>Consequence of a model having high variance:</span></div><div class="mcq-options"><div class="mcq-opt">a) Poor performance on both training and test data</div><div class="mcq-opt correct">b) Good performance on training data but poor generalization</div><div class="mcq-opt">c) Model always underfits</div><div class="mcq-opt">d) Model achieves perfect accuracy</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xlii)</span><span>Model fits training data extremely well but performs poorly on unseen data:</span></div><div class="mcq-options"><div class="mcq-opt">a) Underfitting</div><div class="mcq-opt correct">b) Overfitting</div><div class="mcq-opt">c) Bias</div><div class="mcq-opt">d) Regularization</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xliii)</span><span>Method used to reduce high variance in a model:</span></div><div class="mcq-options"><div class="mcq-opt">a) Increasing model complexity</div><div class="mcq-opt">b) Removing regularization</div><div class="mcq-opt">c) Reducing number of training samples</div><div class="mcq-opt correct">d) Increasing number of training samples</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xliv)</span><span>Sampling method that gives each data point equal chance of being chosen:</span></div><div class="mcq-options"><div class="mcq-opt">a) Stratified Sampling</div><div class="mcq-opt correct">b) Random Sampling</div><div class="mcq-opt">c) Systematic Sampling</div><div class="mcq-opt">d) Snowball Sampling</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xlv)</span><span>Primary goal of sampling in machine learning:</span></div><div class="mcq-options"><div class="mcq-opt">a) Reducing training time</div><div class="mcq-opt correct">b) Selecting a representative subset of data</div><div class="mcq-opt">c) Increasing dataset size</div><div class="mcq-opt">d) Improving model complexity</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xlvi)</span><span>Operation that scales a vector without changing its direction:</span></div><div class="mcq-options"><div class="mcq-opt">a) Vector subtraction</div><div class="mcq-opt correct">b) Scalar-vector multiplication</div><div class="mcq-opt">c) Vector cross product</div><div class="mcq-opt">d) Vector projection</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xlvii)</span><span>Definition of determinant of a matrix:</span></div><div class="mcq-options"><div class="mcq-opt">a) Sum of all elements</div><div class="mcq-opt correct">b) Scalar value representing the scaling factor of transformation</div><div class="mcq-opt">c) Number of rows</div><div class="mcq-opt">d) Sum of diagonal elements</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xlviii)</span><span>Property of an orthogonal matrix:</span></div><div class="mcq-options"><div class="mcq-opt">a) Only non-zero diagonal elements</div><div class="mcq-opt correct">b) Its inverse is equal to its transpose</div><div class="mcq-opt">c) All elements are zero</div><div class="mcq-opt">d) Always has negative elements</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xlix)</span><span>Importance of vector norms in regularization:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) They help measure the size of a vector</div><div class="mcq-opt">b) They define the number of dimensions</div><div class="mcq-opt">c) They increase model complexity</div><div class="mcq-opt">d) They eliminate non-zero components</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(l)</span><span>Definition of stratified sampling:</span></div><div class="mcq-options"><div class="mcq-opt">a) Selecting every nth element</div><div class="mcq-opt">b) Choosing individuals based on convenience</div><div class="mcq-opt correct">c) Dividing population into subgroups and randomly selecting from each</div><div class="mcq-opt">d) Selecting all individuals</div></div></div>
+  </div>
+
+  <!-- MCQ Group 3: ML Types -->
+  <div class="mcq-group">
+    <div class="mcq-group-title">§ ML Types, Statistics &amp; Descriptive (li–lxxiii)</div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(li)</span><span>Definition of convenience sampling:</span></div><div class="mcq-options"><div class="mcq-opt">a) Selecting individuals randomly</div><div class="mcq-opt correct">b) Choosing participants based on ease of access</div><div class="mcq-opt">c) Using fixed intervals</div><div class="mcq-opt">d) Dividing into subgroups before selection</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lii)</span><span>Formula to calculate median with odd number of values:</span></div><div class="mcq-options"><div class="mcq-opt">a) Average of first and last value</div><div class="mcq-opt">b) Most frequently occurring number</div><div class="mcq-opt correct">c) Middle value when arranged in order</div><div class="mcq-opt">d) Sum divided by count</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(liii)</span><span>Definition of standard deviation:</span></div><div class="mcq-options"><div class="mcq-opt">a) Difference between highest and lowest values</div><div class="mcq-opt">b) Sum divided by count</div><div class="mcq-opt correct">c) Measure of spread showing how much data varies from the mean</div><div class="mcq-opt">d) Middle value of a dataset</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(liv)</span><span>Interpretation of a low standard deviation in a dataset:</span></div><div class="mcq-options"><div class="mcq-opt">a) Data points spread out widely</div><div class="mcq-opt correct">b) Data points are close to the mean</div><div class="mcq-opt">c) Data has multiple modes</div><div class="mcq-opt">d) Data is skewed</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lv)</span><span>Key difference between mean and median:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean is always higher than median</div><div class="mcq-opt">b) Median is the average of all values</div><div class="mcq-opt correct">c) Mean is affected by outliers; median is not</div><div class="mcq-opt">d) Median is the most frequently occurring value</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lvi)</span><span>Which is NOT a type of machine learning?</span></div><div class="mcq-options"><div class="mcq-opt">a) Supervised learning</div><div class="mcq-opt">b) Unsupervised learning</div><div class="mcq-opt correct">c) Transferred learning</div><div class="mcq-opt">d) Reinforcement learning</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lvii)</span><span>Key difference between supervised and unsupervised learning:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Supervised uses labeled data; Unsupervised uses unlabeled data</div><div class="mcq-opt">b) Supervised learns classification; Unsupervised learns regression</div><div class="mcq-opt">c) Supervised used for prediction; Unsupervised for analysis</div><div class="mcq-opt">d) Opposite of (a)</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lviii)</span><span>Statement NOT true about supervised learning:</span></div><div class="mcq-options"><div class="mcq-opt">a) It requires labeled data for training</div><div class="mcq-opt">b) It aims to learn a mapping from inputs to desired outputs</div><div class="mcq-opt">c) It can be used for both classification and regression</div><div class="mcq-opt correct">d) It can automatically discover hidden patterns in data</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lix)</span><span>Example of an unsupervised learning task:</span></div><div class="mcq-options"><div class="mcq-opt">a) Predicting house prices based on square footage</div><div class="mcq-opt correct">b) Grouping customers based on purchase history</div><div class="mcq-opt">c) Detecting fraudulent transactions</div><div class="mcq-opt">d) Identifying sentiment from reviews</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lx)</span><span>Primary goal of an agent in reinforcement learning:</span></div><div class="mcq-options"><div class="mcq-opt">a) Minimize number of actions taken</div><div class="mcq-opt">b) Accurately predict environment state</div><div class="mcq-opt correct">c) Maximize long-term expected rewards</div><div class="mcq-opt">d) Learn exact dynamics of environment</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxi)</span><span>ML CANNOT be classified as:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Progress Learning</div><div class="mcq-opt">b) Unsupervised Learning</div><div class="mcq-opt">c) Reinforcement Learning</div><div class="mcq-opt">d) Supervised Learning</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxii)</span><span>Type of learning that uses labeled training data:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Supervised learning</div><div class="mcq-opt">b) Unsupervised learning</div><div class="mcq-opt">c) Reinforcement learning</div><div class="mcq-opt">d) Semi-supervised learning</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxiii)</span><span>Algorithm that is NOT a supervised ML algorithm:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) K-means</div><div class="mcq-opt">b) Naïve Bayes</div><div class="mcq-opt">c) SVM for classification</div><div class="mcq-opt">d) Decision tree</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxiv)</span><span>Purpose of regularization in linear regression:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) To prevent overfitting</div><div class="mcq-opt">b) To encourage overfitting</div><div class="mcq-opt">c) To reduce model complexity</div><div class="mcq-opt">d) To make model more complex</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxv)</span><span>Supervised machine learning algorithm:</span></div><div class="mcq-options"><div class="mcq-opt">a) K-means</div><div class="mcq-opt">b) Clustering</div><div class="mcq-opt correct">c) Linear Regression</div><div class="mcq-opt">d) Apriori algorithm</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxvi)</span><span>Primary applications of supervised learning:</span></div><div class="mcq-options"><div class="mcq-opt">a) Clustering</div><div class="mcq-opt correct">b) Classification and Regression</div><div class="mcq-opt">c) Data Summarization</div><div class="mcq-opt">d) Association Rule Mining</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxvii)</span><span>Primary objective of linear regression:</span></div><div class="mcq-options"><div class="mcq-opt">a) Classifying data</div><div class="mcq-opt correct">b) Finding relationships between variables</div><div class="mcq-opt">c) Reducing dimensionality</div><div class="mcq-opt">d) Clustering data</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxviii)</span><span>Term representing the slope of a linear regression equation:</span></div><div class="mcq-options"><div class="mcq-opt">a) Intercept</div><div class="mcq-opt correct">b) Coefficient</div><div class="mcq-opt">c) Residual</div><div class="mcq-opt">d) Bias</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxix)</span><span>Assumption in linear regression regarding relationship between variables:</span></div><div class="mcq-options"><div class="mcq-opt">a) Non-linear relationship</div><div class="mcq-opt correct">b) Linear relationship</div><div class="mcq-opt">c) Exponential relationship</div><div class="mcq-opt">d) No relationship</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxx)</span><span>Method commonly used to minimize error in linear regression:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Gradient Descent</div><div class="mcq-opt">b) K-Means Clustering</div><div class="mcq-opt">c) Principal Component Analysis</div><div class="mcq-opt">d) Decision Trees</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxi)</span><span>Role of the intercept in a linear regression equation:</span></div><div class="mcq-options"><div class="mcq-opt">a) Adjusts the learning rate</div><div class="mcq-opt correct">b) Represents the predicted value when input is zero</div><div class="mcq-opt">c) Reduces overfitting</div><div class="mcq-opt">d) Normalizes the data</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxii)</span><span>Term for the difference between actual and predicted values in linear regression:</span></div><div class="mcq-options"><div class="mcq-opt">a) Loss</div><div class="mcq-opt correct">b) Residual</div><div class="mcq-opt">c) Weight</div><div class="mcq-opt">d) Bias</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxiii)</span><span>Main advantage of using linear regression:</span></div><div class="mcq-options"><div class="mcq-opt">a) Works well with non-linear data</div><div class="mcq-opt correct">b) Easy to interpret and implement</div><div class="mcq-opt">c) Requires no assumptions</div><div class="mcq-opt">d) Needs large datasets</div></div></div>
+  </div>
+
+  <!-- MCQ Group 4: Decision Trees / Clustering -->
+  <div class="mcq-group">
+    <div class="mcq-group-title">§ Decision Trees, Clustering &amp; Reinforcement Learning (lxxiv–c)</div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxiv)</span><span>Main purpose of a decision tree in ML:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Classification and regression</div><div class="mcq-opt">b) Clustering</div><div class="mcq-opt">c) Dimensionality reduction</div><div class="mcq-opt">d) Feature scaling</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxv)</span><span>Component of a decision tree that represents a decision rule:</span></div><div class="mcq-options"><div class="mcq-opt">a) Root node</div><div class="mcq-opt correct">b) Internal node</div><div class="mcq-opt">c) Leaf node</div><div class="mcq-opt">d) Branch</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxvi)</span><span>Criterion commonly used for splitting nodes in a decision tree:</span></div><div class="mcq-options"><div class="mcq-opt">a) Mean Squared Error</div><div class="mcq-opt correct">b) Gini Index</div><div class="mcq-opt">c) K-Means Clustering</div><div class="mcq-opt">d) Regularization</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxvii)</span><span>Term used for the final nodes in a decision tree:</span></div><div class="mcq-options"><div class="mcq-opt">a) Root nodes</div><div class="mcq-opt correct">b) Leaf nodes</div><div class="mcq-opt">c) Parent nodes</div><div class="mcq-opt">d) Sub-nodes</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxviii)</span><span>Main advantage of decision trees:</span></div><div class="mcq-options"><div class="mcq-opt">a) Requires large datasets</div><div class="mcq-opt correct">b) Handles non-linearity well</div><div class="mcq-opt">c) Works only with numerical data</div><div class="mcq-opt">d) Performs better with high dimensions</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxix)</span><span>Algorithm commonly used to construct decision trees:</span></div><div class="mcq-options"><div class="mcq-opt">a) Backpropagation</div><div class="mcq-opt">b) Gradient Descent</div><div class="mcq-opt correct">c) ID3</div><div class="mcq-opt">d) K-Means</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxx)</span><span>Method used to prevent overfitting in decision trees:</span></div><div class="mcq-options"><div class="mcq-opt">a) Increasing tree depth</div><div class="mcq-opt correct">b) Pruning</div><div class="mcq-opt">c) Ignoring features</div><div class="mcq-opt">d) Removing labels</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxi)</span><span>Type of problem where decision trees are most commonly used:</span></div><div class="mcq-options"><div class="mcq-opt">a) Regression only</div><div class="mcq-opt">b) Clustering only</div><div class="mcq-opt correct">c) Classification and regression</div><div class="mcq-opt">d) Feature extraction</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxii)</span><span>Process of merging nodes to reduce complexity in decision trees:</span></div><div class="mcq-options"><div class="mcq-opt">a) Splitting</div><div class="mcq-opt correct">b) Pruning</div><div class="mcq-opt">c) Rooting</div><div class="mcq-opt">d) Overfitting</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxiii)</span><span>Main objective of K-Means clustering:</span></div><div class="mcq-options"><div class="mcq-opt">a) Classifying data</div><div class="mcq-opt correct">b) Grouping similar data</div><div class="mcq-opt">c) Reducing dimensionality</div><div class="mcq-opt">d) Predicting future values</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxiv)</span><span>Key parameter required to initialize K-Means clustering:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Number of clusters (K)</div><div class="mcq-opt">b) Learning rate</div><div class="mcq-opt">c) Decision tree depth</div><div class="mcq-opt">d) Regularization parameter</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxv)</span><span>Step that occurs after initializing centroids in K-Means:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Assigning data points to clusters</div><div class="mcq-opt">b) Calculating loss function</div><div class="mcq-opt">c) Splitting data</div><div class="mcq-opt">d) Performing backpropagation</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxvi)</span><span>Metric commonly used to measure distance in K-Means:</span></div><div class="mcq-options"><div class="mcq-opt">a) Cosine similarity</div><div class="mcq-opt correct">b) Euclidean distance</div><div class="mcq-opt">c) Manhattan distance</div><div class="mcq-opt">d) Jaccard similarity</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxvii)</span><span>Stopping criterion for K-Means clustering:</span></div><div class="mcq-options"><div class="mcq-opt">a) Reaching maximum number of iterations</div><div class="mcq-opt correct">b) No changes in cluster assignments</div><div class="mcq-opt">c) Achieving zero loss</div><div class="mcq-opt">d) Random selection of clusters</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxviii)</span><span>Common problem faced by K-Means clustering:</span></div><div class="mcq-options"><div class="mcq-opt">a) Overfitting</div><div class="mcq-opt correct">b) Sensitivity to outliers</div><div class="mcq-opt">c) High computational cost</div><div class="mcq-opt">d) Poor scalability</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(lxxxix)</span><span>Type of learning K-Means clustering belongs to:</span></div><div class="mcq-options"><div class="mcq-opt">a) Supervised learning</div><div class="mcq-opt correct">b) Unsupervised learning</div><div class="mcq-opt">c) Reinforcement learning</div><div class="mcq-opt">d) Semi-supervised learning</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xc)</span><span>Application where K-Means is commonly used:</span></div><div class="mcq-options"><div class="mcq-opt">a) Spam email detection</div><div class="mcq-opt correct">b) Customer segmentation</div><div class="mcq-opt">c) Time series forecasting</div><div class="mcq-opt">d) Sentiment analysis</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xci)</span><span>Primary goal of association rule mining:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Finding hidden patterns</div><div class="mcq-opt">b) Predicting future values</div><div class="mcq-opt">c) Clustering similar data</div><div class="mcq-opt">d) Reducing dimensionality</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xcii)</span><span>Most commonly used algorithm for association rule mining:</span></div><div class="mcq-options"><div class="mcq-opt">a) K-Means Clustering</div><div class="mcq-opt correct">b) Apriori Algorithm</div><div class="mcq-opt">c) Decision Trees</div><div class="mcq-opt">d) Naive Bayes</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xciii)</span><span>Measure used to determine strength of an association rule:</span></div><div class="mcq-options"><div class="mcq-opt">a) Accuracy</div><div class="mcq-opt">b) Recall</div><div class="mcq-opt correct">c) Support and Confidence</div><div class="mcq-opt">d) Learning Rate</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xciv)</span><span>Real-world application of association rule mining:</span></div><div class="mcq-options"><div class="mcq-opt">a) Customer segmentation</div><div class="mcq-opt correct">b) Market basket analysis</div><div class="mcq-opt">c) Time-series forecasting</div><div class="mcq-opt">d) Sentiment analysis</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xcv)</span><span>Term representing likelihood of an item appearing in a dataset:</span></div><div class="mcq-options"><div class="mcq-opt">a) Confidence</div><div class="mcq-opt">b) Lift</div><div class="mcq-opt correct">c) Support</div><div class="mcq-opt">d) Entropy</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xcvi)</span><span>Key components of reinforcement learning:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Agent, Environment, Reward</div><div class="mcq-opt">b) Clustering, Labels, Features</div><div class="mcq-opt">c) Weights, Biases, Activation</div><div class="mcq-opt">d) Loss, Gradient, Epochs</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xcvii)</span><span>Type of learning RL belongs to:</span></div><div class="mcq-options"><div class="mcq-opt">a) Supervised Learning</div><div class="mcq-opt">b) Unsupervised Learning</div><div class="mcq-opt">c) Semi-supervised Learning</div><div class="mcq-opt correct">d) Trial-and-error Learning</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xcviii)</span><span>Algorithm commonly used in reinforcement learning:</span></div><div class="mcq-options"><div class="mcq-opt">a) K-Means Clustering</div><div class="mcq-opt correct">b) Q-Learning</div><div class="mcq-opt">c) PCA</div><div class="mcq-opt">d) Naive Bayes</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(xcix)</span><span>Application where reinforcement learning is widely used:</span></div><div class="mcq-options"><div class="mcq-opt">a) Stock Market Prediction</div><div class="mcq-opt correct">b) Game Playing (e.g., AlphaGo)</div><div class="mcq-opt">c) Spam Filtering</div><div class="mcq-opt">d) Image Recognition</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(c)</span><span>Main objective of a Support Vector Machine (SVM):</span></div><div class="mcq-options"><div class="mcq-opt">a) Minimize classification errors</div><div class="mcq-opt correct">b) Maximize the margin between classes</div><div class="mcq-opt">c) Reduce number of features</div><div class="mcq-opt">d) Perform clustering</div></div></div>
+  </div>
+
+  <!-- MCQ Group 5: CRISP-DM and EDA -->
+  <div class="mcq-group">
+    <div class="mcq-group-title">§ CRISP-DM, EDA, Data Visualization (ci–cxxxvi)</div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(ci)</span><span>Phase of CRISP-DM to explore and pre-process data for modeling:</span></div><div class="mcq-options"><div class="mcq-opt">a) Data Understanding</div><div class="mcq-opt correct">b) Data Preparation</div><div class="mcq-opt">c) Modeling</div><div class="mcq-opt">d) Evaluation</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cii)</span><span>First phase of the CRISP-DM process:</span></div><div class="mcq-options"><div class="mcq-opt">a) Data Preparation</div><div class="mcq-opt correct">b) Business Understanding</div><div class="mcq-opt">c) Modeling</div><div class="mcq-opt">d) Evaluation</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(ciii)</span><span>Phase in CRISP-DM that involves assessing data quality and detecting missing values:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Data Preparation</div><div class="mcq-opt">b) Business Understanding</div><div class="mcq-opt">c) Modeling</div><div class="mcq-opt">d) Deployment</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(civ)</span><span>Phase that transforms raw data into structured format suitable for analysis in CRISP-DM:</span></div><div class="mcq-options"><div class="mcq-opt">a) Data Understanding</div><div class="mcq-opt correct">b) Data Preparation</div><div class="mcq-opt">c) Evaluation</div><div class="mcq-opt">d) Deployment</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cv)</span><span>Final phase in CRISP-DM:</span></div><div class="mcq-options"><div class="mcq-opt">a) Modeling</div><div class="mcq-opt">b) Evaluation</div><div class="mcq-opt correct">c) Deployment</div><div class="mcq-opt">d) Data Understanding</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cvi)</span><span>Phase of CRISP-DM that ensures results are properly interpreted and validated:</span></div><div class="mcq-options"><div class="mcq-opt">a) Data Preparation</div><div class="mcq-opt">b) Business Understanding</div><div class="mcq-opt correct">c) Evaluation</div><div class="mcq-opt">d) Modeling</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cvii)</span><span>Primary objective of EDA:</span></div><div class="mcq-options"><div class="mcq-opt">a) Cleaning the dataset</div><div class="mcq-opt correct">b) Summarizing the dataset and finding patterns</div><div class="mcq-opt">c) Training the model</div><div class="mcq-opt">d) Evaluating model performance</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cviii)</span><span>Which is NOT a common EDA technique?</span></div><div class="mcq-options"><div class="mcq-opt">a) Scatter plots</div><div class="mcq-opt">b) Summary statistics</div><div class="mcq-opt correct">c) Data encryption</div><div class="mcq-opt">d) Histogram</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cix)</span><span>EDA is primarily used to:</span></div><div class="mcq-options"><div class="mcq-opt">a) Train a machine learning model</div><div class="mcq-opt">b) Interpret model predictions</div><div class="mcq-opt correct">c) Understand the dataset before modeling</div><div class="mcq-opt">d) Optimize hyperparameters</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cx)</span><span>A box plot is useful for detecting:</span></div><div class="mcq-options"><div class="mcq-opt">a) Missing values</div><div class="mcq-opt correct">b) Outliers</div><div class="mcq-opt">c) Data types</div><div class="mcq-opt">d) Feature scaling</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxi)</span><span>Shape of a histogram provides insights into:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Data skewness and distribution</div><div class="mcq-opt">b) Model accuracy</div><div class="mcq-opt">c) Data types</div><div class="mcq-opt">d) Categorical encoding</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxii)</span><span>Plot best suited for visualizing relationships between two numerical variables:</span></div><div class="mcq-options"><div class="mcq-opt">a) Bar chart</div><div class="mcq-opt">b) Line graph</div><div class="mcq-opt correct">c) Scatter plot</div><div class="mcq-opt">d) Pie chart</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxiii)</span><span>Best visualization for understanding categorical data distributions:</span></div><div class="mcq-options"><div class="mcq-opt">a) Histogram</div><div class="mcq-opt correct">b) Pie chart</div><div class="mcq-opt">c) Box plot</div><div class="mcq-opt">d) Heatmap</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxiv)</span><span>A heatmap is primarily used to visualize:</span></div><div class="mcq-options"><div class="mcq-opt">a) Correlation between variables</div><div class="mcq-opt">b) Data missingness</div><div class="mcq-opt correct">c) Both (A) and (B)</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxv)</span><span>A violin plot is a combination of:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Histogram and box plot</div><div class="mcq-opt">b) Scatter plot and line chart</div><div class="mcq-opt">c) Bar chart and pie chart</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxvi)</span><span>Best technique for identifying trends over time:</span></div><div class="mcq-options"><div class="mcq-opt">a) Scatter plot</div><div class="mcq-opt correct">b) Line chart</div><div class="mcq-opt">c) Box plot</div><div class="mcq-opt">d) Histogram</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxvii)</span><span>Which is NOT a common data cleaning step?</span></div><div class="mcq-options"><div class="mcq-opt">a) Handling missing values</div><div class="mcq-opt">b) Removing duplicate records</div><div class="mcq-opt correct">c) Encrypting the data</div><div class="mcq-opt">d) Handling outliers</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxviii)</span><span>Ways missing numerical data can be handled:</span></div><div class="mcq-options"><div class="mcq-opt">a) Replacing with mean/median/mode</div><div class="mcq-opt">b) Dropping missing values</div><div class="mcq-opt">c) Using predictive modeling</div><div class="mcq-opt correct">d) All three options (A, B, and C)</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxix)</span><span>Definition of data normalization:</span></div><div class="mcq-options"><div class="mcq-opt">a) Removing null values</div><div class="mcq-opt correct">b) Scaling data to a specific range</div><div class="mcq-opt">c) Removing duplicate values</div><div class="mcq-opt">d) Converting categorical to numerical data</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxx)</span><span>Outliers can be detected using:</span></div><div class="mcq-options"><div class="mcq-opt">a) Box plot</div><div class="mcq-opt">b) Z-score method</div><div class="mcq-opt">c) IQR</div><div class="mcq-opt correct">d) All of options A, B, C</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxi)</span><span>Technique that can be used to handle categorical data:</span></div><div class="mcq-options"><div class="mcq-opt">a) One-hot encoding</div><div class="mcq-opt">b) Label encoding</div><div class="mcq-opt">c) Frequency encoding</div><div class="mcq-opt correct">d) All three options</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxii)</span><span>Univariate analysis focuses on:</span></div><div class="mcq-options"><div class="mcq-opt">a) Two variables</div><div class="mcq-opt correct">b) One variable</div><div class="mcq-opt">c) More than three variables</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxiii)</span><span>A histogram is commonly used for:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Univariate analysis</div><div class="mcq-opt">b) Bivariate analysis</div><div class="mcq-opt">c) Multivariate analysis</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxiv)</span><span>Correlation matrix is useful for:</span></div><div class="mcq-options"><div class="mcq-opt">a) Univariate analysis</div><div class="mcq-opt">b) Bivariate analysis</div><div class="mcq-opt correct">c) Multivariate analysis</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxv)</span><span>Pearson's correlation coefficient measures:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Strength of a linear relationship between two variables</div><div class="mcq-opt">b) Spread of a single variable</div><div class="mcq-opt">c) Frequency of categorical values</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxvi)</span><span>Visualization technique best for detecting relationships between two categorical variables:</span></div><div class="mcq-options"><div class="mcq-opt">a) Box plot</div><div class="mcq-opt">b) Bar chart</div><div class="mcq-opt">c) Scatter plot</div><div class="mcq-opt correct">d) Heatmap</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxvii)</span><span>Analyzing only the age of customers — type of analysis:</span></div><div class="mcq-options"><div class="mcq-opt">a) Bivariate analysis</div><div class="mcq-opt">b) Multivariate analysis</div><div class="mcq-opt correct">c) Univariate analysis</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxviii)</span><span>Visualization for bivariate analysis involving two continuous variables:</span></div><div class="mcq-options"><div class="mcq-opt">a) Bar chart</div><div class="mcq-opt correct">b) Scatter plot</div><div class="mcq-opt">c) Histogram</div><div class="mcq-opt">d) Pie chart</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxix)</span><span>Main objective of bivariate analysis:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) To analyze the relationship between two variables</div><div class="mcq-opt">b) To analyze a single variable</div><div class="mcq-opt">c) To analyze multiple variables simultaneously</div><div class="mcq-opt">d) To detect missing values</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxx)</span><span>Chi-square test is commonly used for:</span></div><div class="mcq-options"><div class="mcq-opt">a) Univariate analysis</div><div class="mcq-opt correct">b) Bivariate analysis involving categorical variables</div><div class="mcq-opt">c) Multivariate analysis</div><div class="mcq-opt">d) Regression analysis</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxi)</span><span>Technique to reduce dimensionality in multivariate analysis:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Principal Component Analysis (PCA)</div><div class="mcq-opt">b) Linear Regression</div><div class="mcq-opt">c) Box plot</div><div class="mcq-opt">d) Histogram</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxii)</span><span>Statistical method for combined effect of multiple independent variables on dependent variable:</span></div><div class="mcq-options"><div class="mcq-opt">a) Simple Linear Regression</div><div class="mcq-opt correct">b) Multiple Linear Regression</div><div class="mcq-opt">c) Univariate Analysis</div><div class="mcq-opt">d) None</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxiii)</span><span>Correlation coefficient of -1 means:</span></div><div class="mcq-options"><div class="mcq-opt">a) No correlation</div><div class="mcq-opt correct">b) Perfect negative correlation</div><div class="mcq-opt">c) Perfect positive correlation</div><div class="mcq-opt">d) Weak correlation</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxiv)</span><span>Two variables have Pearson correlation coefficient close to 0 implies:</span></div><div class="mcq-options"><div class="mcq-opt">a) Strong positive correlation</div><div class="mcq-opt">b) Strong negative correlation</div><div class="mcq-opt correct">c) No linear relationship</div><div class="mcq-opt">d) The variables are dependent</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxv)</span><span>Best choice to conduct multivariate analysis and detect multicollinearity:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Strong positive correlation (VIF / heatmap)</div><div class="mcq-opt">b) Histogram</div><div class="mcq-opt">c) Pie chart</div><div class="mcq-opt">d) Line plot</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxvi)</span><span>Plot useful for analyzing relationship between a numerical and a categorical variable:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Box plot</div><div class="mcq-opt">b) Scatter plot</div><div class="mcq-opt">c) Histogram</div><div class="mcq-opt">d) Heatmap</div></div></div>
+  </div>
+
+  <!-- MCQ Group 6: Model Evaluation -->
+  <div class="mcq-group">
+    <div class="mcq-group-title">§ Model Evaluation, Logistic Regression, Decision Trees, PCA (cxxxvii–clviii)</div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxvii)</span><span>Factor that affects model selection in ML:</span></div><div class="mcq-options"><div class="mcq-opt">a) Training accuracy only</div><div class="mcq-opt correct">b) Model interpretability and generalization</div><div class="mcq-opt">c) Number of hidden layers only</div><div class="mcq-opt">d) Number of input features only</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxviii)</span><span>Process that prevents overfitting in model selection:</span></div><div class="mcq-options"><div class="mcq-opt">a) Reducing training data</div><div class="mcq-opt">b) Ignoring feature scaling</div><div class="mcq-opt correct">c) Using cross-validation</div><div class="mcq-opt">d) Increasing model complexity</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxxxix)</span><span>Criterion used to compare models for better generalization:</span></div><div class="mcq-options"><div class="mcq-opt">a) High training accuracy only</div><div class="mcq-opt correct">b) Low test error</div><div class="mcq-opt">c) High complexity regardless of accuracy</div><div class="mcq-opt">d) Increased number of parameters</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxl)</span><span>Metric suitable for evaluating regression models:</span></div><div class="mcq-options"><div class="mcq-opt">a) Accuracy</div><div class="mcq-opt">b) F1-score</div><div class="mcq-opt correct">c) Mean Squared Error</div><div class="mcq-opt">d) Confusion Matrix</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxli)</span><span>Metric that measures classification model performance:</span></div><div class="mcq-options"><div class="mcq-opt">a) Root Mean Squared Error</div><div class="mcq-opt correct">b) Precision-Recall</div><div class="mcq-opt">c) R-Squared</div><div class="mcq-opt">d) Mean Absolute Error</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxlii)</span><span>Model validation ensures:</span></div><div class="mcq-options"><div class="mcq-opt">a) Training accuracy improvement</div><div class="mcq-opt">b) Reduces training data size</div><div class="mcq-opt correct">c) Performance on unseen data</div><div class="mcq-opt">d) Always decreases test accuracy</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxliii)</span><span>Evaluation metric commonly used in logistic regression:</span></div><div class="mcq-options"><div class="mcq-opt">a) R-Squared</div><div class="mcq-opt">b) Mean Squared Error</div><div class="mcq-opt">c) Adjusted R-Squared</div><div class="mcq-opt correct">d) F1-Score</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxliv)</span><span>Role of cross-validation in model evaluation:</span></div><div class="mcq-options"><div class="mcq-opt">a) Improves model performance on training data</div><div class="mcq-opt correct">b) Helps assess model performance on unseen data</div><div class="mcq-opt">c) Eliminates need for test data</div><div class="mcq-opt">d) Reduces number of features</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxlv)</span><span>R-Squared in regression model performance:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Measures goodness-of-fit in regression models</div><div class="mcq-opt">b) Always indicates better performance at higher values</div><div class="mcq-opt">c) Used only for classification problems</div><div class="mcq-opt">d) Reduces model complexity</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxlvi)</span><span>Type of function used in logistic regression:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Sigmoid</div><div class="mcq-opt">b) Linear</div><div class="mcq-opt">c) Polynomial</div><div class="mcq-opt">d) Exponential</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxlvii)</span><span>Scenario where logistic regression is preferred over linear regression:</span></div><div class="mcq-options"><div class="mcq-opt">a) Predicting continuous values</div><div class="mcq-opt correct">b) Classifying email as spam or not spam</div><div class="mcq-opt">c) Finding correlation between numeric variables</div><div class="mcq-opt">d) Predicting housing prices</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxlviii)</span><span>Hyperparameter controlling tree depth in a decision tree:</span></div><div class="mcq-options"><div class="mcq-opt">a) Learning rate</div><div class="mcq-opt correct">b) Maximum depth</div><div class="mcq-opt">c) Activation function</div><div class="mcq-opt">d) Number of training samples</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cxlix)</span><span>Hyperparameter tuning allows:</span></div><div class="mcq-options"><div class="mcq-opt">a) Default parameters are always optimal</div><div class="mcq-opt correct">b) Adjustment of model complexity for better performance</div><div class="mcq-opt">c) Eliminates need for feature engineering</div><div class="mcq-opt">d) Reduces dataset size</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cl)</span><span>Impact of high tree depth in decision trees:</span></div><div class="mcq-options"><div class="mcq-opt">a) Reduces variance in predictions</div><div class="mcq-opt correct">b) Leads to overfitting</div><div class="mcq-opt">c) Improves generalization</div><div class="mcq-opt">d) Always results in better accuracy</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cli)</span><span>Pruning in decision tree optimization:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Removes unnecessary branches to reduce overfitting</div><div class="mcq-opt">b) Increases complexity of decision trees</div><div class="mcq-opt">c) Eliminates need for hyperparameter tuning</div><div class="mcq-opt">d) Reduces number of training samples</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(clii)</span><span>Primary objective of Principal Component Analysis:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Maximizing variance in lower dimensions</div><div class="mcq-opt">b) Reducing dataset size without losing information</div><div class="mcq-opt">c) Increasing number of dimensions</div><div class="mcq-opt">d) Improving model accuracy directly</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cliii)</span><span>Mathematical concept used to derive principal components:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) Eigen decomposition</div><div class="mcq-opt">b) Naïve Bayes theorem</div><div class="mcq-opt">c) K-means clustering</div><div class="mcq-opt">d) Activation functions</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(cliv)</span><span>Transformation PCA applies to original data:</span></div><div class="mcq-options"><div class="mcq-opt">a) Non-linear transformation</div><div class="mcq-opt correct">b) Rotation and scaling</div><div class="mcq-opt">c) Simple averaging</div><div class="mcq-opt">d) Normalization only</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(clv)</span><span>Precision for TP=233, TN=79, FP=13, FN=9:</span></div><div class="mcq-options"><div class="mcq-opt">a) 0.88</div><div class="mcq-opt correct">b) 0.95</div><div class="mcq-opt">c) 0.78</div><div class="mcq-opt">d) 0.93</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(clvi)</span><span>Entropy for GOOD=200, BAD=50, MODERATE=250:</span></div><div class="mcq-options"><div class="mcq-opt">a) 0.78</div><div class="mcq-opt correct">b) 1.35</div><div class="mcq-opt">c) 0.88</div><div class="mcq-opt">d) 0.93</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(clvii)</span><span>Gini score for GOOD=200, BAD=50, MODERATE=250:</span></div><div class="mcq-options"><div class="mcq-opt">a) 0.5</div><div class="mcq-opt correct">b) 0.58</div><div class="mcq-opt">c) 0.73</div><div class="mcq-opt">d) 0.80</div></div></div>
+
+    <div class="mcq-item"><div class="mcq-question" onclick="toggleMCQ(this)"><span class="mcq-num">(clviii)</span><span>Precision for TP=178, TN=92, FN=13, FP=9:</span></div><div class="mcq-options"><div class="mcq-opt correct">a) 0.95</div><div class="mcq-opt">b) 0.92</div><div class="mcq-opt">c) 0.88</div><div class="mcq-opt">d) 0.76</div></div></div>
+  </div>
+
+</div><!-- end s7 -->
+</div><!-- end container -->
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function toggleQ(head) {
+  const card = head.closest('.q-card');
+  card.classList.toggle('open');
+}
+
+function toggleMCQ(question) {
+  const item = question.closest('.mcq-item');
+  item.classList.toggle('open');
+}
+
+function expandAllMCQ() {
+  document.querySelectorAll('.mcq-item').forEach(item => item.classList.add('open'));
+}
+
+// Scroll-to-top button
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  if (window.scrollY > 400) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+});
+</script>
+</body>
+</html>
