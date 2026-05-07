@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique SVG Icons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        .icon-container {
+            background-color: white;
+            border-radius: 0.5rem; /* Tailwind rounded-lg */
+            padding: 1.5rem; /* Tailwind p-6 */
+            margin-bottom: 1.5rem; /* Tailwind mb-6 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Tailwind shadow-md */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .icon-preview {
+            width: 64px; /* Tailwind w-16 */
+            height: 64px; /* Tailwind h-16 */
+            margin-bottom: 1rem; /* Tailwind mb-4 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-preview svg {
+            width: 100%;
+            height: 100%;
+        }
+        .code-block {
+            background-color: #1f2937; /* Tailwind gray-800 */
+            color: #d1d5db; /* Tailwind gray-300 */
+            padding: 1rem; /* Tailwind p-4 */
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem; /* Tailwind text-sm */
+            width: 100%;
+            max-width: 600px; /* Limit width for readability */
+        }
+        .copy-button {
+            background-color: #4f46e5; /* Tailwind indigo-600 */
+            color: white;
+            padding: 0.5rem 1rem; /* Tailwind px-4 py-2 */
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+            cursor: pointer;
+            margin-top: 0.5rem; /* Tailwind mt-2 */
+            transition: background-color 0.3s;
+            border: none;
+        }
+        .copy-button:hover {
+            background-color: #4338ca; /* Tailwind indigo-700 */
+        }
+        .copy-feedback {
+            font-size: 0.75rem; /* Tailwind text-xs */
+            color: #10b981; /* Tailwind green-500 */
+            margin-top: 0.25rem; /* Tailwind mt-1 */
+            height: 1rem; /* Ensure space for feedback */
+        }
+        .controls-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            max-width: 220px; /* Adjusted for dropdown */
+        }
+        
+        .format-select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            border: 1px solid #d1d5db; /* gray-300 */
+            background-color: white;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Button Styling */
+        .button {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            width: 100%;
+            text-align: center;
+        }
+        .download-button {
+            background-color: #10b981; /* green-500 */
+        }
+        .download-button:hover {
+            background-color: #059669; /* green-600 */
+        }
+
+         /* Feedback Message */
+        .feedback-message {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            color: #10b981; 
+            margin-top: 0.25rem;
+            height: 1rem; 
+            text-align: center;
+        }
+
+        /* Hidden canvas for rendering */
+        #renderCanvas {
+            display: none;
+        }
+
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Unique SVG Icons</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 1: Concentric Circles</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="5">
+                    <circle cx="50" cy="50" r="40"/>
+                    <circle cx="50" cy="50" r="25"/>
+                    <circle cx="50" cy="50" r="10"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-1">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="5"&gt;
+    &lt;circle cx="50" cy="50" r="40"/&gt;
+    &lt;circle cx="50" cy="50" r="25"/&gt;
+    &lt;circle cx="50" cy="50" r="10"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-1', 'feedback-1')">Copy Code</button>
+            <div id="feedback-1" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 2: Chevron Stack</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 30 50 15 80 30"/>
+                    <polyline points="20 55 50 40 80 55"/>
+                    <polyline points="20 80 50 65 80 80"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-2">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;polyline points="20 30 50 15 80 30"/&gt;
+    &lt;polyline points="20 55 50 40 80 55"/&gt;
+    &lt;polyline points="20 80 50 65 80 80"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-2', 'feedback-2')">Copy Code</button>
+            <div id="feedback-2" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 3: Abstract Bars</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="15" y="20" width="15" height="60" rx="3"/>
+                    <rect x="42" y="35" width="15" height="45" rx="3"/>
+                    <rect x="70" y="10" width="15" height="80" rx="3"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-3">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="15" y="20" width="15" height="60" rx="3"/&gt;
+    &lt;rect x="42" y="35" width="15" height="45" rx="3"/&gt;
+    &lt;rect x="70" y="10" width="15" height="80" rx="3"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-3', 'feedback-3')">Copy Code</button>
+            <div id="feedback-3" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 4: Intersecting Lines</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="6">
+                    <line x1="10" y1="10" x2="90" y2="90"/>
+                    <line x1="10" y1="90" x2="90" y2="10"/>
+                    <line x1="50" y1="10" x2="50" y2="90"/>
+                    <line x1="10" y1="50" x2="90" y2="50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-4">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="6"&gt;
+    &lt;line x1="10" y1="10" x2="90" y2="90"/&gt;
+    &lt;line x1="10" y1="90" x2="90" y2="10"/&gt;
+    &lt;line x1="50" y1="10" x2="50" y2="90"/&gt;
+    &lt;line x1="10" y1="50" x2="90" y2="50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-4', 'feedback-4')">Copy Code</button>
+            <div id="feedback-4" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 5: Corner Brackets</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                    <polyline points="20 20 20 40"/>
+                    <polyline points="20 20 40 20"/>
+                    <polyline points="80 20 80 40"/>
+                    <polyline points="80 20 60 20"/>
+                    <polyline points="20 80 20 60"/>
+                    <polyline points="20 80 40 80"/>
+                    <polyline points="80 80 80 60"/>
+                    <polyline points="80 80 60 80"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-5">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"&gt;
+    &lt;polyline points="20 20 20 40"/&gt;
+    &lt;polyline points="20 20 40 20"/&gt;
+    &lt;polyline points="80 20 80 40"/&gt;
+    &lt;polyline points="80 20 60 20"/&gt;
+    &lt;polyline points="20 80 20 60"/&gt;
+    &lt;polyline points="20 80 40 80"/&gt;
+    &lt;polyline points="80 80 80 60"/&gt;
+    &lt;polyline points="80 80 60 80"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-5', 'feedback-5')">Copy Code</button>
+            <div id="feedback-5" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 6: Diamond Grid</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect transform="translate(50 10) rotate(45)" width="15" height="15" rx="2"/>
+                    <rect transform="translate(25 35) rotate(45)" width="15" height="15" rx="2"/>
+                    <rect transform="translate(75 35) rotate(45)" width="15" height="15" rx="2"/>
+                    <rect transform="translate(50 60) rotate(45)" width="15" height="15" rx="2"/>
+                    <rect transform="translate(25 85) rotate(45)" width="15" height="15" rx="2" opacity="0.7"/>
+                    <rect transform="translate(75 85) rotate(45)" width="15" height="15" rx="2" opacity="0.7"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-6">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect transform="translate(50 10) rotate(45)" width="15" height="15" rx="2"/&gt;
+    &lt;rect transform="translate(25 35) rotate(45)" width="15" height="15" rx="2"/&gt;
+    &lt;rect transform="translate(75 35) rotate(45)" width="15" height="15" rx="2"/&gt;
+    &lt;rect transform="translate(50 60) rotate(45)" width="15" height="15" rx="2"/&gt;
+    &lt;rect transform="translate(25 85) rotate(45)" width="15" height="15" rx="2" opacity="0.7"/&gt;
+    &lt;rect transform="translate(75 85) rotate(45)" width="15" height="15" rx="2" opacity="0.7"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-6', 'feedback-6')">Copy Code</button>
+            <div id="feedback-6" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 7: Zig Zag</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 85 35 15 55 85 75 15 95 85"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-7">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;polyline points="15 85 35 15 55 85 75 15 95 85"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-7', 'feedback-7')">Copy Code</button>
+            <div id="feedback-7" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 8: Spiral Square</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+                    <polyline points="10 10 90 10 90 90 10 90 10 20 80 20 80 80 20 80 20 30 70 30 70 70 30 70 30 40 60 40 60 60 40 60 40 50 50 50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-8">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"&gt;
+    &lt;polyline points="10 10 90 10 90 90 10 90 10 20 80 20 80 80 20 80 20 30 70 30 70 70 30 70 30 40 60 40 60 60 40 60 40 50 50 50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-8', 'feedback-8')">Copy Code</button>
+            <div id="feedback-8" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 9: Three Dots Vertical</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <circle cx="50" cy="20" r="10"/>
+                    <circle cx="50" cy="50" r="10"/>
+                    <circle cx="50" cy="80" r="10"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-9">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;circle cx="50" cy="20" r="10"/&gt;
+    &lt;circle cx="50" cy="50" r="10"/&gt;
+    &lt;circle cx="50" cy="80" r="10"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-9', 'feedback-9')">Copy Code</button>
+            <div id="feedback-9" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 10: Hamburger Menu</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="10" stroke-linecap="round">
+                    <line x1="15" y1="25" x2="85" y2="25"/>
+                    <line x1="15" y1="50" x2="85" y2="50"/>
+                    <line x1="15" y1="75" x2="85" y2="75"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-10">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="10" stroke-linecap="round"&gt;
+    &lt;line x1="15" y1="25" x2="85" y2="25"/&gt;
+    &lt;line x1="15" y1="50" x2="85" y2="50"/&gt;
+    &lt;line x1="15" y1="75" x2="85" y2="75"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-10', 'feedback-10')">Copy Code</button>
+            <div id="feedback-10" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 11: Target</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6">
+                    <circle cx="50" cy="50" r="45"/>
+                    <circle cx="50" cy="50" r="30"/>
+                    <circle cx="50" cy="50" r="15"/>
+                    <line x1="50" y1="5" x2="50" y2="95"/>
+                    <line x1="5" y1="50" x2="95" y2="50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-11">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6"&gt;
+    &lt;circle cx="50" cy="50" r="45"/&gt;
+    &lt;circle cx="50" cy="50" r="30"/&gt;
+    &lt;circle cx="50" cy="50" r="15"/&gt;
+    &lt;line x1="50" y1="5" x2="50" y2="95"/&gt;
+    &lt;line x1="5" y1="50" x2="95" y2="50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-11', 'feedback-11')">Copy Code</button>
+            <div id="feedback-11" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 12: Abstract Arrow</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="50 10 80 40 65 40 65 90 35 90 35 40 20 40"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-12">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="50 10 80 40 65 40 65 90 35 90 35 40 20 40"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-12', 'feedback-12')">Copy Code</button>
+            <div id="feedback-12" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 13: Stacked Squares</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="5">
+                    <rect x="15" y="15" width="70" height="70" rx="5"/>
+                    <rect x="25" y="25" width="50" height="50" rx="5"/>
+                    <rect x="35" y="35" width="30" height="30" rx="5"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-13">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="5"&gt;
+    &lt;rect x="15" y="15" width="70" height="70" rx="5"/&gt;
+    &lt;rect x="25" y="25" width="50" height="50" rx="5"/&gt;
+    &lt;rect x="35" y="35" width="30" height="30" rx="5"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-13', 'feedback-13')">Copy Code</button>
+            <div id="feedback-13" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 14: Plus in Circle</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                    <circle cx="50" cy="50" r="40" fill="none"/>
+                    <line x1="50" y1="25" x2="50" y2="75"/>
+                    <line x1="25" y1="50" x2="75" y2="50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-14">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="8" stroke-linecap="round"&gt;
+    &lt;circle cx="50" cy="50" r="40" fill="none"/&gt;
+    &lt;line x1="50" y1="25" x2="50" y2="75"/&gt;
+    &lt;line x1="25" y1="50" x2="75" y2="50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-14', 'feedback-14')">Copy Code</button>
+            <div id="feedback-14" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 15: Hashtag</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+                    <line x1="30" y1="15" x2="30" y2="85"/>
+                    <line x1="70" y1="15" x2="70" y2="85"/>
+                    <line x1="10" y1="40" x2="90" y2="40"/>
+                    <line x1="10" y1="60" x2="90" y2="60"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-15">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="7" stroke-linecap="round"&gt;
+    &lt;line x1="30" y1="15" x2="30" y2="85"/&gt;
+    &lt;line x1="70" y1="15" x2="70" y2="85"/&gt;
+    &lt;line x1="10" y1="40" x2="90" y2="40"/&gt;
+    &lt;line x1="10" y1="60" x2="90" y2="60"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-15', 'feedback-15')">Copy Code</button>
+            <div id="feedback-15" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 16: Pie Chart Slice</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M50 50 L50 10 A40 40 0 0 1 85.35 35.35 Z"/>
+                    <path d="M50 50 L85.35 35.35 A40 40 0 0 1 64.65 85.35 Z" opacity="0.7"/>
+                    <path d="M50 50 L64.65 85.35 A40 40 0 0 1 14.65 64.65 Z" opacity="0.4"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-16">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M50 50 L50 10 A40 40 0 0 1 85.35 35.35 Z"/&gt;
+    &lt;path d="M50 50 L85.35 35.35 A40 40 0 0 1 64.65 85.35 Z" opacity="0.7"/&gt;
+    &lt;path d="M50 50 L64.65 85.35 A40 40 0 0 1 14.65 64.65 Z" opacity="0.4"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-16', 'feedback-16')">Copy Code</button>
+            <div id="feedback-16" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 17: Chevron Right</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="35 15 65 50 35 85"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-17">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;polyline points="35 15 65 50 35 85"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-17', 'feedback-17')">Copy Code</button>
+            <div id="feedback-17" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 18: Simple Pin</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M50 10 C35 10 25 20 25 35 C25 55 50 90 50 90 C50 90 75 55 75 35 C75 20 65 10 50 10 Z M50 45 A10 10 0 1 1 50 25 A10 10 0 0 1 50 45 Z"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-18">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M50 10 C35 10 25 20 25 35 C25 55 50 90 50 90 C50 90 75 55 75 35 C75 20 65 10 50 10 Z M50 45 A10 10 0 1 1 50 25 A10 10 0 0 1 50 45 Z"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-18', 'feedback-18')">Copy Code</button>
+            <div id="feedback-18" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 19: Half Circle</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M10 50 A40 40 0 0 1 90 50 Z"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-19">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M10 50 A40 40 0 0 1 90 50 Z"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-19', 'feedback-19')">Copy Code</button>
+            <div id="feedback-19" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 20: Diamond Outline</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round">
+                    <polygon points="50 10 90 50 50 90 10 50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-20">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"&gt;
+    &lt;polygon points="50 10 90 50 50 90 10 50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-20', 'feedback-20')">Copy Code</button>
+            <div id="feedback-20" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 21: Square with Cut Corner</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="15 15 65 15 85 35 85 85 15 85"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-21">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="15 15 65 15 85 35 85 85 15 85"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-21', 'feedback-21')">Copy Code</button>
+            <div id="feedback-21" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 22: Abstract Waves</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+                    <path d="M10 30 Q 30 10 50 30 T 90 30"/>
+                    <path d="M10 50 Q 30 30 50 50 T 90 50"/>
+                    <path d="M10 70 Q 30 50 50 70 T 90 70"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-22">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"&gt;
+    &lt;path d="M10 30 Q 30 10 50 30 T 90 30"/&gt;
+    &lt;path d="M10 50 Q 30 30 50 50 T 90 50"/&gt;
+    &lt;path d="M10 70 Q 30 50 50 70 T 90 70"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-22', 'feedback-22')">Copy Code</button>
+            <div id="feedback-22" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 23: Four Squares</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="15" y="15" width="30" height="30" rx="3"/>
+                    <rect x="55" y="15" width="30" height="30" rx="3"/>
+                    <rect x="15" y="55" width="30" height="30" rx="3"/>
+                    <rect x="55" y="55" width="30" height="30" rx="3"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-23">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="15" y="15" width="30" height="30" rx="3"/&gt;
+    &lt;rect x="55" y="15" width="30" height="30" rx="3"/&gt;
+    &lt;rect x="15" y="55" width="30" height="30" rx="3"/&gt;
+    &lt;rect x="55" y="55" width="30" height="30" rx="3"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-23', 'feedback-23')">Copy Code</button>
+            <div id="feedback-23" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 24: Triangle in Circle</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6">
+                    <circle cx="50" cy="50" r="40"/>
+                    <polygon points="50 20 80 70 20 70" fill="currentColor"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-24">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6"&gt;
+    &lt;circle cx="50" cy="50" r="40"/&gt;
+    &lt;polygon points="50 20 80 70 20 70" fill="currentColor"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-24', 'feedback-24')">Copy Code</button>
+            <div id="feedback-24" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 25: Semicircle Stack</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M10 80 A40 40 0 0 1 90 80 Z"/>
+                    <path d="M20 60 A30 30 0 0 1 80 60 Z" opacity="0.8"/>
+                    <path d="M30 40 A20 20 0 0 1 70 40 Z" opacity="0.6"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-25">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M10 80 A40 40 0 0 1 90 80 Z"/&gt;
+    &lt;path d="M20 60 A30 30 0 0 1 80 60 Z" opacity="0.8"/&gt;
+    &lt;path d="M30 40 A20 20 0 0 1 70 40 Z" opacity="0.6"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-25', 'feedback-25')">Copy Code</button>
+            <div id="feedback-25" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 26: Simple Grid</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4">
+                    <line x1="10" y1="33" x2="90" y2="33"/>
+                    <line x1="10" y1="66" x2="90" y2="66"/>
+                    <line x1="33" y1="10" x2="33" y2="90"/>
+                    <line x1="66" y1="10" x2="66" y2="90"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-26">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4"&gt;
+    &lt;line x1="10" y1="33" x2="90" y2="33"/&gt;
+    &lt;line x1="10" y1="66" x2="90" y2="66"/&gt;
+    &lt;line x1="33" y1="10" x2="33" y2="90"/&gt;
+    &lt;line x1="66" y1="10" x2="66" y2="90"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-26', 'feedback-26')">Copy Code</button>
+            <div id="feedback-26" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 27: Arrow Circle</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="50" cy="50" r="35"/>
+                    <path d="M50 30 L50 70 M35 55 L50 70 L65 55"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-27">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;circle cx="50" cy="50" r="35"/&gt;
+    &lt;path d="M50 30 L50 70 M35 55 L50 70 L65 55"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-27', 'feedback-27')">Copy Code</button>
+            <div id="feedback-27" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 28: Offset Squares</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="20" y="20" width="50" height="50" rx="5"/>
+                    <rect x="35" y="35" width="50" height="50" rx="5" opacity="0.6"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-28">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="20" y="20" width="50" height="50" rx="5"/&gt;
+    &lt;rect x="35" y="35" width="50" height="50" rx="5" opacity="0.6"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-28', 'feedback-28')">Copy Code</button>
+            <div id="feedback-28" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 29: Simple Shield</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M50 10 L15 25 L15 60 C15 80 50 90 50 90 C50 90 85 80 85 60 L85 25 Z"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-29">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M50 10 L15 25 L15 60 C15 80 50 90 50 90 C50 90 85 80 85 60 L85 25 Z"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-29', 'feedback-29')">Copy Code</button>
+            <div id="feedback-29" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2 class="text-lg font-semibold mb-2 text-gray-700">Icon 30: Building Blocks</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="15" y="55" width="70" height="30" rx="3"/>
+                    <rect x="25" y="25" width="50" height="30" rx="3"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-30">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="15" y="55" width="70" height="30" rx="3"/&gt;
+    &lt;rect x="25" y="25" width="50" height="30" rx="3"/&gt;
+&lt;/svg&gt;</code></pre>
+            <button class="copy-button" onclick="copyToClipboard('code-30', 'feedback-30')">Copy Code</button>
+            <div id="feedback-30" class="copy-feedback"></div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 31: Triple Chevron Arrow</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 65 50 35 80 65"/>
+                    <polyline points="20 45 50 15 80 45"/>
+                    <polyline points="20 85 50 55 80 85" opacity="0.6"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-31">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;polyline points="20 65 50 35 80 65"/&gt;
+    &lt;polyline points="20 45 50 15 80 45"/&gt;
+    &lt;polyline points="20 85 50 55 80 85" opacity="0.6"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-31" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-31', 'Triple-Chevron-Arrow', 'format-31', 'feedback-31-download')">Download Icon</button>
+                <div id="feedback-31-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-31', 'feedback-31-copy')">Copy SVG Code</button>
+                <div id="feedback-31-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 32: Interlocked Rings</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6">
+                    <circle cx="35" cy="40" r="25"/>
+                    <circle cx="65" cy="40" r="25"/>
+                    <circle cx="50" cy="65" r="25" opacity="0.8"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-32">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6"&gt;
+    &lt;circle cx="35" cy="40" r="25"/&gt;
+    &lt;circle cx="65" cy="40" r="25"/&gt;
+    &lt;circle cx="50" cy="65" r="25" opacity="0.8"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-32" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-32', 'Interlocked-Rings', 'format-32', 'feedback-32-download')">Download Icon</button>
+                <div id="feedback-32-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-32', 'feedback-32-copy')">Copy SVG Code</button>
+                <div id="feedback-32-copy" class="feedback-message"></div>
+            </div>
+        </div>
+        
+        <div class="icon-container">
+            <h2>Icon 33: Abstract Network</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="5" fill="currentColor">
+                    <circle cx="20" cy="20" r="8"/>
+                    <circle cx="80" cy="20" r="8"/>
+                    <circle cx="50" cy="50" r="10"/>
+                    <circle cx="20" cy="80" r="8"/>
+                    <circle cx="80" cy="80" r="8"/>
+                    <line x1="20" y1="20" x2="50" y2="50" stroke-width="3"/>
+                    <line x1="80" y1="20" x2="50" y2="50" stroke-width="3"/>
+                    <line x1="20" y1="80" x2="50" y2="50" stroke-width="3"/>
+                    <line x1="80" y1="80" x2="50" y2="50" stroke-width="3"/>
+                    <line x1="20" y1="20" x2="20" y2="80" stroke-width="3" opacity="0.5"/>
+                    <line x1="80" y1="20" x2="80" y2="80" stroke-width="3" opacity="0.5"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-33">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="5" fill="currentColor"&gt;
+    &lt;circle cx="20" cy="20" r="8"/&gt;
+    &lt;circle cx="80" cy="20" r="8"/&gt;
+    &lt;circle cx="50" cy="50" r="10"/&gt;
+    &lt;circle cx="20" cy="80" r="8"/&gt;
+    &lt;circle cx="80" cy="80" r="8"/&gt;
+    &lt;line x1="20" y1="20" x2="50" y2="50" stroke-width="3"/&gt;
+    &lt;line x1="80" y1="20" x2="50" y2="50" stroke-width="3"/&gt;
+    &lt;line x1="20" y1="80" x2="50" y2="50" stroke-width="3"/&gt;
+    &lt;line x1="80" y1="80" x2="50" y2="50" stroke-width="3"/&gt;
+    &lt;line x1="20" y1="20" x2="20" y2="80" stroke-width="3" opacity="0.5"/&gt;
+    &lt;line x1="80" y1="20" x2="80" y2="80" stroke-width="3" opacity="0.5"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-33" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-33', 'Abstract-Network', 'format-33', 'feedback-33-download')">Download Icon</button>
+                <div id="feedback-33-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-33', 'feedback-33-copy')">Copy SVG Code</button>
+                <div id="feedback-33-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 34: Hourglass Shape</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="20 15 80 15 50 50 80 85 20 85 50 50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-34">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="20 15 80 15 50 50 80 85 20 85 50 50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-34" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-34', 'Hourglass-Shape', 'format-34', 'feedback-34-download')">Download Icon</button>
+                <div id="feedback-34-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-34', 'feedback-34-copy')">Copy SVG Code</button>
+                <div id="feedback-34-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 35: Overlapping Waves</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+                    <path d="M10 40 Q 30 20 50 40 T 90 40" />
+                    <path d="M10 60 Q 30 40 50 60 T 90 60" opacity="0.7"/>
+                    <path d="M10 80 Q 30 60 50 80 T 90 80" opacity="0.4"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-35">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"&gt;
+    &lt;path d="M10 40 Q 30 20 50 40 T 90 40" /&gt;
+    &lt;path d="M10 60 Q 30 40 50 60 T 90 60" opacity="0.7"/&gt;
+    &lt;path d="M10 80 Q 30 60 50 80 T 90 80" opacity="0.4"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-35" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-35', 'Overlapping-Waves', 'format-35', 'feedback-35-download')">Download Icon</button>
+                <div id="feedback-35-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-35', 'feedback-35-copy')">Copy SVG Code</button>
+                <div id="feedback-35-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 36: Sunburst / Star</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="50 10 60 40 90 40 65 60 75 90 50 70 25 90 35 60 10 40 40 40"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-36">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="50 10 60 40 90 40 65 60 75 90 50 70 25 90 35 60 10 40 40 40"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-36" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-36', 'Sunburst-Star', 'format-36', 'feedback-36-download')">Download Icon</button>
+                <div id="feedback-36-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-36', 'feedback-36-copy')">Copy SVG Code</button>
+                <div id="feedback-36-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 37: Checkered Pattern</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="10" y="10" width="25" height="25"/> <rect x="40" y="10" width="25" height="25" opacity="0.6"/> <rect x="70" y="10" width="25" height="25"/>
+                    <rect x="10" y="40" width="25" height="25" opacity="0.6"/> <rect x="40" y="40" width="25" height="25"/> <rect x="70" y="40" width="25" height="25" opacity="0.6"/>
+                    <rect x="10" y="70" width="25" height="25"/> <rect x="40" y="70" width="25" height="25" opacity="0.6"/> <rect x="70" y="70" width="25" height="25"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-37">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="10" y="10" width="25" height="25"/&gt; &lt;rect x="40" y="10" width="25" height="25" opacity="0.6"/&gt; &lt;rect x="70" y="10" width="25" height="25"/&gt;
+    &lt;rect x="10" y="40" width="25" height="25" opacity="0.6"/&gt; &lt;rect x="40" y="40" width="25" height="25"/&gt; &lt;rect x="70" y="40" width="25" height="25" opacity="0.6"/&gt;
+    &lt;rect x="10" y="70" width="25" height="25"/&gt; &lt;rect x="40" y="70" width="25" height="25" opacity="0.6"/&gt; &lt;rect x="70" y="70" width="25" height="25"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-37" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-37', 'Checkered-Pattern', 'format-37', 'feedback-37-download')">Download Icon</button>
+                <div id="feedback-37-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-37', 'feedback-37-copy')">Copy SVG Code</button>
+                <div id="feedback-37-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 38: Simple Bolt</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="50 10 30 50 55 50 45 90 70 40 45 40"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-38">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="50 10 30 50 55 50 45 90 70 40 45 40"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-38" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-38', 'Simple-Bolt', 'format-38', 'feedback-38-download')">Download Icon</button>
+                <div id="feedback-38-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-38', 'feedback-38-copy')">Copy SVG Code</button>
+                <div id="feedback-38-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 39: Speech Bubble Outline</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round">
+                    <path d="M15 15 H 85 V 65 H 55 L 40 80 V 65 H 15 Z"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-39">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"&gt;
+    &lt;path d="M15 15 H 85 V 65 H 55 L 40 80 V 65 H 15 Z"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-39" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-39', 'Speech-Bubble-Outline', 'format-39', 'feedback-39-download')">Download Icon</button>
+                <div id="feedback-39-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-39', 'feedback-39-copy')">Copy SVG Code</button>
+                <div id="feedback-39-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 40: Rounded Cross</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="40" y="15" width="20" height="70" rx="5"/>
+                    <rect x="15" y="40" width="70" height="20" rx="5"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-40">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="40" y="15" width="20" height="70" rx="5"/&gt;
+    &lt;rect x="15" y="40" width="70" height="20" rx="5"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-40" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-40', 'Rounded-Cross', 'format-40', 'feedback-40-download')">Download Icon</button>
+                <div id="feedback-40-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-40', 'feedback-40-copy')">Copy SVG Code</button>
+                <div id="feedback-40-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 41: Cog Wheel Variant</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M50 10 A40 40 0 0 1 50 90 A40 40 0 0 1 50 10 M50 25 A25 25 0 0 0 50 75 A25 25 0 0 0 50 25 Z"/>
+                    <path d="M50 5 L50 20 M50 80 L50 95 M95 50 L80 50 M20 50 L5 50 M78.28 21.72 L70 30 M30 70 L21.72 78.28 M21.72 21.72 L30 30 M70 70 L78.28 78.28" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-41">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M50 10 A40 40 0 0 1 50 90 A40 40 0 0 1 50 10 M50 25 A25 25 0 0 0 50 75 A25 25 0 0 0 50 25 Z"/&gt;
+    &lt;path d="M50 5 L50 20 M50 80 L50 95 M95 50 L80 50 M20 50 L5 50 M78.28 21.72 L70 30 M30 70 L21.72 78.28 M21.72 21.72 L30 30 M70 70 L78.28 78.28" stroke="currentColor" stroke-width="6" stroke-linecap="round"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-41" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-41', 'Cog-Wheel-Variant', 'format-41', 'feedback-41-download')">Download Icon</button>
+                <div id="feedback-41-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-41', 'feedback-41-copy')">Copy SVG Code</button>
+                <div id="feedback-41-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 42: Abstract Leaf</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M50 90 C 20 90, 10 60, 50 10 C 90 60, 80 90, 50 90 Z M50 10 L 50 90"/>
+                    <path d="M50 40 C 65 40 70 50 50 60" fill="none" stroke="#fff" stroke-width="4" opacity="0.5"/>
+                    <path d="M50 40 C 35 40 30 50 50 60" fill="none" stroke="#fff" stroke-width="4" opacity="0.5"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-42">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M50 90 C 20 90, 10 60, 50 10 C 90 60, 80 90, 50 90 Z M50 10 L 50 90"/&gt;
+    &lt;path d="M50 40 C 65 40 70 50 50 60" fill="none" stroke="#fff" stroke-width="4" opacity="0.5"/&gt;
+    &lt;path d="M50 40 C 35 40 30 50 50 60" fill="none" stroke="#fff" stroke-width="4" opacity="0.5"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-42" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-42', 'Abstract-Leaf', 'format-42', 'feedback-42-download')">Download Icon</button>
+                <div id="feedback-42-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-42', 'feedback-42-copy')">Copy SVG Code</button>
+                <div id="feedback-42-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 43: Simple Key</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="35" cy="35" r="20"/>
+                    <line x1="50" y1="50" x2="85" y2="85"/>
+                    <line x1="65" y1="85" x2="85" y2="85"/>
+                    <line x1="75" y1="75" x2="85" y2="75"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-43">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;circle cx="35" cy="35" r="20"/&gt;
+    &lt;line x1="50" y1="50" x2="85" y2="85"/&gt;
+    &lt;line x1="65" y1="85" x2="85" y2="85"/&gt;
+    &lt;line x1="75" y1="75" x2="85" y2="75"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-43" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-43', 'Simple-Key', 'format-43', 'feedback-43-download')">Download Icon</button>
+                <div id="feedback-43-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-43', 'feedback-43-copy')">Copy SVG Code</button>
+                <div id="feedback-43-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 44: Pyramid Stack</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="50 15 15 85 85 85"/>
+                    <polygon points="50 35 30 75 70 75" opacity="0.7"/>
+                    <polygon points="50 50 40 70 60 70" opacity="0.4"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-44">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="50 15 15 85 85 85"/&gt;
+    &lt;polygon points="50 35 30 75 70 75" opacity="0.7"/&gt;
+    &lt;polygon points="50 50 40 70 60 70" opacity="0.4"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-44" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-44', 'Pyramid-Stack', 'format-44', 'feedback-44-download')">Download Icon</button>
+                <div id="feedback-44-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-44', 'feedback-44-copy')">Copy SVG Code</button>
+                <div id="feedback-44-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 45: Bar Chart Up</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <rect x="15" y="60" width="20" height="25" rx="3"/>
+                    <rect x="40" y="40" width="20" height="45" rx="3"/>
+                    <rect x="65" y="20" width="20" height="65" rx="3"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-45">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;rect x="15" y="60" width="20" height="25" rx="3"/&gt;
+    &lt;rect x="40" y="40" width="20" height="45" rx="3"/&gt;
+    &lt;rect x="65" y="20" width="20" height="65" rx="3"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-45" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-45', 'Bar-Chart-Up', 'format-45', 'feedback-45-download')">Download Icon</button>
+                <div id="feedback-45-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-45', 'feedback-45-copy')">Copy SVG Code</button>
+                <div id="feedback-45-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 46: Infinity Loop</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+                    <path d="M30 50 C 30 25, 70 25, 70 50 S 30 75, 30 50"/>
+                    <path d="M70 50 C 70 25, 30 25, 30 50 S 70 75, 70 50" transform="rotate(180 50 50)"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-46">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"&gt;
+    &lt;path d="M30 50 C 30 25, 70 25, 70 50 S 30 75, 30 50"/&gt;
+    &lt;path d="M70 50 C 70 25, 30 25, 30 50 S 70 75, 70 50" transform="rotate(180 50 50)"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-46" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-46', 'Infinity-Loop', 'format-46', 'feedback-46-download')">Download Icon</button>
+                <div id="feedback-46-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-46', 'feedback-46-copy')">Copy SVG Code</button>
+                <div id="feedback-46-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 47: Diamond Cut</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="50 10 90 40 50 90 10 40"/>
+                    <polygon points="50 10 70 50 50 90 30 50" opacity="0.6"/>
+                    <line x1="10" y1="40" x2="90" y2="40" stroke="#fff" stroke-width="3" opacity="0.4"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-47">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="50 10 90 40 50 90 10 40"/&gt;
+    &lt;polygon points="50 10 70 50 50 90 30 50" opacity="0.6"/&gt;
+    &lt;line x1="10" y1="40" x2="90" y2="40" stroke="#fff" stroke-width="3" opacity="0.4"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-47" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-47', 'Diamond-Cut', 'format-47', 'feedback-47-download')">Download Icon</button>
+                <div id="feedback-47-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-47', 'feedback-47-copy')">Copy SVG Code</button>
+                <div id="feedback-47-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 48: Simple Compass</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="50" cy="50" r="40"/>
+                    <polygon points="50 15 40 50 50 85 60 50" fill="currentColor"/>
+                    <line x1="50" y1="15" x2="50" y2="85"/>
+                    <line x1="15" y1="50" x2="85" y2="50"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-48">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"&gt;
+    &lt;circle cx="50" cy="50" r="40"/&gt;
+    &lt;polygon points="50 15 40 50 50 85 60 50" fill="currentColor"/&gt;
+    &lt;line x1="50" y1="15" x2="50" y2="85"/&gt;
+    &lt;line x1="15" y1="50" x2="85" y2="50"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-48" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-48', 'Simple-Compass', 'format-48', 'feedback-48-download')">Download Icon</button>
+                <div id="feedback-48-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-48', 'feedback-48-copy')">Copy SVG Code</button>
+                <div id="feedback-48-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 49: Folder Icon</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M10 25 H 40 L 50 35 H 90 V 75 H 10 Z"/>
+                    <rect x="10" y="30" width="80" height="45" rx="3" opacity="0.7"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-49">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;path d="M10 25 H 40 L 50 35 H 90 V 75 H 10 Z"/&gt;
+    &lt;rect x="10" y="30" width="80" height="45" rx="3" opacity="0.7"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-49" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-49', 'Folder-Icon', 'format-49', 'feedback-49-download')">Download Icon</button>
+                <div id="feedback-49-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-49', 'feedback-49-copy')">Copy SVG Code</button>
+                <div id="feedback-49-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+        <div class="icon-container">
+            <h2>Icon 50: Simple Tag</h2>
+            <div class="icon-preview">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <polygon points="15 20 70 20 90 50 70 80 15 80 15 20"/>
+                    <circle cx="30" cy="50" r="7" fill="#fff"/>
+                </svg>
+            </div>
+            <pre class="code-block"><code id="code-50">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor"&gt;
+    &lt;polygon points="15 20 70 20 90 50 70 80 15 80 15 20"/&gt;
+    &lt;circle cx="30" cy="50" r="7" fill="#fff"/&gt;
+&lt;/svg&gt;</code></pre>
+            <div class="controls-group">
+                <select id="format-50" class="format-select">
+                    <option value="svg">SVG</option>
+                    <option value="png">PNG (256x256)</option>
+                    <option value="jpg">JPG (256x256)</option>
+                    <option value="ico">ICO (32x32, simplified)</option>
+                </select>
+                <button class="button download-button" onclick="downloadIcon('code-50', 'Simple-Tag', 'format-50', 'feedback-50-download')">Download Icon</button>
+                <div id="feedback-50-download" class="feedback-message"></div>
+                <button class="button copy-button" onclick="copyToClipboard('code-50', 'feedback-50-copy')">Copy SVG Code</button>
+                <div id="feedback-50-copy" class="feedback-message"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to copy text to clipboard
+        function copyToClipboard(elementId, feedbackId) {
+            const codeElement = document.getElementById(elementId);
+            const feedbackElement = document.getElementById(feedbackId);
+            const textToCopy = codeElement.innerText;
+
+            // Create a temporary textarea element to hold the text
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy'); // Use execCommand for broader compatibility in iframes
+                feedbackElement.textContent = 'Copied!';
+                setTimeout(() => {
+                    feedbackElement.textContent = '';
+                }, 2000);
+            } catch (err) {
+                feedbackElement.textContent = 'Failed to copy.';
+                console.error('Failed to copy text: ', err);
+            }
+            document.body.removeChild(tempTextArea);
+        }
+
+                // Main download function
+        async function downloadIcon(codeElementId, iconName, formatElementId, feedbackId) {
+            const codeElement = document.getElementById(codeElementId);
+            const formatSelectElement = document.getElementById(formatElementId);
+            const feedbackElement = document.getElementById(feedbackId);
+
+            if (!codeElement || !formatSelectElement || !feedbackElement) {
+                console.error("Elements not found for download:", codeElementId, formatElementId, feedbackId);
+                if(feedbackElement) {
+                    feedbackElement.textContent = 'Error: Elements missing.';
+                    feedbackElement.style.color = '#ef4444';
+                    setTimeout(() => { feedbackElement.textContent = ''; }, 3000);
+                }
+                return;
+            }
+
+            const svgString = codeElement.innerText;
+            const format = formatSelectElement.value;
+            const baseFilename = iconName.trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9-]/g, '');
+            
+            feedbackElement.textContent = 'Processing...';
+            feedbackElement.style.color = '#6b7280'; // gray-500
+
+            try {
+                if (format === 'svg') {
+                    downloadFile(svgString, `${baseFilename}.svg`, 'image/svg+xml;charset=utf-8', feedbackElement);
+                } else if (format === 'png' || format === 'jpg') {
+                    const canvas = document.getElementById('renderCanvas');
+                    const ctx = canvas.getContext('2d');
+                    const targetSize = 256; // For PNG/JPG
+                    canvas.width = targetSize;
+                    canvas.height = targetSize;
+
+                    const img = new Image();
+                    img.onload = function() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+                        if (format === 'jpg') {
+                            ctx.fillStyle = 'white'; // Set white background for JPG
+                            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                        }
+                        ctx.drawImage(img, 0, 0, targetSize, targetSize);
+                        const dataUrl = canvas.toDataURL(format === 'png' ? 'image/png' : 'image/jpeg', 0.9); // 0.9 quality for JPG
+                        downloadFileFromDataUrl(dataUrl, `${baseFilename}.${format}`, feedbackElement);
+                        URL.revokeObjectURL(img.src); // Clean up blob URL
+                    };
+                    img.onerror = function() {
+                        showError(feedbackElement, 'Error loading SVG for conversion.');
+                        URL.revokeObjectURL(img.src); // Clean up blob URL
+                    }
+                    // Use a Blob URL for the image source to handle potentially complex SVGs better
+                    const svgBlob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+                    img.src = URL.createObjectURL(svgBlob);
+
+                } else if (format === 'ico') {
+                    // Simplified ICO generation (32x32)
+                    const canvas = document.getElementById('renderCanvas');
+                    const ctx = canvas.getContext('2d');
+                    const icoSize = 32;
+                    canvas.width = icoSize;
+                    canvas.height = icoSize;
+
+                    const img = new Image();
+                    img.onload = async function() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        ctx.drawImage(img, 0, 0, icoSize, icoSize);
+                        const pngDataUrl = canvas.toDataURL('image/png');
+                        
+                        // Convert data URL to ArrayBuffer (PNG data)
+                        const pngBytes = await dataURLToBytes(pngDataUrl.split(',')[1]);
+                        if (!pngBytes) {
+                            showError(feedbackElement, 'Failed to process PNG for ICO.');
+                            URL.revokeObjectURL(img.src);
+                            return;
+                        }
+
+                        // ICO Header (6 bytes)
+                        const icoHeader = new Uint8Array([0,0, 1,0, 1,0]); // Reserved, Type (ICO), Image Count
+                        
+                        // Image Directory Entry (16 bytes)
+                        const imgDir = new Uint8Array(16);
+                        imgDir[0] = icoSize; // Width
+                        imgDir[1] = icoSize; // Height
+                        imgDir[2] = 0;       // Color Palette (0 for true color)
+                        imgDir[3] = 0;       // Reserved
+                        imgDir[4] = 1; imgDir[5] = 0; // Color Planes (1)
+                        imgDir[6] = 32; imgDir[7] = 0; // Bits Per Pixel (32)
+                        
+                        // Size of PNG data (4 bytes, little-endian)
+                        const pngSize = pngBytes.byteLength;
+                        imgDir[8] = pngSize & 0xFF;
+                        imgDir[9] = (pngSize >> 8) & 0xFF;
+                        imgDir[10] = (pngSize >> 16) & 0xFF;
+                        imgDir[11] = (pngSize >> 24) & 0xFF;
+
+                        // Offset of PNG data from beginning of file (22 bytes: 6 header + 16 dir) (4 bytes, little-endian)
+                        const offset = 22;
+                        imgDir[12] = offset & 0xFF;
+                        imgDir[13] = (offset >> 8) & 0xFF;
+                        imgDir[14] = (offset >> 16) & 0xFF;
+                        imgDir[15] = (offset >> 24) & 0xFF;
+
+                        const icoBlob = new Blob([icoHeader, imgDir, pngBytes], { type: 'image/x-icon' });
+                        downloadFileFromBlob(icoBlob, `${baseFilename}.ico`, feedbackElement);
+                        URL.revokeObjectURL(img.src); // Clean up blob URL
+                    };
+                    img.onerror = function() {
+                        showError(feedbackElement, 'Error loading SVG for ICO conversion.');
+                        URL.revokeObjectURL(img.src); // Clean up blob URL
+                    }
+                    const svgBlobIco = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+                    img.src = URL.createObjectURL(svgBlobIco);
+                }
+            } catch (error) {
+                showError(feedbackElement, 'Download failed: ' + error.message);
+                console.error("Download error:", error);
+            }
+        }
+
+        // Helper to convert base64 data URL part to Uint8Array
+        async function dataURLToBytes(base64String) {
+            try {
+                const binaryString = atob(base64String);
+                const len = binaryString.length;
+                const bytes = new Uint8Array(len);
+                for (let i = 0; i < len; i++) {
+                    bytes[i] = binaryString.charCodeAt(i);
+                }
+                return bytes;
+            } catch (e) {
+                console.error("Base64 decoding error:", e);
+                return null;
+            }
+        }
+
+        // Helper function for direct string/blob download
+        function downloadFile(data, filename, mimeType, feedbackElement) {
+            const blob = new Blob([data], { type: mimeType });
+            downloadFileFromBlob(blob, filename, feedbackElement);
+        }
+
+        // Helper function for data URL download
+        function downloadFileFromDataUrl(dataUrl, filename, feedbackElement) {
+            const link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showSuccess(feedbackElement, 'Downloaded!');
+        }
+        
+        // Helper function for blob download
+        function downloadFileFromBlob(blob, filename, feedbackElement) {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            showSuccess(feedbackElement, 'Downloaded!');
+        }
+
+        function showSuccess(feedbackElement, message) {
+            feedbackElement.textContent = message;
+            feedbackElement.style.color = '#10b981'; // Green
+            setTimeout(() => {
+                feedbackElement.textContent = '';
+            }, 2000);
+        }
+
+        function showError(feedbackElement, message) {
+            feedbackElement.textContent = message;
+            feedbackElement.style.color = '#ef4444'; // Red
+            setTimeout(() => {
+                feedbackElement.textContent = '';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
