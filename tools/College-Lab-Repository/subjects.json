@@ -1,9 +1,0 @@
-[
-  {
-  "id": "web_tech",
-  "subjectName": "Web Technology",
-  "icon": "🌐",
-  "description": "HTML, CSS, JavaScript, PHP, React, and XML.",
-  "file": "web.json"
-}
-]
