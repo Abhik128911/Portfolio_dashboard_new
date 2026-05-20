@@ -1,0 +1,385 @@
+[
+  {
+    "assignment": "Assignment 01",
+    "title": "Installation of Ubuntu on Virtual Machine using Oracle VirtualBox",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To install the Ubuntu operating system on a virtual machine using Oracle VM VirtualBox.</p>"
+      },
+      {
+        "question": "Concept of Virtual Machine",
+        "answer": "<p>A Virtual Machine (VM) is a software-based emulation of a physical computer. It allows multiple operating systems to run on a single physical system. Each virtual machine works independently and is allocated its own resources such as CPU, RAM, storage, and network interfaces.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Oracle VM VirtualBox</li><li>Ubuntu ISO image</li><li>Host Operating System (Windows/Linux)</li></ul>"
+      },
+      {
+        "question": "Procedure to Install Oracle VirtualBox",
+        "answer": "<ol><li>Open a web browser and visit <b>https://www.virtualbox.org</b>.</li><li>Download Oracle VM VirtualBox for Windows Hosts.</li><li>Run the downloaded setup file.</li><li>Click <b>Next</b> and keep default installation settings.</li><li>Click <b>Install</b> and allow necessary permissions.</li><li>Wait until the installation completes successfully.</li></ol>"
+      },
+      {
+        "question": "Procedure to Install Ubuntu on VirtualBox",
+        "answer": "<ol><li>Download Ubuntu ISO file from <b>https://ubuntu.com/download</b>.</li><li>Open Oracle VirtualBox and click <b>New</b>.</li><li>Enter Name as <b>Ubuntu</b>, Type as <b>Linux</b>, and Version as <b>Ubuntu (64-bit)</b>.</li><li>Allocate memory size (minimum 2048 MB).</li><li>Create a virtual hard disk (VDI → Dynamically Allocated).</li><li>Set virtual disk size (minimum 20 GB).</li><li>Go to <b>Settings → Storage</b> and attach the Ubuntu ISO file.</li><li>Start the virtual machine.</li><li>Select <b>Install Ubuntu</b> and follow on-screen instructions.</li><li>Set keyboard layout, timezone, username, and password.</li><li>Complete the installation and reboot the virtual machine.</li></ol>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>Ubuntu installation process completed successfully and the system booted into the Ubuntu desktop environment.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>Ubuntu operating system was successfully installed on a virtual machine using Oracle VirtualBox.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 02",
+    "title": "Getting System Information using Command Line",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To obtain system information of a virtual machine such as guest operating system name, allocated RAM, virtual disk size, VirtualBox version, and CPU details using command line.</p>"
+      },
+      {
+        "question": "System Requirements",
+        "answer": "<ul><li>Ubuntu operating system installed on VirtualBox</li><li>Terminal access</li><li>Oracle VM VirtualBox</li></ul>"
+      },
+      {
+        "question": "Command to Get Guest Operating System Information",
+        "answer": "<p>The following command is used to display the guest operating system details:</p><pre>lsb_release -a</pre>"
+      },
+      {
+        "question": "Command to Check Allocated RAM",
+        "answer": "<p>The following command displays total, used, and free memory:</p><pre>free -h</pre>"
+      },
+      {
+        "question": "Command to Get CPU Information",
+        "answer": "<p>The following command shows CPU architecture, number of cores, and processor details:</p><pre>lscpu</pre>"
+      },
+      {
+        "question": "Command to Get Virtual Disk Size",
+        "answer": "<p>The following command displays information about block devices and virtual disks:</p><pre>lsblk</pre>"
+      },
+      {
+        "question": "Command to Get Kernel Version",
+        "answer": "<p>The following command displays the Linux kernel version:</p><pre>uname -r</pre>"
+      },
+      {
+        "question": "Command to Get VirtualBox Version",
+        "answer": "<p>The following command is used on the host machine to check the VirtualBox version:</p><pre>VBoxManage --version</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>All system details such as operating system version, memory size, CPU cores, disk size, and VirtualBox version were displayed correctly using command line utilities.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>The system information of the virtual machine was successfully obtained using various Linux command line commands.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 03",
+    "title": "Installation of GCC Compiler in Ubuntu",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To install the GNU Compiler Collection (GCC) in Ubuntu Linux and compile a simple C program.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Ubuntu operating system</li><li>Terminal access</li><li>Internet connection</li></ul>"
+      },
+      {
+        "question": "About GCC",
+        "answer": "<p>GCC (GNU Compiler Collection) is a free and open-source compiler system developed by the GNU Project. It is used to compile programming languages such as C, C++, and others.</p>"
+      },
+      {
+        "question": "Procedure to Install GCC",
+        "answer": "<p>The following commands are used to install GCC in Ubuntu:</p><pre>sudo apt update\nsudo apt install gcc</pre>"
+      },
+      {
+        "question": "Command to Verify GCC Installation",
+        "answer": "<p>The following command is used to verify whether GCC is installed successfully:</p><pre>gcc --version</pre>"
+      },
+      {
+        "question": "Sample C Program",
+        "answer": "<pre>#include &lt;stdio.h&gt;\nint main() {\n    printf(\"Hello World\");\n    return 0;\n}</pre>"
+      },
+      {
+        "question": "Compile and Execute the Program",
+        "answer": "<p>The following commands are used to compile and execute the C program:</p><pre>gcc program.c\n./a.out</pre>"
+      },
+      {
+        "question": "Output",
+        "answer": "<pre>Hello World</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>The C program compiled successfully without errors and produced the expected output.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>The GCC compiler was successfully installed in Ubuntu and a C program was compiled and executed successfully.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 04",
+    "title": "Shell Scripting in Linux",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To write and execute basic shell scripts in Linux for displaying date and time, accepting user input, and implementing conditional statements.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Ubuntu operating system</li><li>Terminal access</li><li>Bash shell</li></ul>"
+      },
+      {
+        "question": "Script to Display Current Date and Time",
+        "answer": "<p>The following shell script is used to display the current date and time:</p><pre>#!/bin/bash\necho \"Current Date and Time: $(date)\"</pre>"
+      },
+      {
+        "question": "Script to Display Only Current Time",
+        "answer": "<p>The following script displays only the current system time:</p><pre>#!/bin/bash\necho \"Current Time: $(date +%H:%M:%S)\"</pre>"
+      },
+      {
+        "question": "Script to Accept User Input",
+        "answer": "<p>The following shell script accepts a user name as input and displays a welcome message:</p><pre>#!/bin/bash\necho \"Enter your name:\"\nread name\necho \"Hello $name! Welcome to Linux Shell Scripting.\"</pre>"
+      },
+      {
+        "question": "Shell Script using IF-ELSE Statement",
+        "answer": "<p>The following script demonstrates the use of if-else condition:</p><pre>#!/bin/bash\nx=10\ny=20\nif [ $x -lt $y ]\nthen\n  echo \"$x is less than $y\"\nelse\n  echo \"$x is greater than $y\"\nfi</pre>"
+      },
+      {
+        "question": "Shell Script using IF-ELIF-ELSE Statement",
+        "answer": "<p>The following script demonstrates the use of if-elif-else condition:</p><pre>#!/bin/bash\nx=20\ny=50\nif [ $x -lt $y ]\nthen\n  echo \"$x is less than $y\"\nelif [ $x -eq $y ]\nthen\n  echo \"$x is equal to $y\"\nelse\n  echo \"$x is greater than $y\"\nfi</pre>"
+      },
+      {
+        "question": "Execution of Shell Script",
+        "answer": "<p>To execute the shell script, use the following commands:</p><pre>chmod +x script.sh\n./script.sh</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>All shell scripts executed successfully and produced the expected output.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>Basic shell scripting operations were successfully implemented using Bash shell.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 05",
+    "title": "File Permission Changing in Linux",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To understand and change file permissions in Linux using command line.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Ubuntu operating system</li><li>Terminal access</li><li>Basic knowledge of Linux commands</li></ul>"
+      },
+      {
+        "question": "Concept of File Permissions",
+        "answer": "<p>In Linux, file permissions determine who can read, write, or execute a file. There are three types of users: owner, group, and others. Each file has three permission types: read (r), write (w), and execute (x).</p>"
+      },
+      {
+        "question": "Command to View File Permissions",
+        "answer": "<p>The following command is used to view file permissions:</p><pre>ls -l</pre>"
+      },
+      {
+        "question": "Command to Change File Permission",
+        "answer": "<p>The chmod command is used to change file permissions:</p><pre>chmod +x filename.sh</pre>"
+      },
+      {
+        "question": "Numeric Method of chmod",
+        "answer": "<p>File permissions can also be changed using numeric values:</p><pre>chmod 755 filename.sh</pre><p>Here, 7 represents read, write, and execute permissions for owner, and 5 represents read and execute permissions for group and others.</p>"
+      },
+      {
+        "question": "Execution of File After Permission Change",
+        "answer": "<p>After changing permission, the file can be executed using:</p><pre>./filename.sh</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>The file permissions were successfully changed and the file executed without any permission error.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>File permissions were successfully modified using the chmod command in Linux.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 06",
+    "title": "Pinging One Virtual Machine to Another Using NAT",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To test network connectivity between two virtual machines using the ping command and NAT networking in VirtualBox.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Oracle VM VirtualBox</li><li>Two Ubuntu virtual machines</li><li>Terminal access</li></ul>"
+      },
+      {
+        "question": "Concept of NAT",
+        "answer": "<p>NAT (Network Address Translation) allows virtual machines to access external networks using the host system’s IP address. It also enables communication between virtual machines when configured properly.</p>"
+      },
+      {
+        "question": "Steps to Configure NAT Network",
+        "answer": "<ol><li>Open VirtualBox.</li><li>Select the virtual machine → Settings → Network.</li><li>Set Adapter 1 as <b>NAT</b>.</li><li>Repeat the same steps for the second virtual machine.</li></ol>"
+      },
+      {
+        "question": "Command to Get IP Address of VM",
+        "answer": "<p>The following command is used to obtain the IP address of the virtual machine:</p><pre>ip -4 addr show</pre>"
+      },
+      {
+        "question": "Command to Ping Another Virtual Machine",
+        "answer": "<p>Use the following command to check connectivity between two VMs:</p><pre>ping -c 4 &lt;destination_IP_address&gt;</pre><p><b>Example:</b></p><pre>ping -c 4 10.0.2.6</pre>"
+      },
+      {
+        "question": "Saving Ping Output to a File",
+        "answer": "<p>The ping output can be saved into a file using:</p><pre>ping www.google.com &gt;&gt; ping_report.txt</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>The ping command successfully sent and received packets between the two virtual machines, indicating proper network connectivity.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>Network connectivity between the two virtual machines was successfully verified using NAT configuration and the ping command.</p>"
+      }
+    ]
+  },
+   {
+    "assignment": "Assignment 07",
+    "title": "Getting IP Details and File Sharing from One VM to Another Using NAT and SCP",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To obtain IP address details of a virtual machine and transfer files between two virtual machines using NAT networking and SCP command.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Oracle VM VirtualBox</li><li>Two Ubuntu virtual machines</li><li>Terminal access</li><li>SSH and SCP utilities</li></ul>"
+      },
+      {
+        "question": "Command to Get IP Address of Virtual Machine",
+        "answer": "<p>The following command is used to display the IP address of the virtual machine:</p><pre>ip -4 addr show</pre>"
+      },
+      {
+        "question": "Concept of SCP",
+        "answer": "<p>SCP (Secure Copy Protocol) is a network protocol used to securely transfer files between hosts over an SSH connection. It ensures secure data transfer using encryption.</p>"
+      },
+      {
+        "question": "Installation of SSH Server",
+        "answer": "<p>SSH server must be installed on both virtual machines using the following commands:</p><pre>sudo apt-get update\nsudo apt-get install openssh-server</pre>"
+      },
+      {
+        "question": "Port Forwarding Configuration for NAT",
+        "answer": "<p>When using NAT, port forwarding is required to enable communication between virtual machines.</p><p><b>Port forwarding rules:</b></p><pre>VM1:\nHost Port: 2222 → Guest Port: 22\n\nVM2:\nHost Port: 2223 → Guest Port: 22</pre>"
+      },
+      {
+        "question": "Command to Transfer File from One VM to Another",
+        "answer": "<p>The following SCP command is used to transfer a file:</p><pre>scp -P 2223 /path/to/file user@localhost:/home/user/</pre>"
+      },
+      {
+        "question": "Verification of File Transfer",
+        "answer": "<p>To verify whether the file is transferred successfully:</p><pre>ssh user@localhost -p 2223\nls /home/user/</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>The IP address of the virtual machine was obtained successfully and files were transferred securely between the two virtual machines.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>IP details were successfully retrieved and file sharing between virtual machines was achieved using NAT and SCP.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 08",
+    "title": "Installation of Google App Engine",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To install and configure Google App Engine (GAE) and set up a basic cloud application environment.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Ubuntu operating system</li><li>Google Cloud account</li><li>Internet connection</li><li>Python installed</li></ul>"
+      },
+      {
+        "question": "About Google App Engine",
+        "answer": "<p>Google App Engine (GAE) is a cloud computing platform provided by Google that allows users to build and deploy applications on Google-managed infrastructure. It supports multiple programming languages and automatically handles scaling, security, and server management.</p>"
+      },
+      {
+        "question": "Downloading Google Cloud SDK",
+        "answer": "<p>The Google Cloud SDK is required to work with Google App Engine. It can be downloaded based on the operating system.</p><pre>Linux 64-bit: google-cloud-cli-linux-x86_64.tar.gz\nLinux 32-bit: google-cloud-cli-linux-x86.tar.gz</pre>"
+      },
+      {
+        "question": "Installation of Google Cloud SDK",
+        "answer": "<p>After downloading the SDK, extract and install it using the following commands:</p><pre>tar -xvf google-cloud-cli-linux-x86_64.tar.gz\ncd google-cloud-sdk\n./install.sh</pre>"
+      },
+      {
+        "question": "Initialization of Google Cloud SDK",
+        "answer": "<p>The SDK must be initialized to authenticate the user and configure the project:</p><pre>gcloud init</pre><p>During initialization, log in with your Google account and select or create a project.</p>"
+      },
+      {
+        "question": "Creating Google App Engine Application",
+        "answer": "<p>The following command is used to create an App Engine application:</p><pre>gcloud app create</pre><p>Select the required region when prompted.</p>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>Google Cloud SDK was successfully installed and initialized, and the App Engine application was created without any errors.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>Google App Engine was successfully installed and configured, enabling cloud application deployment.</p>"
+      }
+    ]
+  },
+  {
+    "assignment": "Assignment 09",
+    "title": "Simulation of Cloud Scenario using CloudSim (FCFS Scheduling Algorithm)",
+    "questions": [
+      {
+        "question": "Aim",
+        "answer": "<p>To simulate a cloud computing environment using CloudSim and analyze the performance of the First Come First Serve (FCFS) scheduling algorithm.</p>"
+      },
+      {
+        "question": "About CloudSim",
+        "answer": "<p>CloudSim is an open-source Java-based simulation framework developed by the CLOUDS Laboratory. It is used to model and simulate cloud computing infrastructures, data centers, virtual machines, and scheduling policies without deploying applications on real cloud platforms.</p>"
+      },
+      {
+        "question": "Software Requirements",
+        "answer": "<ul><li>Java Development Kit (JDK)</li><li>Apache NetBeans IDE</li><li>CloudSim 3.0.3 library</li><li>Operating System (Windows / Ubuntu)</li></ul>"
+      },
+      {
+        "question": "Scheduling Algorithm Used (FCFS)",
+        "answer": "<p>First Come First Serve (FCFS) is a non-preemptive scheduling algorithm where cloudlets are executed in the order of their arrival. It is simple to implement but may result in higher waiting time for shorter jobs.</p>"
+      },
+      {
+        "question": "FCFS Scheduling Program using CloudSim (Java Code)",
+        "answer": "<pre><code>import org.cloudbus.cloudsim.*;\nimport org.cloudbus.cloudsim.core.CloudSim;\nimport java.util.*;\n\npublic class FCFSCloudSim {\n    public static void main(String[] args) {\n        try {\n            int numUser = 1;\n            Calendar calendar = Calendar.getInstance();\n            boolean traceFlag = false;\n\n            CloudSim.init(numUser, calendar, traceFlag);\n\n            Datacenter datacenter = createDatacenter(\"Datacenter_1\");\n            DatacenterBroker broker = new DatacenterBroker(\"Broker_1\");\n            int brokerId = broker.getId();\n\n            List<Vm> vmlist = new ArrayList<>();\n            Vm vm = new Vm(0, brokerId, 1000, 1, 512, 1000, 10000, \"Xen\", new CloudletSchedulerTimeShared());\n            vmlist.add(vm);\n            broker.submitVmList(vmlist);\n\n            List<Cloudlet> cloudletList = new ArrayList<>();\n            UtilizationModel utilizationModel = new UtilizationModelFull();\n\n            for (int i = 0; i < 4; i++) {\n                Cloudlet cloudlet = new Cloudlet(i, 4000, 1, 300, 300, utilizationModel, utilizationModel, utilizationModel);\n                cloudlet.setUserId(brokerId);\n                cloudletList.add(cloudlet);\n            }\n\n            broker.submitCloudletList(cloudletList);\n\n            CloudSim.startSimulation();\n            List<Cloudlet> newList = broker.getCloudletReceivedList();\n            CloudSim.stopSimulation();\n\n            System.out.println(\"Cloudlet ID | Status | Start Time | Finish Time | Waiting Time\");\n            for (Cloudlet cloudlet : newList) {\n                System.out.println(cloudlet.getCloudletId() + \" | \" + cloudlet.getStatus() + \" | \" + cloudlet.getExecStartTime() + \" | \" + cloudlet.getFinishTime() + \" | \" + cloudlet.getWaitingTime());\n            }\n\n        } catch (Exception e) {\n            e.printStackTrace();\n        }\n    }\n\n    private static Datacenter createDatacenter(String name) {\n        List<Host> hostList = new ArrayList<>();\n        List<Pe> peList = new ArrayList<>();\n        peList.add(new Pe(0, new PeProvisionerSimple(1000)));\n\n        Host host = new Host(0, new RamProvisionerSimple(2048), new BwProvisionerSimple(10000), 1000000, peList, new VmSchedulerTimeShared(peList));\n        hostList.add(host);\n\n        DatacenterCharacteristics characteristics = new DatacenterCharacteristics(\n                \"x86\", \"Linux\", \"Xen\", hostList, 10.0, 3.0, 0.05, 0.001, 0.0);\n\n        return new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), new ArrayList<>(), 0);\n    }\n}</code></pre>"
+      },
+      {
+        "question": "Simulation Output",
+        "answer": "<p>The simulation displays execution details of cloudlets scheduled using FCFS algorithm.</p><pre>Average Waiting Time = 0.25\nAverage Turnaround Time = 3.0\nSUCCESSFUL (Total Time: 41 seconds)</pre>"
+      },
+      {
+        "question": "Observation",
+        "answer": "<p>The CloudSim simulation executed successfully and cloudlets were processed in the order of their arrival as per the FCFS scheduling policy.</p>"
+      },
+      {
+        "question": "Result",
+        "answer": "<p>The cloud computing scenario was successfully simulated using CloudSim, and the FCFS scheduling algorithm was implemented and analyzed.</p>"
+      }
+    ]
+  }
+]
+
